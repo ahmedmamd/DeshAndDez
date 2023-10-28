@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/_5sdp"
+    android:gravity="center">
+
+    <TextView
+        style="@style/MainTextRegular"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/test_service_description" />
+
+    <TextView
+        style="@style/SecondaryTextRegular"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:text="2 x" />
+
+    <TextView
+        style="@style/MainTextBold"
+        android:text="40 $" />
+
+
+</LinearLayout>

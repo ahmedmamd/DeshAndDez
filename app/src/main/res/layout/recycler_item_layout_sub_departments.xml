@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/sub_department_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/name_textview"
+            style="@style/MainTextBold"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/icon_arrow_bottom"
+            android:drawableTint="@color/icon_color_main"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="Programming Language"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/view_expand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:el_expanded="false">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/services_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                tools:itemCount="4"
+                tools:listitem="@layout/recycler_item_layout_sub_department_services"
+                />
+            <TextView
+                android:id="@+id/tv_empty"
+                style="@style/MainTextRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:text="@string/no_results_found"
+                android:textSize="@dimen/_13ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/background_color_secondary"/>
+</LinearLayout>

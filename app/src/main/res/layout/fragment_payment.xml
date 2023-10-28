@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lang"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:title="@{@string/payment}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SecondaryTextRegular"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:text="@string/products"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@drawable/department_item_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/products_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/recycler_item_layout_payment_products" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@color/number_picker_valuer_stroke" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/MainTextRegular"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/fees" />
+
+                        <TextView
+                            style="@style/MainTextBold"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="40 $" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@color/number_picker_valuer_stroke" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/MainTextBold"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/total" />
+
+                        <TextView
+                            style="@style/MainTextBold"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="40 $" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/SecondaryTextRegular"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:text="@string/payment_way"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/visa_linearlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/department_item_selected_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_10sdp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/visa_image_icon" />
+
+                        <TextView
+                            android:id="@+id/tvMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="@string/credit_card"
+                            android:textColor="@color/blackWhite"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/paypal_linearlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/department_item_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_10sdp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/paypal_image_icon" />
+
+                        <TextView
+                            android:id="@+id/tvFemale"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_regular"
+                            android:text="@string/paypal"
+                            android:textColor="@color/blackWhite"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:background="@drawable/department_item_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="@string/full_name" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/full_name_edittext"
+                        style="@style/EdittextPrimaryStyle"
+                        android:inputType="text" />
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="@string/credit_card_information" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/credit_card_edittext"
+                        style="@style/EdittextPrimaryStyle"
+                        android:inputType="text" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/date_edittext"
+                            style="@style/EdittextPrimaryStyle"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:hint="MM/YY"
+                            android:inputType="text" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/cvc_edittext"
+                            style="@style/EdittextPrimaryStyle"
+                            android:layout_weight="1"
+                            android:hint="CVC"
+                            android:inputType="text" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/save_the_card_to_facilitate_future_payments"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/shadow_effect_round" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_sheet_background"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    style="@style/MainTextRegular"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@string/total" />
+
+                <TextView
+                    style="@style/MainTextBold"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:text="40 $" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:id="@+id/confirm_and_pay_button"
+                    style="@style/ButtonContainedPrimary"
+                    android:text="@string/confirm_and_pay"
+                    />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

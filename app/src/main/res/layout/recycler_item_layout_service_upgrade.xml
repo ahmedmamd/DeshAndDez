@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginVertical="@dimen/_5sdp">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_textview"
+        style="@style/MainTextRegular"
+        android:layout_width="0dp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:text="@string/test_upgrade_text"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/price_textview"
+        style="@style/SecondaryTextRegular"
+        android:layout_width="0dp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:text="@string/test_upgrade_price"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/name_textview"
+        app:layout_constraintTop_toBottomOf="@id/name_textview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

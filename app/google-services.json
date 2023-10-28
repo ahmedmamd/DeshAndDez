@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "597817686544",
+    "project_id": "t-malty",
+    "storage_bucket": "t-malty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597817686544:android:9a541d7780ec0cef352895",
+        "android_client_info": {
+          "package_name": "com.tmalty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597817686544-4bn7i2n82qe7r4rvjbsuc5ld8tf2esgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmalty",
+            "certificate_hash": "61fe2b8068abef93be5d7dd8fac3f838d6fa2392"
+          }
+        },
+        {
+          "client_id": "597817686544-tm813ra3qlmi7b8oad2ochv4nc4pt7nt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzGM-_2DxxV19rox7_b_VkyJVrvpyzuCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597817686544-tm813ra3qlmi7b8oad2ochv4nc4pt7nt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

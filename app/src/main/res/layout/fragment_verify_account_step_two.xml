@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="timer"
+            type="String" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbarSize="2dp"
+        android:scrollbars="vertical"
+        tools:context=".uis.activityies_auth.activity_acount_verification.fragments.FragmentPhone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                app:title="@{@string/account_verification}" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:progress="50"
+                app:indicatorColor="@color/primary_color"
+                app:trackColor="@color/greyLightBlack"
+                app:trackCornerRadius="6dp"
+                app:trackThickness="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/enter_please_enter_the_code_sent_to"
+                android:textColor="@color/blackWhite"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/font_regular"
+                android:gravity="start"
+                android:text='+201003345696'
+                android:textAlignment="viewStart"
+                android:textColor="@color/primary_color"
+                android:textSize="12sp" />
+
+
+            <com.mukesh.OtpView
+                android:id="@+id/otp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_26sdp"
+                android:cursorVisible="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:inputType="number"
+                android:itemBackground="@color/primary_color_10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:OtpItemCount="5"
+                app:OtpItemHeight="@dimen/_40sdp"
+                app:OtpItemRadius="@dimen/_5sdp"
+                app:OtpItemSpacing="@dimen/_10sdp"
+                app:OtpItemWidth="@dimen/_40sdp"
+                app:OtpLineColor="@color/transparent"
+                app:OtpViewType="rectangle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"></com.mukesh.OtpView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <TextView
+                    android:id="@+id/resendCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_regular"
+                    android:text="@string/resend_sms_code"
+                    android:textColor="@color/primary_color"
+                    android:textSize="11sp"
+                    android:visibility='@{timer.equalsIgnoreCase("00:00")?View.VISIBLE:View.GONE,default=gone}'
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_regular"
+                    android:text='@{timer??""}'
+                    android:textColor="@color/blackWhite"
+                    android:textSize="11sp"
+                    android:visibility='@{timer.equalsIgnoreCase("00:00")?View.GONE:View.VISIBLE,default=gone}' />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/previous_button"
+                    style="@style/ButtonOutlineMain"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1.5"
+                    android:text="@string/previous" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/next_button"
+                    style="@style/ButtonContainedPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/next" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

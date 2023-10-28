@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_sheet_background"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bottom_sheet_background">
+
+                <TextView
+                    style="@style/MainTextBold"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/share_via"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/close_imageview"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/circle_background"
+
+                    android:backgroundTint="@color/icon_color_main"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/icon_close"
+                    app:tint="@color/icon_color_secondary2" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:id="@+id/facebook_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/circle_background"
+                        android:backgroundTint="@color/primary_color_10"
+                        android:padding="@dimen/_11sdp"
+                        android:src="@drawable/facebook_icon" />
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/facebook"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/instagram_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/circle_background"
+                        android:backgroundTint="@color/primary_color_10"
+                        android:padding="@dimen/_11sdp"
+                        android:src="@drawable/instagram_icon" />
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/instagram"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/twitter_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/circle_background"
+                        android:backgroundTint="@color/primary_color_10"
+                        android:padding="@dimen/_11sdp"
+                        android:src="@drawable/twitter_icon" />
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/twitter"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/snapchat_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/circle_background"
+                        android:backgroundTint="@color/primary_color_10"
+                        android:padding="@dimen/_11sdp"
+                        android:src="@drawable/snapchat_icon" />
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/snapchat"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/share_more_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/circle_background"
+                        android:backgroundTint="@color/primary_color_10"
+                        android:padding="@dimen/_11sdp"
+                        android:src="@drawable/share_more_icon" />
+
+                    <TextView
+                        style="@style/MainTextRegular"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/more"
+                        android:textSize="@dimen/_11ssp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/SecondaryTextRegular"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/or_copy_link"
+                android:textSize="@dimen/_11ssp"
+                />
+
+            <TextView
+                android:id="@+id/copy_link_textview"
+                style="@style/SecondaryTextRegular"
+                android:textSize="@dimen/_10ssp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@drawable/department_item_background"
+                android:drawableStart="@drawable/copy_link_icon"
+                android:drawablePadding="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="@dimen/_10sdp"
+                android:text="https://www.google.com/" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
