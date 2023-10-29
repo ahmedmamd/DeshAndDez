@@ -128,7 +128,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     private fun handleSearchClick() {
-        findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        findNavController().navigate(R.id.searchFragment)
     }
 
     private fun handleHomeClick() {
@@ -137,11 +137,11 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     private fun handleCategoriesClick() {
-        findNavController().navigate(R.id.action_homeFragment_to_departmentsFragment)
+        findNavController().navigate(R.id.departmentsFragment)
     }
 
     private fun handleOrdersClick() {
-        findNavController().navigate(R.id.action_homeFragment_to_orderFragment)
+        findNavController().navigate(R.id.orderFragment)
     }
 
     private fun handleAddServicesClick() {
@@ -149,22 +149,23 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     private fun handleProfileClick() {
+        findNavController().navigate(R.id.customerProfileFragment)
     }
 
     private fun handleChatsClick() {
-        findNavController().navigate(R.id.action_homeFragment_to_chatsFragment)
+        findNavController().navigate(R.id.chatsFragment)
     }
 
     private fun handleCartClick() {
-        findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+        findNavController().navigate(R.id.cartFragment)
     }
 
     private fun handlePurchasesClick() {
-        findNavController().navigate(R.id.action_homeFragment_to_purchaseFragment)
+        findNavController().navigate(R.id.purchaseFragment)
     }
 
     private fun handleMoreClick() {
-
+        findNavController().navigate(R.id.moreFragment)
     }
 
     private fun handleLogoutClick() {
@@ -217,7 +218,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     private fun navigateToServiceDetails(it: Service) {
-        findNavController().navigate(R.id.action_homeFragment_to_serviceDetailsFragment)
+        findNavController().navigate(R.id.serviceDetailsFragment)
     }
 
 

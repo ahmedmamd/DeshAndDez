@@ -72,7 +72,7 @@
     <string name="change_language">تغيير اللغة</string>
     <string name="contact_us">اتصل بنا</string>
     <string name="privacy_policy">سياسة الخصوصية</string>
-    <string name="about_us">عنا</string>
+    <string name="about_app">عن التطبيق</string>
     <string name="share_app">مشاركة التطبيق</string>
     <string name="edit_profile">تعديل الملف الشخصي</string>
     <string name="change_email">تغيير البريد الإلكتروني</string>
@@ -283,5 +283,31 @@
     <string name="delivery_on_time">التسليم بالموعد</string>
     <string name="follow_up">التواصل والمتابعة</string>
     <string name="quality_of_service">جودة الخدمة</string>
+    <string name="balance">الرصيد</string>
+    <string name="withdraw">سحب</string>
+    <string name="full_balance">الرصيد الكلى</string>
+    <string name="suspended_balance">رصيد معلق</string>
+    <string name="profits">ارباح يمكن سحبها</string>
+    <string name="services">الخدمات</string>
+    <string name="bio">نبذة عنى</string>
+    <string name="verifications">التوثيقات</string>
+    <string name="statisitics">الاحصائيات</string>
+    <string name="test_bio_text">انا خالد عوض مبرمج مواقع بخبرة تفوق الاربع سنوات عملت على كثير من المشاريع وقمت بتنفيذ عدت مواقع لشركات محلية ودولية.
+=================مميزات العمل معي=================
+-توفير خدمة ممتازة وبحودة عالية في وقت قياسي .
+-توفير خدمة الدعم بعد البيع واستلام مشروعك في حالة ظهور اي شئ
+-خبرة جيدة في مجال البرمجة ويمكنني فهم اي خدمات تريدها في مشروعك .
+-تخصصي ((computer science and artificial intellience)).
+-سرعة الرد على الرسائل.
+-هدفي الاول هو ارضائك كعميل.</string>
+    <string name="personal_identification">الهوية الشخصية</string>
+    <string name="email_address">البريد الإلكترونى</string>
+    <string name="the_account_is_not_verified">الحساب غير موثق</string>
+    <string name="edit_account">تعديل الحساب</string>
+    <string name="language">اللغة</string>
+    <string name="common_questions">الأسئلة الشائعة</string>
+    <string name="terms_and_conditions">الشروط والاحكام</string>
+    <string name="rate_app">تقييم التطبيق</string>
+    <string name="delete_account">حذف الحساب</string>
 
 </resources>
