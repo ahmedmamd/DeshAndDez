@@ -6,11 +6,12 @@ import androidx.navigation.fragment.findNavController
 import com.tmalty.R
 import com.tmalty.base.BaseFragment
 import com.tmalty.databinding.FragmentCustomerProfileBinding
+import com.tmalty.databinding.FragmentProfileStatisiticsBinding
 
-class ProfileStatisticsFragment : BaseFragment(R.layout.fragment_customer_profile) {
+class ProfileStatisticsFragment : BaseFragment(R.layout.fragment_profile_statisitics) {
 
     // Declare view and objects
-    lateinit var binding: FragmentCustomerProfileBinding
+    lateinit var binding: FragmentProfileStatisiticsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,7 @@ class ProfileStatisticsFragment : BaseFragment(R.layout.fragment_customer_profil
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentCustomerProfileBinding.bind(requireView())
+        binding = FragmentProfileStatisiticsBinding.bind(requireView())
         binding.lifecycleOwner = this
         setupFragment()
     }
@@ -39,9 +40,6 @@ class ProfileStatisticsFragment : BaseFragment(R.layout.fragment_customer_profil
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
-            findNavController().popBackStack()
-        }
     }
 
 

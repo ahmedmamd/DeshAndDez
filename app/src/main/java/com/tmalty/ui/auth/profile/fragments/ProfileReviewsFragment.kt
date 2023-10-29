@@ -53,9 +53,6 @@ class ProfileReviewsFragment : BaseFragment(R.layout.fragment_profile_reviews) {
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
-            findNavController().popBackStack()
-        }
     }
     private fun setupOrderRecycler() {
         binding.recycler.apply {

@@ -46,9 +46,7 @@ class ProfileBioFragment : BaseFragment(R.layout.fragment_profile_bio) {
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
-            findNavController().popBackStack()
-        }
+
     }
 
 

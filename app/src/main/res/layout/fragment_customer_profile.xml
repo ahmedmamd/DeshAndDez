@@ -238,10 +238,16 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tab_layout"
+                <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></com.google.android.material.tabs.TabLayout>
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    >
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></com.google.android.material.tabs.TabLayout>
+                </HorizontalScrollView>
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/view_pager"

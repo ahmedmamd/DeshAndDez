@@ -46,9 +46,6 @@ class ProfileVerificationsFragment : BaseFragment(R.layout.fragment_profile_veri
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
-            findNavController().popBackStack()
-        }
     }
 
 

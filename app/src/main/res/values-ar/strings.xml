@@ -300,5 +300,10 @@
 -تخصصي ((computer science and artificial intellience)).
 -سرعة الرد على الرسائل.
 -هدفي الاول هو ارضائك كعميل.</string>
+    <string name="personal_identification">الهوية الشخصية</string>
+    <string name="email_address">البريد الإلكترونى</string>
+    <string name="the_account_is_not_verified">الحساب غير موثق</string>
+    <string name="edit_account">Edit Account</string>
+    <string name="language">Language</string>
 
 </resources>
