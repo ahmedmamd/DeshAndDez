@@ -283,5 +283,10 @@
     <string name="delivery_on_time">التسليم بالموعد</string>
     <string name="follow_up">التواصل والمتابعة</string>
     <string name="quality_of_service">جودة الخدمة</string>
+    <string name="balance">Balance</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="full_balance">Full balance</string>
+    <string name="suspended_balance">Suspended balance</string>
+    <string name="profits">Profits</string>
 
 </resources>

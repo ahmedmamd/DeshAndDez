@@ -286,5 +286,10 @@ I will create a main online store on your platform. In this service, I will hand
     <string name="delivery_on_time">Delivery on time</string>
     <string name="follow_up">Follow up</string>
     <string name="quality_of_service">Quality of service</string>
+    <string name="balance">Balance</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="full_balance">Full balance</string>
+    <string name="suspended_balance">Suspended balance</string>
+    <string name="profits">Profits</string>
 
 </resources>
