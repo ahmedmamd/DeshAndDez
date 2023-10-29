@@ -42,6 +42,7 @@ class ServiceRateFilterSheetDialog(
         setUpSheetUi(binding.root.parent)
         setupOrderAdapter()
         setupOrderRecycler()
+
     }
 
     // Set up event listeners for button clicks and other interactions
