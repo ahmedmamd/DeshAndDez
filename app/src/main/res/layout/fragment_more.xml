@@ -38,7 +38,7 @@
                 android:text="@string/edit_account"
                 android:drawableEnd="@drawable/arrow_right"
                 android:drawablePadding="@dimen/_8sdp"
-                android:paddingVertical="@dimen/_8sdp"/>
+                android:paddingVertical="@dimen/_10sdp"/>
             <TextView
                 android:id="@+id/language_textview"
                 style="@style/MainTextRegular"
@@ -47,7 +47,70 @@
                 android:text="@string/language"
                 android:drawableEnd="@drawable/arrow_right"
                 android:drawablePadding="@dimen/_8sdp"
-                android:paddingVertical="@dimen/_8sdp"/>
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/contact_us_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/more_contact_us_icon"
+                android:layout_width="match_parent"
+                android:text="@string/contact_us"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/about_app_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/circle_info_icon"
+                android:layout_width="match_parent"
+                android:text="@string/about_app"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/common_question_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/more_common_question_icon"
+                android:layout_width="match_parent"
+                android:text="@string/common_questions"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/terms_conditions_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/more_terms_conditions_icon"
+                android:layout_width="match_parent"
+                android:text="@string/terms_and_conditions"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/privacy_policy_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/more_privacy_policy_icon"
+                android:layout_width="match_parent"
+                android:text="@string/privacy_policy"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/rate_app_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/more_rate_app_icon"
+                android:layout_width="match_parent"
+                android:text="@string/rate_app"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
+            <TextView
+                android:id="@+id/delete_account_textview"
+                style="@style/MainTextRegular"
+                android:drawableStart="@drawable/more_delete_account_icon"
+                android:layout_width="wrap_content"
+                android:text="@string/delete_account"
+                android:textColor="#FF0005"
+                android:drawablePadding="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_10sdp"/>
         </LinearLayout>
         </ScrollView>
 

@@ -87,6 +87,9 @@
         <action
             android:id="@+id/action_homeFragment_to_customerProfileFragment"
             app:destination="@id/customerProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_moreFragment"
+            app:destination="@id/moreFragment" />
     </fragment>
     <fragment
         android:id="@+id/departmentsFragment"
@@ -210,4 +213,9 @@
         android:name="com.tmalty.ui.auth.profile.CustomerProfileFragment"
         android:label="CustomerProfileFragment"
         tools:layout="@layout/fragment_customer_profile"/>
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.tmalty.ui.main.fragments.more.MoreFragment"
+        android:label="MoreFragment"
+        tools:layout="@layout/fragment_more"/>
 </navigation>
