@@ -10,13 +10,14 @@ import com.tmalty.data.models.core.Department
 import com.tmalty.data.models.core.SubDepartment
 import com.tmalty.databinding.FragmentCustomerProfileBinding
 import com.tmalty.databinding.FragmentDepartmentsBinding
+import com.tmalty.databinding.FragmentProfileReviewsBinding
 import com.tmalty.ui.main.fragments.departments.adapters.DepartmentsAdapter
 import com.tmalty.ui.main.fragments.departments.adapters.SubDepartmentsAdapter
 
-class ProfileReviewsFragment : BaseFragment(R.layout.fragment_customer_profile) {
+class ProfileReviewsFragment : BaseFragment(R.layout.fragment_profile_reviews) {
 
     // Declare view and objects
-    lateinit var binding: FragmentCustomerProfileBinding
+    lateinit var binding: FragmentProfileReviewsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,7 @@ class ProfileReviewsFragment : BaseFragment(R.layout.fragment_customer_profile) 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentCustomerProfileBinding.bind(requireView())
+        binding = FragmentProfileReviewsBinding.bind(requireView())
         binding.lifecycleOwner = this
         setupFragment()
     }

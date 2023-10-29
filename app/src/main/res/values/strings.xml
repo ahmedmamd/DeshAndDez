@@ -291,5 +291,9 @@ I will create a main online store on your platform. In this service, I will hand
     <string name="full_balance">Full balance</string>
     <string name="suspended_balance">Suspended balance</string>
     <string name="profits">Profits</string>
+    <string name="services">Services</string>
+    <string name="bio">Bio</string>
+    <string name="verifications">Verifications</string>
+    <string name="statisitics">Statisitics</string>
 
 </resources>
