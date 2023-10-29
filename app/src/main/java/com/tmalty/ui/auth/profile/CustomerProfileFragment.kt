@@ -44,6 +44,8 @@ class CustomerProfileFragment : BaseFragment(R.layout.fragment_customer_profile)
     // Set up the UI components
     private fun setupUI() {
         // Set up any UI-related configurations here
+        setupViewPager()
+        setupTabLayout()
     }
 
 
@@ -66,7 +68,7 @@ class CustomerProfileFragment : BaseFragment(R.layout.fragment_customer_profile)
         )
         val adapter = ProfilePagerAdapter(requireActivity(), fragmentList)
         binding.viewPager.adapter = adapter
-        binding.viewPager.offscreenPageLimit = 2
+        binding.viewPager.offscreenPageLimit = 5
         binding.viewPager.isUserInputEnabled = false
     }
 

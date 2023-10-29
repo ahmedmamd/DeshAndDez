@@ -283,14 +283,22 @@
     <string name="delivery_on_time">التسليم بالموعد</string>
     <string name="follow_up">التواصل والمتابعة</string>
     <string name="quality_of_service">جودة الخدمة</string>
-    <string name="balance">Balance</string>
-    <string name="withdraw">Withdraw</string>
-    <string name="full_balance">Full balance</string>
-    <string name="suspended_balance">Suspended balance</string>
-    <string name="profits">Profits</string>
-    <string name="services">Services</string>
-    <string name="bio">Bio</string>
-    <string name="verifications">Verifications</string>
-    <string name="statisitics">Statisitics</string>
+    <string name="balance">الرصيد</string>
+    <string name="withdraw">سحب</string>
+    <string name="full_balance">الرصيد الكلى</string>
+    <string name="suspended_balance">رصيد معلق</string>
+    <string name="profits">ارباح يمكن سحبها</string>
+    <string name="services">الخدمات</string>
+    <string name="bio">نبذة عنى</string>
+    <string name="verifications">التوثيقات</string>
+    <string name="statisitics">الاحصائيات</string>
+    <string name="test_bio_text">انا خالد عوض مبرمج مواقع بخبرة تفوق الاربع سنوات عملت على كثير من المشاريع وقمت بتنفيذ عدت مواقع لشركات محلية ودولية.
+=================مميزات العمل معي=================
+-توفير خدمة ممتازة وبحودة عالية في وقت قياسي .
+-توفير خدمة الدعم بعد البيع واستلام مشروعك في حالة ظهور اي شئ
+-خبرة جيدة في مجال البرمجة ويمكنني فهم اي خدمات تريدها في مشروعك .
+-تخصصي ((computer science and artificial intellience)).
+-سرعة الرد على الرسائل.
+-هدفي الاول هو ارضائك كعميل.</string>
 
 </resources>

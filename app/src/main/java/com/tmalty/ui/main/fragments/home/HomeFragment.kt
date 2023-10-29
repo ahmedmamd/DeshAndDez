@@ -149,6 +149,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
     }
 
     private fun handleProfileClick() {
+        findNavController().navigate(R.id.action_homeFragment_to_customerProfileFragment)
     }
 
     private fun handleChatsClick() {
