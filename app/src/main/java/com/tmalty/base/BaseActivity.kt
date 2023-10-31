@@ -38,7 +38,6 @@ abstract class BaseActivity : AppCompatActivity() {
         myApp = this.applicationContext as BaseApp
         Utils.stopDarkMode()
         settingsRepository.setDeviceId(DeviceUtilities.getDeviceId(this) ?: "")
-        setContentView(setUpLayoutView())
         handleEvents()
     }
 
@@ -65,9 +64,6 @@ abstract class BaseActivity : AppCompatActivity() {
     private fun handleEvents() {
     }
 
-    protected abstract fun setUpLayoutView(savedInstanceState: Bundle? = null): View
-
-
     open fun setLocale(lang: String) {
         val locale = Locale(lang)
         Locale.setDefault(locale)
@@ -77,7 +73,7 @@ abstract class BaseActivity : AppCompatActivity() {
         resources.updateConfiguration(configuration, resources.displayMetrics)
     }
 
-    fun shoMsg(msg: String, type: String) {
+    fun shoMsg(msg: String) {
 
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 //        MotionToast.createColorToast(

@@ -11,11 +11,11 @@ class AboutUsActivity : BaseActivity() {
     lateinit var binding : ActivityAboutUsBinding
     val aboutAppViewModel : AboutAppViewModel by viewModels()
 
-
-    override fun setUpLayoutView(savedInstanceState: Bundle?): View {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivityAboutUsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setupActivity()
-        return binding.root
     }
 
 

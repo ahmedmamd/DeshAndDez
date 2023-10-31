@@ -12,6 +12,6 @@
         android:paddingVertical="@dimen/_6sdp"
         android:text="Programming Language"
         android:textAlignment="viewStart"
-        android:textSize="@dimen/_12ssp" />
+        android:textSize="@dimen/_9ssp" />
 
 </LinearLayout>

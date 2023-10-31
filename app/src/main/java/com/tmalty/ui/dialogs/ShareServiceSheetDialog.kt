@@ -2,15 +2,11 @@ package com.tmalty.ui.dialogs
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.tmalty.R
 import com.tmalty.commons.extensions.setUpSheetUi
-import com.tmalty.data.models.core.OrderStatus
-import com.tmalty.databinding.SheetLayoutCheckboxSelectionBinding
 import com.tmalty.databinding.SheetLayoutShareServiceBinding
-import com.tmalty.ui.main.fragments.orders.adapters.OrdersStatusAdapter
+import com.tmalty.ui.main.fragments.orders.adapters.CheckboxSelectionAdapter
 
 class ShareServiceSheetDialog(
     private val screenContext: Context
@@ -21,7 +17,7 @@ class ShareServiceSheetDialog(
     private var lang = ""
 
     //Departments
-    lateinit var ordersStatusAdapter: OrdersStatusAdapter
+    lateinit var checkboxSelectionAdapter: CheckboxSelectionAdapter
 
     init {
         setupBottomSheet()

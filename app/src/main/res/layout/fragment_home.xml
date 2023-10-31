@@ -61,6 +61,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:padding="3dp"
+                            android:visibility="gone"
                             android:src="@drawable/notification" />
 
                         <View
@@ -118,6 +119,7 @@
                         android:id="@+id/departments_section"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginHorizontal="@dimen/_13sdp">
 
                         <TextView
@@ -143,8 +145,8 @@
                         <TextView
                             android:id="@+id/departments_description_text_view"
                             style="@style/SecondaryTextRegular"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:text="All creative and professional services to develop and grow your business."
+                            android:layout_marginVertical="@dimen/_10sdp"
+                            android:text="@string/all_creative_and_professional_services_to_develop_and_grow_your_business"
                             android:textSize="@dimen/_9ssp"
                             app:layout_constraintStart_toStartOf="@id/departments_text_view"
                             app:layout_constraintTop_toBottomOf="@id/departments_text_view" />

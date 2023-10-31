@@ -8,7 +8,7 @@ abstract class CustomBaseAdapter<T, VH : RecyclerView.ViewHolder> : RecyclerView
 
     private var dataList: MutableList<T> = mutableListOf()
     var currentSelectedPosition = 0
-    var previousSelectedPosition = 0
+    var previousSelectedPosition = -1
 
     fun setData(newDataList: List<T>) {
         val diffResult = DiffUtil.calculateDiff(DataDiffCallback(dataList, newDataList))
@@ -34,10 +34,11 @@ abstract class CustomBaseAdapter<T, VH : RecyclerView.ViewHolder> : RecyclerView
     }
 
     fun clickItem(position: Int, onItemClicked: () -> Unit) {
-        previousSelectedPosition = currentSelectedPosition
-        currentSelectedPosition = position
-        if (previousSelectedPosition != currentSelectedPosition)
+        if (currentSelectedPosition != position) {
+            previousSelectedPosition = currentSelectedPosition
             notifyItemChanged(previousSelectedPosition)
+        }
+        currentSelectedPosition = position
         notifyItemChanged(currentSelectedPosition)
         onItemClicked()
     }

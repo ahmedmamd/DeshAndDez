@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/screen_background_color"
+            >
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_11sdp">
+
+                <TextView
+                    android:id="@+id/sheet_title_textview"
+                    style="@style/MainTextBold"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/filter"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/close_imageview"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/circle_background"
+                    android:backgroundTint="@color/icon_color_main"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/icon_close"
+                    app:tint="@color/icon_color_secondary2" />
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/department_constraint"
+                android:layout_marginHorizontal="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/department_textview"
+                    style="@style/MainTextBold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/department"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/department_value_textview"
+                    style="@style/SecondaryTextRegular"
+                    android:text="@string/test_sub_department_name"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/department_textview" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_arrow_bottom"
+                    app:layout_constraintBottom_toBottomOf="@id/department_value_textview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/department_textview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/service_review_textview"
+                style="@style/MainTextBold"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:drawableEnd="@drawable/icon_arrow_bottom"
+                android:text="@string/service_review"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seller_level_constraint"
+                android:layout_marginHorizontal="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/seller_level_textview"
+                    style="@style/MainTextBold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/seller_level"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/seller_level_service_textview"
+                    style="@style/SecondaryTextRegular"
+                    android:text='@{@string/distinguished_seller +" - " +@string/active_seller}'
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seller_level_textview" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_arrow_bottom"
+                    app:layout_constraintBottom_toBottomOf="@id/seller_level_textview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/seller_level_textview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seller_status_constraint"
+                android:layout_marginHorizontal="@dimen/_16sdp">
+
+                <TextView
+                    android:id="@+id/seller_status_textview"
+                    style="@style/MainTextBold"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/seller_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/seller_status_service_textview"
+                    style="@style/SecondaryTextRegular"
+                    android:text='@{@string/verified_id +" - " + @string/online_now}'
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seller_status_textview" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_arrow_bottom"
+                    app:layout_constraintBottom_toBottomOf="@id/seller_status_textview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/seller_status_textview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/previous_button"
+                    style="@style/ButtonOutlineMain"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1.5"
+                    android:text="@string/reset" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/next_button"
+                    style="@style/ButtonContainedPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:text="@string/activation" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

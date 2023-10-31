@@ -2,19 +2,11 @@ package com.tmalty.ui.auth.profile.fragments
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tmalty.R
 import com.tmalty.base.BaseFragment
-import com.tmalty.data.models.core.Department
 import com.tmalty.data.models.core.Reviews
-import com.tmalty.data.models.core.Service
-import com.tmalty.data.models.core.SubDepartment
-import com.tmalty.databinding.FragmentCustomerProfileBinding
-import com.tmalty.databinding.FragmentDepartmentsBinding
 import com.tmalty.databinding.FragmentProfileReviewsBinding
-import com.tmalty.ui.main.fragments.departments.adapters.DepartmentsAdapter
-import com.tmalty.ui.main.fragments.departments.adapters.SubDepartmentsAdapter
 import com.tmalty.ui.main.fragments.servicedetails.adapters.ReviewsAdapter
 
 class ProfileReviewsFragment : BaseFragment(R.layout.fragment_profile_reviews) {
@@ -50,10 +42,10 @@ class ProfileReviewsFragment : BaseFragment(R.layout.fragment_profile_reviews) {
     }
 
 
-
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
     }
+
     private fun setupOrderRecycler() {
         binding.recycler.apply {
             layoutManager = LinearLayoutManager(requireActivity())

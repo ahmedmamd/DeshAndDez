@@ -2,10 +2,8 @@ package com.tmalty.ui.auth.profile.fragments
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import com.tmalty.R
 import com.tmalty.base.BaseFragment
-import com.tmalty.databinding.FragmentCustomerProfileBinding
 import com.tmalty.databinding.FragmentProfileStatisiticsBinding
 
 class ProfileStatisticsFragment : BaseFragment(R.layout.fragment_profile_statisitics) {

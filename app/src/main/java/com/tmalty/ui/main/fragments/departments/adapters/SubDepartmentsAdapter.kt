@@ -14,7 +14,8 @@ class SubDepartmentsAdapter(private val onItemClicked: (SubDepartment) -> Unit) 
     CustomBaseAdapter<SubDepartment, SubDepartmentsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item_layout_sub_departments, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.recycler_item_layout_sub_departments, parent, false)
         return ViewHolder(view)
     }
 
@@ -49,11 +50,9 @@ class SubDepartmentsAdapter(private val onItemClicked: (SubDepartment) -> Unit) 
 
         private fun setupExpandItemUi(item: SubDepartment) {
             if (currentSelectedPosition == position)
-                if (!binding.viewExpand.isExpanded)
-                    binding.viewExpand.expand()
-                else
-                    binding.viewExpand.collapse()
-            else binding.viewExpand.collapse()
+                binding.viewExpand.toggle()
+            else
+                binding.viewExpand.collapse()
 
         }
     }

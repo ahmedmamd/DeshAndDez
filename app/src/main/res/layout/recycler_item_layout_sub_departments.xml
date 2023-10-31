@@ -22,7 +22,7 @@
             android:paddingVertical="@dimen/_8sdp"
             android:text="Programming Language"
             android:textAlignment="viewStart"
-            android:textSize="@dimen/_12ssp" />
+            android:textSize="@dimen/_11ssp" />
     </LinearLayout>
 
     <net.cachapa.expandablelayout.ExpandableLayout

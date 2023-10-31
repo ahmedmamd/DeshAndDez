@@ -18,7 +18,9 @@
             style="@style/MainTextRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:textSize="@dimen/_8ssp"
             android:text="@string/test_bio_text" />
     </androidx.core.widget.NestedScrollView>
 </layout>

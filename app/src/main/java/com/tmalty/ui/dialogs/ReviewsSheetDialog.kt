@@ -2,15 +2,12 @@ package com.tmalty.ui.dialogs
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.tmalty.R
 import com.tmalty.commons.extensions.setUpSheetUi
 import com.tmalty.data.models.core.Reviews
-import com.tmalty.databinding.SheetLayoutCheckboxSelectionBinding
 import com.tmalty.databinding.SheetLayoutReviewsBinding
-import com.tmalty.ui.main.fragments.orders.adapters.OrdersStatusAdapter
 import com.tmalty.ui.main.fragments.servicedetails.adapters.ReviewsAdapter
 
 class ReviewsSheetDialog(

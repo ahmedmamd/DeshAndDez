@@ -74,7 +74,7 @@
     <string name="privacy_policy">سياسة الخصوصية</string>
     <string name="about_app">عن التطبيق</string>
     <string name="share_app">مشاركة التطبيق</string>
-    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="edit_profile">تعديل الحساب</string>
     <string name="change_email">تغيير البريد الإلكتروني</string>
     <string name="change_phone_number">تغيير رقم الهاتف</string>
     <string name="shipments">الشحنات</string>
@@ -98,7 +98,7 @@
     <string name="pickup_location">موقع الاستلام</string>
     <string name="destination_address">عنوان الوجهة</string>
     <string name="start">بدء</string>
-    <string name="choose">اختيار</string>
+    <string name="choose">اختر</string>
     <string name="address">العنوان</string>
     <string name="package_info">معلومات الطرد</string>
     <string name="select_truck">اختيار الشاحنة</string>
@@ -108,7 +108,7 @@
     <string name="pickup_date_time"><![CDATA[الاستلام (التاريخ والوقت)]]></string>
     <string name="choose_date">اختيار التاريخ</string>
     <string name="choose_time">اختيار الوقت</string>
-    <string name="category">الفئة</string>
+    <string name="category">التصنيف</string>
     <string name="package_type">نوع الطرد</string>
     <string name="description">الوصف</string>
     <string name="destination_location">موقع الوجهة</string>
@@ -154,6 +154,7 @@
     <string name="enter_your_registered_data_to_complete_the_login_process">ادخل بياناتك المسجلة لإتمام عملية الدخول</string>
     <string name="email">البريد الالكتروني</string>
     <string name="ex_mail_mail_com">مثال:mail@mail.com</string>
+    <string name="ex_address">مثال:تصميم ويب</string>
     <string name="password">كلمة المرور</string>
     <string name="forgot_password">نسيت كلمة المرور ؟</string>
     <string name="log_in">تسجيل الدخول</string>
@@ -309,5 +310,32 @@
     <string name="terms_and_conditions">الشروط والاحكام</string>
     <string name="rate_app">تقييم التطبيق</string>
     <string name="delete_account">حذف الحساب</string>
+    <string name="all_creative_and_professional_services_to_develop_and_grow_your_business">كافة الخدمات الإبداعية والاحترافية لتطوير وتنمية أعمالك .</string>
+    <string name="average_speed_of_response">متوسط سرعة الرد</string>
+    <string name="published_services">الخدمات المنشورة</string>
+    <string name="number_of_clients">عدد العملاء</string>
+    <string name="min">د</string>
+    <string name="introduction">النبذة التعريفية</string>
+    <string name="service_address">عنوان الخدمة</string>
+    <string name="sub_category">التصنيف الفرعى</string>
+    <string name="service_description">وصف الخدمة</string>
+    <string name="write_here">أكتب هنا</string>
+    <string name="service_gallery">معرض الخدمة</string>
+    <string name="service_gallery_tips">القياس: 343x257 بكسل . بنسبة 4:3 . الحجم الأقصى: 5 ميجا. العدد المسموح: 10 ملفات.</string>
+    <string name="service_price">سعر الخدمة</string>
+    <string name="order_status">حالة الطلب</string>
+    <string name="seller_level">مستوى البائع</string>
+    <string name="distinguished_seller">بائع مميز</string>
+    <string name="active_seller">بائع نشيط</string>
+    <string name="new_seller">بائع جديد</string>
+    <string name="verified_id">هوية موثقة</string>
+    <string name="online_now">متواجد حاليا</string>
+    <string name="seller_status">حالة البائع</string>
+    <string name="service_review">تقييم الخدمة</string>
+    <string name="department">القسم</string>
+    <string name="reset">إعادة التعيين</string>
+    <string name="activation">تفعيل</string>
+    <string name="filter">تصفية</string>
+    <string name="confirm_and_add">تأكيد وإضافتة</string>
 
 </resources>

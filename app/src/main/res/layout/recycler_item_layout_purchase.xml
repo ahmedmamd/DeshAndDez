@@ -8,8 +8,8 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/service_imageview"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_93sdp"
+        android:layout_height="@dimen/_73sdp"
         android:scaleType="fitXY"
         android:src="@drawable/home_service_image_test"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +19,10 @@
     <TextView
         android:id="@+id/service_name_textview"
         style="@style/MainTextRegular"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
         android:gravity="start"
         android:text="@string/test_service_description"
         android:maxLines="3"
@@ -33,13 +34,13 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/service_provider_imageview"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
         android:scaleType="fitXY"
         android:src="@drawable/user_image_for_test"
         app:layout_constraintBottom_toBottomOf="@id/service_imageview"
         app:layout_constraintStart_toStartOf="@id/service_name_textview"
-        app:riv_corner_radius="@dimen/_12sdp" />
+        app:riv_corner_radius="@dimen/_10sdp" />
 
     <TextView
         android:id="@+id/service_provider_name_textview"
@@ -50,7 +51,7 @@
         android:gravity="start"
         android:text="@string/test_provider_name"
         android:textAlignment="viewStart"
-        android:textSize="@dimen/_11sdp"
+        android:textSize="@dimen/_9ssp"
         app:layout_constraintBottom_toBottomOf="@id/service_provider_imageview"
         app:layout_constraintStart_toEndOf="@id/service_provider_imageview"
         app:layout_constraintTop_toTopOf="@id/service_provider_imageview" />
@@ -78,7 +79,7 @@
             android:gravity="start"
             android:text="@string/running"
             android:textAlignment="viewStart"
-            android:textSize="@dimen/_11sdp" />
+            android:textSize="@dimen/_8ssp" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             style="@style/UnActiveProgressBar"
@@ -96,6 +97,7 @@
         android:gravity="center"
         android:paddingHorizontal="@dimen/_10sdp"
         android:text="@string/details"
+        android:textSize="@dimen/_8ssp"
         app:layout_constraintBottom_toBottomOf="@id/status_linearlayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/status_linearlayout" />
@@ -106,10 +108,10 @@
         style="@style/MainTextRegular"
         android:layout_marginVertical="@dimen/_8sdp"
         android:gravity="start"
+        android:textSize="@dimen/_8ssp"
         android:text="36 min ago"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toTopOf="@id/line_view"
-        app:layout_constraintStart_toEndOf="@id/service_imageview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/status_linearlayout" />
 
@@ -119,6 +121,7 @@
         style="@style/MainTextBold"
         android:gravity="start"
         android:text="20 $"
+        android:textSize="@dimen/_11ssp"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/time_textview"

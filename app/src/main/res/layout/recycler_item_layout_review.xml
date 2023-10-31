@@ -9,8 +9,8 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/provider_imageview"
-        android:layout_width="@dimen/_48sdp"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
         android:scaleType="fitXY"
         android:src="@drawable/home_service_image_test"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,6 @@
         android:layout_width="0dp"
         android:layout_marginStart="@dimen/_8sdp"
         android:text="@string/test_provider_name"
-        android:textSize="@dimen/_11ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/provider_imageview"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +34,7 @@
         android:gravity="start"
         android:text="@string/test_time_ago"
         android:textAlignment="viewStart"
-        android:textSize="@dimen/_9sdp"
+        android:textSize="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/provider_name_textview"
         app:layout_constraintTop_toBottomOf="@id/provider_name_textview" />
@@ -46,7 +45,7 @@
         android:layout_width="0dp"
         android:layout_marginTop="@dimen/_16sdp"
         android:text="@string/test_review_text"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_9ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/service_textview" />
@@ -73,7 +72,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/delivery_on_time"
-                android:textSize="@dimen/_9ssp" />
+                android:textSize="@dimen/_8ssp" />
 
             <RatingBar
                 style="@style/Widget.AppCompat.RatingBar.Small"
@@ -103,7 +102,7 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="@dimen/_9ssp" />
+                android:textSize="@dimen/_8ssp" />
 
             <RatingBar
                 style="@style/Widget.AppCompat.RatingBar.Small"
@@ -132,7 +131,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textSize="@dimen/_9ssp" />
+                android:textSize="@dimen/_8ssp" />
 
             <RatingBar
                 style="@style/Widget.AppCompat.RatingBar.Small"

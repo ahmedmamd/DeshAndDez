@@ -155,6 +155,7 @@
     <string name="enter_your_registered_data_to_complete_the_login_process">Enter your registered data to complete the login process</string>
     <string name="email">Email</string>
     <string name="ex_mail_mail_com">Ex:mail@mail.com</string>
+    <string name="ex_address">Ex:develop web</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot password ?</string>
     <string name="log_in">Log in</string>
@@ -305,5 +306,32 @@ I will create a main online store on your platform. In this service, I will hand
     <string name="terms_and_conditions">Terms and conditions</string>
     <string name="rate_app">Rate app</string>
     <string name="delete_account">Delete account</string>
+    <string name="all_creative_and_professional_services_to_develop_and_grow_your_business">All creative and professional services to develop and grow your business.</string>
+    <string name="average_speed_of_response">Average speed of response</string>
+    <string name="published_services">Published services</string>
+    <string name="number_of_clients">Number of clients</string>
+    <string name="min">min</string>
+    <string name="introduction">Introduction</string>
+    <string name="service_address">Service address</string>
+    <string name="sub_category">Sub category</string>
+    <string name="service_description">Service description</string>
+    <string name="write_here">Write here</string>
+    <string name="service_gallery">Service gallery</string>
+    <string name="service_gallery_tips">Size: 343 x 257 pixels. Ratio 4:3. Maximum size: 5MB. Allowed number: 10 files.</string>
+    <string name="service_price">Service price</string>
+    <string name="order_status">Order status</string>
+    <string name="seller_level">Seller level</string>
+    <string name="distinguished_seller">Distinguished seller</string>
+    <string name="active_seller">Active seller</string>
+    <string name="new_seller">New seller</string>
+    <string name="verified_id">Verified ID</string>
+    <string name="online_now">Online now</string>
+    <string name="seller_status">Seller status</string>
+    <string name="service_review">Service review</string>
+    <string name="department">Department</string>
+    <string name="reset">Reset</string>
+    <string name="activation">Activation</string>
+    <string name="filter">Filter</string>
+    <string name="confirm_and_add">Confrim and add</string>
 
 </resources>

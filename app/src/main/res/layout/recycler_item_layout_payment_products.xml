@@ -18,13 +18,32 @@
 
     <TextView
         style="@style/SecondaryTextRegular"
+        android:textStyle="bold"
         android:layout_marginStart="@dimen/_3sdp"
         android:layout_marginEnd="@dimen/_8sdp"
-        android:text="2 x" />
+        android:text="2 x"
+        android:textSize="@dimen/_11ssp"
+        />
 
-    <TextView
-        style="@style/MainTextBold"
-        android:text="40 $" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    >
+
+        <TextView
+            android:id="@+id/price_textview"
+            style="@style/MainTextBold"
+            android:text="400"
+            android:textSize="@dimen/_11ssp"/>
+
+        <TextView
+            style="@style/PrimaryTextRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_11ssp" />
+    </LinearLayout>
 
 
 </LinearLayout>

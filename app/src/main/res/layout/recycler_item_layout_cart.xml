@@ -9,8 +9,8 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/service_imageview"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_93sdp"
+        android:layout_height="@dimen/_73sdp"
         android:scaleType="fitXY"
         android:src="@drawable/home_service_image_test"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,8 @@
     <TextView
         android:id="@+id/service_name_textview"
         style="@style/MainTextRegular"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:ellipsize="end"
@@ -34,8 +35,8 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/service_provider_imageview"
-        android:layout_width="@dimen/_24sdp"
-        android:layout_height="@dimen/_24sdp"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
         android:scaleType="fitXY"
         android:src="@drawable/user_image_for_test"
         app:layout_constraintBottom_toBottomOf="@id/service_imageview"
@@ -51,7 +52,7 @@
         android:gravity="start"
         android:text="@string/test_provider_name"
         android:textAlignment="viewStart"
-        android:textSize="@dimen/_11sdp"
+        android:textSize="@dimen/_9ssp"
         app:layout_constraintBottom_toBottomOf="@id/service_provider_imageview"
         app:layout_constraintStart_toEndOf="@id/service_provider_imageview"
         app:layout_constraintTop_toTopOf="@id/service_provider_imageview" />
@@ -91,15 +92,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total_textview" />
 
-    <TextView
-        android:id="@+id/price_textview"
-        style="@style/MainTextBold"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:text="400$"
-        android:textSize="@dimen/_15ssp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/added_service_textview"
         app:layout_constraintEnd_toStartOf="@id/remove_imageview"
-        app:layout_constraintTop_toTopOf="@id/total_textview" />
+        app:layout_constraintTop_toTopOf="@id/total_textview">
+
+        <TextView
+            android:id="@+id/price_textview"
+            style="@style/MainTextBold"
+            android:text="400"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            style="@style/PrimaryTextRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_15ssp" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/remove_imageview"

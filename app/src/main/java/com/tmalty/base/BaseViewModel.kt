@@ -22,7 +22,7 @@ open class BaseViewModel : ViewModel() {
     private val TAG = BaseViewModel::class.simpleName
     private var parentJob: Job? = null
     fun customCoroutineExceptionHandler(): CoroutineExceptionHandler {
-        return CoroutineExceptionHandler { _, exception ->
+        return CoroutineExceptionHandler { _, _ ->
 
         }
     }
@@ -69,7 +69,7 @@ open class BaseViewModel : ViewModel() {
     }
 
     private fun handlerSharedException(state: MutableSharedFlow<NetworkState>): CoroutineExceptionHandler {
-        return CoroutineExceptionHandler { coroutineContext, throwable ->
+        return CoroutineExceptionHandler { _, throwable ->
             throwable.printStackTrace()
             when (throwable.message) {
                 Constants.ErrorApi.UNAUTHORIZED -> {

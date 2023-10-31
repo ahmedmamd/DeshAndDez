@@ -58,7 +58,7 @@
                     android:fontFamily="@font/font_regular"
                     android:text="@string/phone_number"
                     android:textColor="@color/blackWhite"
-                    android:textSize="13sp" />
+                    android:textSize="@dimen/_10ssp" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +94,7 @@
                         app:ccp_showFlag="true"
                         app:ccp_showFullName="false"
                         app:ccp_showNameCode="true"
-                        app:ccp_textSize="12sp"
+                        app:ccp_textSize="@dimen/_10ssp"
 
 
                         ></com.hbb20.CountryCodePicker>
@@ -118,7 +118,7 @@
                     android:textAlignment="viewStart"
                     android:textColor="@color/blackWhite"
                     android:textColorHint="@color/input_hint"
-                    android:textSize="11sp"
+                    android:textSize="@dimen/_99ssp"
                     tools:ignore="HardcodedText,TextFields" />
             </LinearLayout>
 

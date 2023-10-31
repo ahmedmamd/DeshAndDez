@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbarSize="2dp"
+        android:scrollbars="vertical"
+        tools:context=".uis.activityies_auth.activity_acount_verification.fragments.FragmentPhone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                app:title="@{@string/add_service}" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:progress="30"
+                android:max="90"
+                app:indicatorColor="@color/primary_color"
+                app:trackColor="@color/greyLightBlack"
+                app:trackCornerRadius="6dp"
+                app:trackThickness="6dp" />
+
+            <TextView
+                android:id="@+id/address_textview"
+                style="@style/MainTextRegular"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:text="@string/service_address"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:textColor="@color/text_color_main"
+                app:drawableEndCompat="@drawable/circle_info_icon"
+                app:drawableTint="@color/icon_color_secondary" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/address_edittext"
+                style="@style/EdittextMainStyle"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/ex_address"
+                android:inputType="text"
+                android:textColorHint="@color/input_hint"
+                android:textSize="@dimen/_9ssp" />
+
+            <TextView
+                android:id="@+id/category_textview"
+                style="@style/MainTextRegular"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:text="@string/category"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:textColor="@color/text_color_main"
+                app:drawableEndCompat="@drawable/circle_info_icon"
+                app:drawableTint="@color/icon_color_secondary" />
+
+            <TextView
+                android:id="@+id/category_edittext"
+                style="@style/EdittextMainStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/choose"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:lines="1"
+                android:textColorHint="@color/input_hint"
+                android:textSize="@dimen/_9ssp"
+                app:drawableEndCompat="@drawable/icon_arrow_bottom"
+                app:drawableTint="@color/icon_color_secondary" />
+
+            <TextView
+                android:id="@+id/sub_category_textview"
+                style="@style/MainTextRegular"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:text="@string/sub_category"
+                android:textColor="@color/text_color_main"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                app:drawableEndCompat="@drawable/circle_info_icon"
+                app:drawableTint="@color/icon_color_secondary" />
+
+            <TextView
+                android:id="@+id/sub_category_edittext"
+                style="@style/EdittextMainStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/choose"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:lines="1"
+                android:textColorHint="@color/input_hint"
+                android:textSize="@dimen/_9ssp"
+                app:drawableEndCompat="@drawable/icon_arrow_bottom"
+                app:drawableTint="@color/icon_color_secondary" />
+            <TextView
+                android:id="@+id/description_textview"
+                style="@style/MainTextRegular"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:drawablePadding="@dimen/_8sdp"
+                android:text="@string/service_description"
+                android:textColor="@color/text_color_main"
+                app:drawableEndCompat="@drawable/circle_info_icon"
+                app:drawableTint="@color/icon_color_secondary" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/description_edittext"
+                style="@style/EdittextMainStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:hint="@string/write_here"
+                android:inputType="text"
+                android:gravity="top"
+                android:textColorHint="@color/input_hint"
+                android:textSize="@dimen/_9ssp"
+                android:layout_weight="1"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/next_button"
+                style="@style/ButtonContainedPrimary"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:text="@string/next" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

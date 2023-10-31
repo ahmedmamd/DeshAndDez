@@ -51,7 +51,7 @@
                 android:fontFamily="@font/font_regular"
                 android:text="@string/enter_please_enter_the_code_sent_to"
                 android:textColor="@color/blackWhite"
-                android:textSize="11sp" />
+                android:textSize="@dimen/_9ssp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
                 android:text='+201003345696'
                 android:textAlignment="viewStart"
                 android:textColor="@color/primary_color"
-                android:textSize="12sp" />
+                android:textSize="@dimen/_10ssp" />
 
 
             <com.mukesh.OtpView

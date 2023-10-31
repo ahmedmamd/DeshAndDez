@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lang"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:title="@{@string/order_details}" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/provider_imageview"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/user_image_for_test"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_24sdp" />
+
+            <TextView
+                android:id="@+id/provider_name_textview"
+                style="@style/MainTextBold"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:text="@string/test_provider_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/provider_imageview"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/service_textview"
+                style="@style/SecondaryTextRegular"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="start"
+                android:text="@string/test_service_description"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/provider_name_textview"
+                app:layout_constraintTop_toBottomOf="@id/provider_name_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/service_details_card_background"
+            android:padding="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/order_number_textview"
+                style="@style/MainTextRegular"
+                android:text="@string/order_number"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/order_number_value_textview"
+                style="@style/MainTextBold"
+                android:text="#134553"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/order_number_textview" />
+
+            <View
+                android:id="@+id/line1_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_9ssp"
+                android:background="@color/number_picker_valuer_stroke"
+                app:layout_constraintTop_toBottomOf="@id/order_number_textview" />
+
+            <TextView
+                android:id="@+id/order_value_textview"
+                style="@style/MainTextRegular"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/order_value"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1_view" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/order_value_textview">
+
+                <TextView
+                    android:id="@+id/fees_textview"
+                    style="@style/MainTextBold"
+                    android:text="400"
+                    android:textSize="@dimen/_10ssp" />
+
+                <TextView
+                    style="@style/PrimaryTextRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="$"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line2_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/number_picker_valuer_stroke"
+                app:layout_constraintTop_toBottomOf="@id/order_value_textview" />
+
+
+            <TextView
+                android:id="@+id/date_of_purchase_textview"
+                style="@style/MainTextRegular"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/date_of_purchase"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line2_view" />
+
+            <TextView
+                android:id="@+id/date_of_purchase_value_textview"
+                style="@style/MainTextRegular"
+                android:text="منذ 5 ايام و 7 ساعات"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/date_of_purchase_textview" />
+
+            <View
+                android:id="@+id/line3_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_9ssp"
+                android:background="@color/number_picker_valuer_stroke"
+                app:layout_constraintTop_toBottomOf="@id/date_of_purchase_value_textview" />
+
+
+            <TextView
+                android:id="@+id/expected_delivery_date_duration_textview"
+                style="@style/MainTextRegular"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/expected_delivery_date"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line3_view" />
+
+            <TextView
+                android:id="@+id/expected_delivery_date_value_textview"
+                style="@style/MainTextRegular"
+                android:text="20 / 11 / 2023"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/expected_delivery_date_duration_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <LinearLayout
+                android:id="@+id/status_linearlayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/purchase_item_status_background"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/chat_imageview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/status_textview"
+                    style="@style/SecondaryTextRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/test_order_status_text"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/_9ssp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    style="@style/UnActiveProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:progress="70" />
+            </LinearLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/chat_imageview"
+                android:layout_width="@dimen/_37sdp"
+                android:layout_height="@dimen/_37sdp"
+                android:background="@drawable/circle_background"
+                android:backgroundTint="@color/primary_color_10"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:src="@drawable/chat_icon"
+                app:layout_constraintBottom_toBottomOf="@id/status_linearlayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/status_linearlayout"
+                app:riv_corner_radius="@dimen/_23sdp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/send_delivery_order_button"
+            style="@style/ButtonContainedPrimary"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:backgroundTint="@color/active_color"
+            android:text="@string/send_a_delivery_order" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_16sdp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/report_issue_button"
+                style="@style/ButtonOutlinePrimary"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/report_issue"
+                app:icon="@drawable/report_issue_icon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel_order_button"
+                style="@style/ButtonContainedMain"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel_order"
+                app:icon="@drawable/circle_close_outline_icon" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

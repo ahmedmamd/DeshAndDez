@@ -8,5 +8,7 @@
     android:layout_marginVertical="@dimen/_5sdp"
     android:orientation="vertical"
     android:text="@string/running"
+    style="@style/MainTextRegular"
+    android:gravity="center_vertical"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />

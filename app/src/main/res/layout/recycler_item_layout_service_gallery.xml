@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_150sdp"
+    android:layout_height="@dimen/_110sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_marginHorizontal="@dimen/_5sdp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/home_service_image_test"
+            />
+
+        <ImageView
+            android:id="@+id/remove_imageview"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/circle_background"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/close"
+            app:tint="@color/icon_color_secondary2" />
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

@@ -29,7 +29,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/the_process_was_completed_successfully"
-                android:textSize="@dimen/_12ssp"
                 android:gravity="center"
                 android:textColor="@color/text_color_main"
                 android:layout_gravity="center"
@@ -52,7 +51,6 @@
                     android:text="@string/purchases"
                     android:gravity="center"
                     android:padding="@dimen/_10sdp"
-                    android:textSize="@dimen/_12ssp"
                     android:id="@+id/purchases_textview"
                     />
 
@@ -71,7 +69,6 @@
                     android:text="@string/home"
                     android:gravity="center"
                     android:padding="@dimen/_10sdp"
-                    android:textSize="@dimen/_12ssp"
                     android:id="@+id/home_textview"
                     />
 
