@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     ************************** اسم التطبيق **********************************
-    <string name="app_name">Tmalty</string>
+    <string name="app_name">DeshAndDez</string>
     <string name="currency_code">أ.د</string>
     <string name="distance_code">كم</string>
     ************************** معالجة أخطاء إدخال النص **********************************
@@ -337,5 +337,13 @@
     <string name="activation">تفعيل</string>
     <string name="filter">تصفية</string>
     <string name="confirm_and_add">تأكيد وإضافتة</string>
+    <string name="message_address">عنوان الرسالة</string>
+    <string name="message">الرسالة</string>
+    <string name="who_us">من نحن</string>
+    <string name="test_text">هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص</string>
+    <string name="added_duration">Added Duration</string>
+    <string name="instructions_for_buyer">Instructions For Buyer</string>
+    <string name="upgrade_title">Upgrade Title</string>
+    <string name="add_upgrade_for_this_service">Add upgrade for this service</string>
 
 </resources>

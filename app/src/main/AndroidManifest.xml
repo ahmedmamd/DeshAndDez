@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.tmalty">
+    package="com.deshAndDez">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,7 +21,7 @@
         android:required="true" />
 
     <application
-        android:name=".base.BaseApp"
+        android:name="com.deshAndDez.base.BaseApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -39,13 +39,13 @@
             android:value="AIzaSyD-CG0GJCuXKB441V1gL-2xC0Jc5rJi_UA" />
         <!--   Base     -->
         <activity
-            android:name="com.tmalty.base.BaseActivity"
+            android:name="com.deshAndDez.base.BaseActivity"
             android:screenOrientation="portrait" />
 
         <!--   Authentication activities     -->
         <!--   Splash     -->
         <activity
-            android:name="com.tmalty.ui.splash.SplashActivity"
+            android:name="com.deshAndDez.ui.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -55,134 +55,134 @@
         </activity>
         <!--   main Activities     -->
         <activity
-            android:name="com.tmalty.ui.main.activities.MainActivity"
+            android:name="com.deshAndDez.ui.main.activities.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.contactus.ContactUsActivity"
+            android:name="com.deshAndDez.ui.contactus.ContactUsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.aboutApp.PolicyActivity"
+            android:name="com.deshAndDez.ui.aboutApp.PolicyActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.aboutApp.AboutUsActivity"
+            android:name="com.deshAndDez.ui.aboutApp.AboutUsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.main.fragments.servicedetails.ServiceDetailsActivity"
+            android:name=".ui.screens.servicedetails.ServiceDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.main.fragments.search.SearchActivity"
+            android:name=".ui.screens.search.SearchActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.auth.profile.EditProfileActivity"
+            android:name="com.deshAndDez.ui.auth.profile.EditProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.main.fragments.purchase.PurchasesActivity"
+            android:name=".ui.screens.purchase.PurchasesActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.purchase.PurchasesDetailsActivity"
+            android:name=".ui.screens.purchase.PurchasesDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.orders.OrdersActivity"
+            android:name=".ui.screens.orders.OrdersActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.orders.OrderDetailsActivity"
+            android:name=".ui.screens.orders.OrderDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.profile.ProfileActivity"
+            android:name="com.deshAndDez.ui.auth.profile.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.login.LoginActivity"
+            android:name="com.deshAndDez.ui.auth.login.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.create_account.SignUpActivity"
+            android:name="com.deshAndDez.ui.auth.create_account.SignUpActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.accountverification.VerifyAccountStepOneActivity"
+            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepOneActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.accountverification.VerifyAccountStepTwoActivity"
+            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepTwoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.accountverification.VerifyAccountStepThreeActivity"
+            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepThreeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.accountverification.VerifyAccountStepFourActivity"
+            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepFourActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.main.fragments.cart.CartActivity"
+            android:name=".ui.screens.cart.CartActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.chats.ChatsActivity"
+            android:name=".ui.screens.chats.ChatsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.departments.DepartmentsActivity"
+            android:name=".ui.screens.departments.DepartmentsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.payment.PaymentActivity"
+            android:name=".ui.screens.payment.PaymentActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.fragments.more.MoreActivity"
+            android:name=".ui.screens.more.MoreActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.forgetpassword.ForgetPasswordActivity"
+            android:name="com.deshAndDez.ui.auth.forgetpassword.ForgetPasswordActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.forgetpassword.ForgetPasswordVerificationActivity"
+            android:name="com.deshAndDez.ui.auth.forgetpassword.ForgetPasswordVerificationActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.auth.forgetpassword.ForgetPasswordResetActivity"
+            android:name="com.deshAndDez.ui.auth.forgetpassword.ForgetPasswordResetActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.addservice.AddServiceStepOneActivity"
+            android:name="com.deshAndDez.ui.screens.addservice.AddServiceStepOneActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.addservice.AddServiceStepTwoActivity"
+            android:name=".ui.screens.addservice.AddServiceStepTwoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.main.addservice.AddServiceStepThreeActivity"
+            android:name=".ui.screens.addservice.AddServiceStepThreeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <service
-            android:name=".fcm.MyFirebaseMessagingService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+<!--        <service-->
+<!--            android:name="com.deshAndDez.fcm.MyFirebaseMessagingService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
 
     </application>
 

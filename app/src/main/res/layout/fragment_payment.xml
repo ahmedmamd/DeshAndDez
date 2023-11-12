@@ -253,7 +253,7 @@
                         android:layout_marginTop="@dimen/_10sdp"
                         android:textSize="@dimen/_9ssp">
 
-                        <com.tmalty.ui.customviews.textview.DateTextView
+                        <com.deshAndDez.ui.customviews.textview.DateTextView
                             android:id="@+id/date_edittext"
                             style="@style/EdittextSecondaryStyle"
                             android:layout_marginEnd="@dimen/_8sdp"

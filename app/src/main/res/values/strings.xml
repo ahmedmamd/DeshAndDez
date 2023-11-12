@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     ************************** Public **********************************
-    <string name="app_name">Tmalty</string>
+    <string name="app_name">DeshAndDez</string>
     <string name="currency_code">AED</string>
     <string name="distance_code">KM</string>
     ************************** Edit Text Error Handling **********************************
@@ -333,5 +333,14 @@ I will create a main online store on your platform. In this service, I will hand
     <string name="activation">Activation</string>
     <string name="filter">Filter</string>
     <string name="confirm_and_add">Confrim and add</string>
+    <string name="message_address">Message address</string>
+    <string name="message">Message</string>
+    <string name="who_us">Who us</string>
+    <string name="test_text">هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص</string>
+    <string name="added_cost">Added Cost</string>
+    <string name="added_duration">Added Duration</string>
+    <string name="instructions_for_buyer">Instructions For Buyer</string>
+    <string name="upgrade_title">Upgrade Title</string>
+    <string name="add_upgrade_for_this_service">Add upgrade for this service</string>
 
 </resources>
