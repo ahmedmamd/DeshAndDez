@@ -5,60 +5,6 @@
     <color name="colorAccent">@color/white</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_color">#BA2649</color>
-    <color name="primary_color_10">#FCEEF1</color>
-    <color name="primary_color_30">#F5CCD6</color>
-    <color name="grey">#777777</color>
-    <color name="grey_light">#D9D9D9</color>
-    <color name="input_hint">#AAAAAA</color>
-    <color name="input_stroke">#F4F4F4</color>
-    <color name="number_picker_valuer_stroke">#D9D9D9</color>
-    <color name="input_bg">#FAFAFA</color>
     <color name="transparent">#00000000</color>
-
-
     <color name="screen_background_color">@color/white</color>
-    <color name="status_bar_color">@color/white</color>
-    <color name="blackWhite">@color/black</color>
-    <color name="whiteBlack">@color/white</color>
-    <color name="whiteBlack2">@color/white</color>
-    <color name="greyWhite">#777777</color>
-    <color name="mainColor30Black">#F5CCD6</color>
-    <color name="greyLightBlack">@color/grey_light</color>
-    <color name="light_blue_black">#EEF6FC</color>
-    <color name="mainColorWhite">#BA2649</color>
-    <color name="mainColor10Black">#FCEEF1</color>
-
-
-    //For background: main = white , secondary = grey , primary = is primaryColor
-    <color name="background_color_primary">@color/primary_color</color>
-    <color name="background_color_primary_10_alpha">#1ABA2649</color>
-    <color name="background_color_primary_30_alpha">#4DBA2649</color>
-    <color name="background_color_main">@color/screen_background_color</color>
-    <color name="background_color_secondary">#F4F4F4</color>
-
-    //For Texts: main = black , secondary = grey , primary = is primaryColor
-    <color name="text_color_primary">@color/primary_color</color>
-    <color name="text_color_main">#231F20</color>
-    <color name="text_color_secondary">#777777</color>
-    <color name="text_color_secondary2">@color/white</color>
-
-    //For Icons: main = black , secondary = grey , primary = is primaryColor
-    <color name="icon_color_primary">@color/primary_color</color>
-    <color name="icon_color_main">#231F20</color>
-    <color name="icon_color_secondary">#777777</color>
-    <color name="icon_color_secondary2">@color/white</color>
-
-
-    <color name="rating_bar_active_color">#FFD500</color>
-    <color name="rating_bar_un_active_color">#D9D9D9</color>
-
-
-    <color name="progress_bar_background_color">#F4F4F4</color>
-    <color name="progress_bar_active_color">#26BA35</color>
-    <color name="progress_bar_un_active_color">#BA2649</color>
-
-
-    <color name="active_color">#26BA35</color>
-
 </resources>
