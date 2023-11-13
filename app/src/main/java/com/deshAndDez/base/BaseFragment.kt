@@ -12,8 +12,6 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 abstract class BaseFragment(@LayoutRes val resId: Int?) : Fragment() {
-    @Inject
-    lateinit var intEventBus: EventBus<Int>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

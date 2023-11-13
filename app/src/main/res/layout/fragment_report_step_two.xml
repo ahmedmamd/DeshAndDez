@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lang"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/screen_background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:title="@{@string/report}" />
+
+        <TextView
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:gravity="start"
+            android:text="@string/what_kind_of_hate_speech"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_13ssp" />
+
+        <TextView
+            style="@style/TextStyleRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:gravity="start"
+            android:text="@string/we_want_to_helop_you_to_solve_your_problem_please_send_report_to_desh_amp_dez_and_we_will_work_to_solve_the_problem_quickly_we_are_always_at_your_service"
+            android:textColor="@color/text_second"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textSize="@dimen/_9ssp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orders_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:background="@color/transparent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/recycler_item_layout_report" />
+
+    </LinearLayout>
+</layout>

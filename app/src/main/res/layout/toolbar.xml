@@ -13,7 +13,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
-        android:background="@drawable/screen_background"
         app:elevation="0dp">
 
         <TextView
@@ -25,16 +24,17 @@
             style="@style/TextStyleBold"
             android:textColor="@color/white"
             android:textSize="@dimen/_15ssp"
-            tools:text="Likes" />
+            tools:text="Title" />
 
         <ImageView
             android:id="@+id/back"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_gravity="start|center"
-            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/horizontal_edge_spaces"
             android:background="@drawable/circle"
             android:padding="@dimen/_4sdp"
+            android:elevation="@dimen/_1sdp"
             android:src="@drawable/arrow_back_icon" />
     </FrameLayout>
 </layout>
