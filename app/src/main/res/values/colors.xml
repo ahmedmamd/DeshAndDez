@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/white</color>
-    <color name="colorPrimaryDark">@color/white</color>
-    <color name="colorAccent">@color/white</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#05081A</color>
+    <color name="colorPrimaryDark">#05081A</color>
+    <color name="color_second">#FFB801</color>
+    <color name="color_second_transparent">#EDFFB801</color>
+    <color name="color_second_transparent2">#E2FFB801</color>
+    <color name="colorAccent">#FFB801</color>
     <color name="transparent">#00000000</color>
+    <color name="text_primary">#ffffff</color>
+    <color name="text_primaryDark">#1b1b1b</color>
+    <color name="text_second">#D2D2D2</color>
+    <color name="colorPrimaryTransparent">#B277B64D</color>
+    <color name="gold">#FFC107</color>
+    <color name="transparent_gray">#A4FFFFFF</color>
+    <color name="transparent_black_gray">#B4888888</color>
+    <color name="gray">#707070</color>
+    <color name="grayLight">#ACACAC</color>
+    <color name="icon_back_transparent">#DC444444</color>
+    <color name="live_red">#FF0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_gray_blue">#8D93A5</color>
+    <color name="gray_dark">#4B4B4B</color>
+    <color name="black">#FF000000</color>
+    <color name="line_color">#1AEAEA1A</color>
     <color name="screen_background_color">@color/white</color>
 </resources>

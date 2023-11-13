@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">DeshAndDez</string>
+    <string name="follow">Follow</string>
+    <string name="likes">Likes</string>
+    <string name="like_by">Liked by</string>
+    <string name="watched_by">Watched by</string>
+    <string name="views">Views</string>
+    <string name="report">Report</string>
+
+    <string name="we_want_to_helop_you_to_solve_your_problem_please_send_report_to_desh_amp_dez_and_we_will_work_to_solve_the_problem_quickly_we_are_always_at_your_service"><![CDATA[We want to helop you to solve your problem,please send report to Desh&dez, and we will work to solve the problem quickly, we are always at your service.]]></string>
+    <string name="please_select_a_problem">Please select a problem</string>
+    <string name="what_kind_of_hate_speech">What kind of hate speech?</string>
+    <string name="nudity">Nudity</string>
+
 </resources>
