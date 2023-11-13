@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/celebrity" />
+
+<!--    <com.gjiazhe.panoramaimageview.PanoramaImageView-->
+<!--        android:id="@+id/panorama_image_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:visibility="gone"-->
+<!--        app:piv_enablePanoramaMode="true"-->
+<!--        app:piv_invertScrollDirection="false"-->
+<!--        app:piv_show_scrollbar="false" />-->
+
+<!--    <com.smarteist.autoimageslider.SliderView-->
+<!--        android:id="@+id/sliderPhotos"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:visibility="gone"-->
+<!--        app:sliderAnimationDuration="2000"-->
+<!--        app:sliderAutoCycleDirection="left"-->
+<!--        app:sliderAutoCycleEnabled="true"-->
+<!--        app:sliderIndicatorAnimationDuration="2000"-->
+<!--        app:sliderIndicatorGravity="center_horizontal|bottom"-->
+<!--        app:sliderIndicatorMarginBottom="15dp"-->
+<!--        app:sliderIndicatorOrientation="horizontal"-->
+<!--        app:sliderIndicatorPadding="1dp"-->
+<!--        app:sliderIndicatorRadius="1.7dp"-->
+<!--        app:sliderIndicatorSelectedColor="#FFFFFF"-->
+<!--        app:sliderIndicatorUnselectedColor="#CDF1F1F1"-->
+<!--        app:sliderScrollTimeInSec="5"-->
+<!--        app:sliderStartAutoCycle="true" />-->
+
+    <View
+        android:id="@+id/viewBlack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/celebrity">
+
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_close" />
+
+        <ImageView
+            android:id="@+id/ivNext"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/celebrity"
+            android:backgroundTint="#775C5C5C"
+            android:padding="7dp"
+            android:src="@drawable/celebrity"
+            app:tint="@color/color_second" />
+
+        <ImageView
+            android:id="@+id/ivPlay"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/celebrity"
+            android:backgroundTint="@color/transparent_black_gray"
+            android:paddingStart="3dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/celebrity" />
+<!--        android:fontFamily="@font/f_medium"-->
+        <TextView
+            android:id="@+id/tvViewAllPhotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/celebrity"
+            android:backgroundTint="@color/transparent_black_gray"
+
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="@string/view_all_photos"
+            android:textColor="#fff"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llMenuButton"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="172dp"
+            android:background="@drawable/celebrity"
+            android:backgroundTint="@color/icon_back_transparent"
+            android:backgroundTintMode="multiply"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/ic_user_profile" />
+<!--            android:fontFamily="@font/f_medium"-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+
+                android:gravity="center"
+                android:text="@string/profile"
+                android:textColor="@color/text_primary"
+                android:textSize="6dp" />
+<!--            android:fontFamily="@font/f_medium"-->
+            <TextView
+                android:id="@+id/tvFollow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawablePadding="2dp"
+
+                android:gravity="center"
+                android:text="@string/follow"
+                android:textColor="@color/text_primary"
+                android:textSize="6dp"
+                app:drawableTint="#CBFFFFFF"
+                app:drawableTopCompat="@drawable/celebrity" />
+
+            <LinearLayout
+                android:id="@+id/llComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivComments"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/celebrity"
+                    android:backgroundTint="#68CFCFCF"
+                    android:padding="5dp"
+                    android:src="@drawable/celebrity" />
+<!--                android:fontFamily="@font/f_medium"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/comments"
+                    android:textColor="@color/text_primary"
+                    android:textSize="6dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTrend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivTrend"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/celebrity"
+                    android:backgroundTint="#68CFCFCF"
+                    android:padding="6dp"
+                    android:src="@drawable/celebrity"
+                    app:tint="#fff" />
+<!--                android:fontFamily="@font/f_medium"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/trend"
+                    android:textColor="@color/text_primary"
+                    android:textSize="6dp" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/ivLike"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/celebrity"
+                app:tint="#A4FFFFFF" />
+<!--            android:fontFamily="@font/f_medium"-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:text="19.00K"
+                android:textColor="@color/text_primary"
+                android:textSize="6dp" />
+
+            <LinearLayout
+                android:id="@+id/llSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivSave"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/celebrity"
+                    android:backgroundTint="#68CFCFCF"
+                    android:padding="10dp"
+                    android:src="@drawable/celebrity"
+                    app:tint="#E2FFFFFF" />
+<!--                android:fontFamily="@font/f_medium"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="19.00K"
+                    android:textColor="@color/text_primary"
+                    android:textSize="6dp" />
+            </LinearLayout>
+<!--            android:fontFamily="@font/f_medium"-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="2dp"
+
+                android:gravity="center"
+                android:textColor="@color/text_primary"
+                android:textSize="0dp"
+                app:drawableTopCompat="@drawable/celebrity" />
+
+            <ImageView
+                android:id="@+id/ivReport"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/celebrity"
+                android:backgroundTint="#68CFCFCF"
+                android:padding="8dp"
+                android:src="@drawable/celebrity"
+                app:tint="#E2FFFFFF" />
+<!--            android:fontFamily="@font/f_medium"-->
+            <TextView
+                android:id="@+id/tvVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="2dp"
+
+                android:gravity="center"
+                android:textColor="@color/text_primary"
+                android:textSize="0dp"
+                app:drawableTopCompat="@drawable/celebrity" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llClearMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="105dp"
+            android:background="@drawable/celebrity"
+            android:backgroundTint="@color/icon_back_transparent"
+            android:backgroundTintMode="multiply"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/celebrity"
+                android:backgroundTint="#68CFCFCF"
+                android:padding="5dp"
+                android:src="@drawable/celebrity" />
+<!--            android:fontFamily="@font/f_medium"-->
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="5dp"
+
+                android:gravity="center"
+                android:text="@string/clear_mood"
+                android:textColor="@color/text_primary"
+                android:textSize="6dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llMenuAds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/celebrity"
+            android:backgroundTint="@color/icon_back_transparent"
+            android:backgroundTintMode="multiply"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/llMenuAdsDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/llMenuAdsDetailsData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/llAds30s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+<!--                        android:fontFamily="@font/f_medium"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="30s"
+                            android:textColor="@color/text_primary"
+                            android:textSize="10dp" />
+<!--                        android:fontFamily="@font/f_medium"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="392.000 KD"
+                            android:textColor="@color/color_second"
+                            android:textSize="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAds60s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+<!--                        android:fontFamily="@font/f_medium"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="60s"
+                            android:textColor="@color/text_primary"
+                            android:textSize="10dp" />
+<!--                        android:fontFamily="@font/f_medium"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="392.000 KD"
+                            android:textColor="@color/color_second"
+                            android:textSize="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAds3m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+<!--                        android:fontFamily="@font/f_medium"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="03m"
+                            android:textColor="@color/text_primary"
+                            android:textSize="10dp" />
+<!--                        android:fontFamily="@font/f_medium"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="392.000 KD"
+                            android:textColor="@color/color_second"
+                            android:textSize="6dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAdsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:background="@drawable/celebrity"
+                    android:backgroundTint="#68CFCFCF"
+                    android:padding="5dp"
+                    android:src="@drawable/celebrity" />
+<!--                android:fontFamily="@font/f_medium"-->
+                <TextView
+                    android:id="@+id/tvAds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/ads"
+                    android:textColor="@color/text_primary"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="100dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+<!--                android:fontFamily="@font/f_medium"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/celebrity"
+                    android:backgroundTint="#995C5C5C"
+                    android:backgroundTintMode="multiply"
+
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Netflix"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+<!--                    android:fontFamily="@font/f_medium"-->
+<!--                    android:text="@string/ahmedezzofficial"-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+
+
+                        android:textColor="@color/text_primary"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/ivStar"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="-2dp"
+                        android:src="@drawable/celebrity" />
+
+                    <LinearLayout
+                        android:id="@+id/llParticipate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/celebrity"
+                        android:backgroundTint="@color/live_red"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingEnd="10dp"
+                        android:visibility="gone">
+<!--                        app:lottie_rawRes="@raw/circle_pop"-->
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:padding="5dp"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            />
+<!--                        android:fontFamily="@font/f_bold"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="@string/participate"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+<!--                    android:fontFamily="@font/f_medium"-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+
+                        android:text="20 December 2022"
+                        android:textColor="#CECECE"
+                        android:textSize="10dp" />
+
+                    <LinearLayout
+                        android:id="@+id/llNumFollow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/celebrity" />
+<!--                        android:fontFamily="@font/f_regular"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+
+                            android:gravity="center"
+                            android:text="390K"
+                            android:textColor="#fff"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llNumLikeUsers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/celebrity"
+                            app:tint="#fff" />
+<!--                        android:fontFamily="@font/f_regular"-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="2dp"
+
+                            android:gravity="center"
+                            android:text="390K"
+                            android:textColor="#fff"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+<!--                android:fontFamily="@font/f_medium"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+
+                    android:text="Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500S"
+                    android:textColor="#CECECE"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/llContactUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="35dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+<!--            android:fontFamily="@font/f_semi_bold"-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/celebrity"
+                android:drawableEnd="@drawable/celebrity"
+                android:drawablePadding="15dp"
+
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="@string/contact_us"
+                android:textColor="#fff"
+                android:textSize="13dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/celebrity"
+                android:backgroundTint="#68CFCFCF"
+                android:padding="8dp"
+                android:src="@drawable/celebrity" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/celebrity"
+                android:backgroundTint="#68CFCFCF"
+                android:padding="8dp"
+                android:src="@drawable/celebrity"
+                app:tint="#fff" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/celebrity"
+                android:backgroundTint="#68CFCFCF"
+                android:padding="8dp"
+                android:src="@drawable/celebrity" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/celebrity"
+                android:backgroundTint="#68CFCFCF"
+                android:padding="8dp"
+                android:src="@drawable/celebrity" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/likeAnimationView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+<!--    app:lottie_rawRes="@raw/like_animation"-->
+</RelativeLayout>
