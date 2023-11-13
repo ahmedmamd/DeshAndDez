@@ -130,8 +130,8 @@ class Utils {
             )
             sendIntent.type = "text/plain"
 
-            val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_via))
-            context.startActivity(shareIntent)
+//            val shareIntent = Intent.createChooser(sendIntent, context.getString(R.string.share_via))
+//            context.startActivity(shareIntent)
         }
     }
 

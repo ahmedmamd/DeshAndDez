@@ -226,7 +226,7 @@ fun imageUserBinding(view: ImageView, imageUrl: String?) {
     }
     Glide.with(view.context)
         .load(prepareImageUrl(imageUrl!!))
-        .placeholder(R.drawable.user_image_for_test)
+//        .placeholder(R.drawable.user_image_for_test)
         .timeout(20000)
         .into(view)
 }

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">DeshAndDez</string>
+    <string name="required">required</string>
+    <string name="this_field_is_required">this field is required</string>
+    <string name="please_enter_a_valid_email_address">please enter a valid address</string>
+    <string name="password_must_contain_at_least_x_characters_including_uppercase_lowercase_numeric_and_special_characters">000</string>
+    <string name="password_matching_not_valid">password not matches</string>
+    <string name="email_not_valid">email not valid</string>
 </resources>
