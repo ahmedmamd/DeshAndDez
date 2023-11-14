@@ -1,4 +1,4 @@
-package com.deshAndDez.ui.screens.views
+package com.deshAndDez.ui.screens.language
 
 import android.os.Bundle
 import android.view.View
@@ -6,22 +6,24 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.databinding.FragmentLikesBinding
-import com.deshAndDez.databinding.FragmentViewsBinding
+import com.deshAndDez.databinding.FragmentLanguageBinding
+import com.deshAndDez.ui.adapters.Language
+import com.deshAndDez.ui.adapters.LanguageAdapter
 import com.deshAndDez.ui.adapters.User
 import com.deshAndDez.ui.adapters.UsersAdapter
 
-class ViewsFragment : BaseFragment(R.layout.fragment_views) {
+class LanguagesFragment : BaseFragment(R.layout.fragment_language) {
+
     // Declare view and objects
-    lateinit var binding: FragmentViewsBinding
+    lateinit var binding: FragmentLanguageBinding
 
     //Departments
-    lateinit var usersAdapter: UsersAdapter
-    private val usersList: MutableList<User> = mutableListOf()
+    lateinit var languageAdapter: LanguageAdapter
+    private val languageList: MutableList<Language> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentViewsBinding.inflate(layoutInflater)
+        binding = FragmentLanguageBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
     }
 
@@ -30,6 +32,7 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
         setupUI()
         setupListeners()
     }
+
 
     // Set up the UI components
     private fun setupUI() {
@@ -48,17 +51,19 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
     private fun setupRecyclerUi() {
         binding.ordersRecycler.apply {
             layoutManager = LinearLayoutManager(requireActivity())
-            adapter = usersAdapter
+            adapter = languageAdapter
         }
     }
 
     private fun setupRecyclerAdapter() {
-        usersAdapter = UsersAdapter {
+        languageAdapter = LanguageAdapter {
         }
-        usersList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112"))
-        usersList.add(User("2", "Mohamed Kamal", "mohamed33"))
-        usersList.add(User("3", "Karim Ahmed", "karim66"))
-        usersList.add(User("4", "Maged Ibraheem", "maged77"))
-        usersAdapter.setData(usersList)
+        languageList.add(Language("1", "Arabic"))
+        languageList.add(Language("2", "English"))
+        languageList.add(Language("3", "Francais"))
+        languageList.add(Language("4", "Spain"))
+        languageList.add(Language("5", "Korean"))
+        languageList.add(Language("6", "Italian"))
+        languageAdapter.setData(languageList)
     }
 }

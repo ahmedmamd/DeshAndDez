@@ -1,4 +1,4 @@
-package com.deshAndDez.ui.screens.views
+package com.deshAndDez.ui.screens.interest
 
 import android.os.Bundle
 import android.view.View
@@ -6,22 +6,22 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.databinding.FragmentLikesBinding
-import com.deshAndDez.databinding.FragmentViewsBinding
-import com.deshAndDez.ui.adapters.User
-import com.deshAndDez.ui.adapters.UsersAdapter
+import com.deshAndDez.databinding.FragmentInterestsBinding
+import com.deshAndDez.databinding.FragmentLanguageBinding
+import com.deshAndDez.ui.adapters.*
 
-class ViewsFragment : BaseFragment(R.layout.fragment_views) {
+class InterrestsFragment : BaseFragment(R.layout.fragment_interests) {
+
     // Declare view and objects
-    lateinit var binding: FragmentViewsBinding
+    lateinit var binding: FragmentInterestsBinding
 
     //Departments
-    lateinit var usersAdapter: UsersAdapter
-    private val usersList: MutableList<User> = mutableListOf()
+    lateinit var interestAdapter: InterestAdapter
+    private val interestsList: MutableList<Interest> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentViewsBinding.inflate(layoutInflater)
+        binding = FragmentInterestsBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
     }
 
@@ -30,6 +30,7 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
         setupUI()
         setupListeners()
     }
+
 
     // Set up the UI components
     private fun setupUI() {
@@ -48,17 +49,17 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
     private fun setupRecyclerUi() {
         binding.ordersRecycler.apply {
             layoutManager = LinearLayoutManager(requireActivity())
-            adapter = usersAdapter
+            adapter = interestAdapter
         }
     }
 
     private fun setupRecyclerAdapter() {
-        usersAdapter = UsersAdapter {
+        interestAdapter = InterestAdapter {
         }
-        usersList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112"))
-        usersList.add(User("2", "Mohamed Kamal", "mohamed33"))
-        usersList.add(User("3", "Karim Ahmed", "karim66"))
-        usersList.add(User("4", "Maged Ibraheem", "maged77"))
-        usersAdapter.setData(usersList)
+        interestsList.add(Interest("1", "Movies"))
+        interestsList.add(Interest("2", "TV Show"))
+        interestsList.add(Interest("3", "Series"))
+        interestsList.add(Interest("4", "Books"))
+        interestAdapter.setData(interestsList)
     }
 }

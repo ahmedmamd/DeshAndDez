@@ -1,4 +1,4 @@
-package com.deshAndDez.ui.screens.views
+package com.deshAndDez.ui.screens.country
 
 import android.os.Bundle
 import android.view.View
@@ -6,22 +6,21 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.databinding.FragmentLikesBinding
-import com.deshAndDez.databinding.FragmentViewsBinding
-import com.deshAndDez.ui.adapters.User
-import com.deshAndDez.ui.adapters.UsersAdapter
+import com.deshAndDez.databinding.FragmentCountriesBinding
+import com.deshAndDez.ui.adapters.*
 
-class ViewsFragment : BaseFragment(R.layout.fragment_views) {
+class CountriesFragment : BaseFragment(R.layout.fragment_countries) {
+
     // Declare view and objects
-    lateinit var binding: FragmentViewsBinding
+    lateinit var binding: FragmentCountriesBinding
 
     //Departments
-    lateinit var usersAdapter: UsersAdapter
-    private val usersList: MutableList<User> = mutableListOf()
+    lateinit var countryAdapter: CountryAdapter
+    private val countriesList: MutableList<Country> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentViewsBinding.inflate(layoutInflater)
+        binding = FragmentCountriesBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
     }
 
@@ -30,6 +29,7 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
         setupUI()
         setupListeners()
     }
+
 
     // Set up the UI components
     private fun setupUI() {
@@ -48,17 +48,18 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
     private fun setupRecyclerUi() {
         binding.ordersRecycler.apply {
             layoutManager = LinearLayoutManager(requireActivity())
-            adapter = usersAdapter
+            adapter = countryAdapter
         }
     }
 
     private fun setupRecyclerAdapter() {
-        usersAdapter = UsersAdapter {
-        }
-        usersList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112"))
-        usersList.add(User("2", "Mohamed Kamal", "mohamed33"))
-        usersList.add(User("3", "Karim Ahmed", "karim66"))
-        usersList.add(User("4", "Maged Ibraheem", "maged77"))
-        usersAdapter.setData(usersList)
+        countryAdapter = CountryAdapter {}
+        countriesList.add(Country("1", "Argentina", R.drawable.country1))
+        countriesList.add(Country("2", "Armenia", R.drawable.country2))
+        countriesList.add(Country("3", "Angola", R.drawable.country3))
+        countriesList.add(Country("4", "Andorra", R.drawable.country4))
+        countriesList.add(Country("5", "Albania", R.drawable.country5))
+        countriesList.add(Country("6", "Australia", R.drawable.country7))
+        countryAdapter.setData(countriesList)
     }
 }

@@ -15,6 +15,47 @@
         android:id="@+id/likesFragment"
         android:name="com.deshAndDez.ui.screens.likes.LikesFragment"
         android:label="LikesFragment"
-        tools:layout="@layout/fragment_likes"/>
+        tools:layout="@layout/fragment_likes" />
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.deshAndDez.ui.screens.country.CountriesFragment"
+        android:label="CountriesFragment"
+        tools:layout="@layout/fragment_countries" />
+    <fragment
+        android:id="@+id/interrestsFragment"
+        android:name="com.deshAndDez.ui.screens.interest.InterrestsFragment"
+        android:label="InterrestsFragment"
+        tools:layout="@layout/fragment_interests" />
+    <fragment
+        android:id="@+id/languagesFragment"
+        android:name="com.deshAndDez.ui.screens.language.LanguagesFragment"
+        android:label="LanguagesFragment"
+        tools:layout="@layout/fragment_language" />
+    <fragment
+        android:id="@+id/reportStepFourFragment"
+        android:name="com.deshAndDez.ui.screens.report.ReportStepFourFragment"
+        tools:layout="@layout/fragment_report_step_four"
+        android:label="ReportStepFourFragment" />
+    <fragment
+        android:id="@+id/reportStepOneFragment"
+        android:name="com.deshAndDez.ui.screens.report.ReportStepOneFragment"
+        tools:layout="@layout/fragment_report_step_one"
+        android:label="ReportStepOneFragment" />
+    <fragment
+        android:id="@+id/reportStepTwoFragment"
+        android:name="com.deshAndDez.ui.screens.report.ReportStepTwoFragment"
+        android:label="ReportStepTwoFragment"
+        tools:layout="@layout/fragment_report_step_two"
+        />
+    <fragment
+        android:id="@+id/reportStepThreeFragment"
+        android:name="com.deshAndDez.ui.screens.report.ReportStepThreeFragment"
+        tools:layout="@layout/fragment_report_step_three"
+        android:label="ReportStepThreeFragment" />
+    <fragment
+        android:id="@+id/viewsFragment"
+        android:name="com.deshAndDez.ui.screens.views.ViewsFragment"
+        tools:layout="@layout/fragment_views"
+        android:label="ViewsFragment" />
 
 </navigation>

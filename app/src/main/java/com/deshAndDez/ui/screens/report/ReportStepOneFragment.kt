@@ -2,6 +2,7 @@ package com.deshAndDez.ui.screens.report
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
@@ -43,7 +44,7 @@ class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.back.setOnClickListener {
-
+            findNavController().popBackStack()
         }
     }
 

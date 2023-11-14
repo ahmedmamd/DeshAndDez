@@ -7,6 +7,7 @@
     <color name="color_second_transparent2">#E2FFB801</color>
     <color name="colorAccent">#FFB801</color>
     <color name="transparent">#00000000</color>
+    <color name="light_grey">#1AEAEAEA</color>
     <color name="text_primary">#ffffff</color>
     <color name="text_primaryDark">#1b1b1b</color>
     <color name="text_second">#D2D2D2</color>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lang"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/screen_background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:title="@{@string/report}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            >
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/search_icon"
+                android:padding="@dimen/_5sdp"
+                android:id="@+id/search_imageview"/>
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/round_background"
+                android:layout_marginHorizontal="@dimen/_24sdp"
+                android:id="@+id/search_edittext"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/circle_close_icon"
+                android:padding="@dimen/_5sdp"
+                android:id="@+id/clear_imageview"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orders_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:background="@color/transparent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_weight="3"
+            tools:itemCount="20"
+            android:layout_marginTop="@dimen/_10sdp"
+            tools:listitem="@layout/recycler_item_layout_country" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            >
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_button"
+                style="@style/SolidGoldButton"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                app:cornerRadius="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:text="@string/save"
+                android:textSize="@dimen/_13ssp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

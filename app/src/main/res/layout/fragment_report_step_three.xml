@@ -109,7 +109,7 @@
             android:layout_marginBottom="@dimen/_16sdp"
             android:layout_height="@dimen/_45sdp"
             app:cornerRadius="@dimen/_15sdp"
-            android:layout_marginHorizontal="@dimen/bottom_edge_spaces"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
             android:text="@string/submit_report"
             android:textSize="@dimen/_13ssp" />
 

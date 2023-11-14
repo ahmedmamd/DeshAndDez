@@ -33,5 +33,16 @@
     <string name="sexually_explicit_language">Sexually explicit language</string>
     <string name="we_only_remove_content_that_goes_against_our_community_standards_we_don_t_allow_things_like">We only remove content that goes against our community standards we don’t allow things like</string>
     <string name="submit_report">Submit Report</string>
+    <string name="false_news">False news</string>
+    <string name="something_else">Something else</string>
+    <string name="thanks_for_letting_us_know">Thanks for letting us know</string>
+    <string name="we_will_use_this_information_to_improve_our_processes_independent_face_checkers_may_review_the_content">We will use this information to improve our processes independent face-checkers may review the content</string>
+    <string name="other_steps_you_can_take">Other steps you can take</string>
+    <string name="block_ahmed_s_profile">Block Ahmed`s profile</string>
+    <string name="you_won_t_be_able_to_see_or_contact_with_each_other">you won\'t be able to see or contact with each other.</string>
+    <string name="hide_all_from_ahmed">Hide all from Ahmed</string>
+    <string name="stop_seeing_posts_from_this_page">Stop seeing posts from this page</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
 
 </resources>

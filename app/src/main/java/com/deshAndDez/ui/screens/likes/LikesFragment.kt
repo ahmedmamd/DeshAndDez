@@ -2,6 +2,7 @@ package com.deshAndDez.ui.screens.likes
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
@@ -41,7 +42,7 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.back.setOnClickListener {
-
+            findNavController().popBackStack()
         }
     }
 
@@ -55,10 +56,10 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
     private fun setupRecyclerAdapter() {
         usersAdapter = UsersAdapter {
         }
-        likesList.add(User("1","Ahmed Mohamed","ahmedmohamed112"))
-        likesList.add(User("2","Mohamed Kamal","mohamed33"))
-        likesList.add(User("3","Karim Ahmed","karim66"))
-        likesList.add(User("4","Maged Ibraheem","maged77"))
+        likesList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112"))
+        likesList.add(User("2", "Mohamed Kamal", "mohamed33"))
+        likesList.add(User("3", "Karim Ahmed", "karim66"))
+        likesList.add(User("4", "Maged Ibraheem", "maged77"))
         usersAdapter.setData(likesList)
     }
 }
