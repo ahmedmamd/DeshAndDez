@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/reels_nav"
-    app:startDestination="@id/videoFragment">
+    app:startDestination="@id/likesFragment">
 
 
     <fragment
@@ -11,5 +11,10 @@
         android:name="com.deshAndDez.ui.customviews.fragment.HomeVediosFragment"
         android:label="fragment_video"
         tools:layout="@layout/fragment_vides_player" />
+    <fragment
+        android:id="@+id/likesFragment"
+        android:name="com.deshAndDez.ui.screens.likes.LikesFragment"
+        android:label="LikesFragment"
+        tools:layout="@layout/fragment_likes"/>
 
 </navigation>

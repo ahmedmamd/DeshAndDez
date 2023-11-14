@@ -57,5 +57,6 @@
         style="@style/SolidGoldButton"
         android:layout_height="@dimen/_32sdp"
         android:text="@string/follow"
+
         android:textSize="@dimen/_10ssp" />
 </LinearLayout>

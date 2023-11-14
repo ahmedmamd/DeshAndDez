@@ -129,6 +129,7 @@
         <item name="textAllCaps">false</item>
         <item name="cornerRadius">@dimen/_10sdp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:paddingTop">@dimen/_4sdp</item>
         <item name="android:paddingStart">@dimen/_20sdp</item>
         <item name="android:paddingEnd">@dimen/_20sdp</item>

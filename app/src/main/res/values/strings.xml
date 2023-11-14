@@ -27,5 +27,11 @@
     <string name="ads">ads</string>
     <string name="participate">Participant</string>
     <string name="contact_us">Contack us</string>
+    <string name="sexual_activity">Sexual activity</string>
+    <string name="offering_or_requesting_sexual_activity">offering or requesting sexual activity</string>
+    <string name="female_nipples_except_breastfeeding_health_and_acts_of_protest">Female nipples (except breastfeeding, health and acts of protest )</string>
+    <string name="sexually_explicit_language">Sexually explicit language</string>
+    <string name="we_only_remove_content_that_goes_against_our_community_standards_we_don_t_allow_things_like">We only remove content that goes against our community standards we don’t allow things like</string>
+    <string name="submit_report">Submit Report</string>
 
 </resources>
