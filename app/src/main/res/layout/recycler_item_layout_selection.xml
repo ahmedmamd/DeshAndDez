@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:id="@+id/container"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:background="@drawable/gold_round_background"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingVertical="@dimen/_6sdp"
+    android:text="@string/_2_months"
+    android:textSize="@dimen/_9ssp"
+    android:textColor="@color/text_primary"
+    />

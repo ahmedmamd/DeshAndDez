@@ -23,6 +23,6 @@
     <color name="color_gray_blue">#8D93A5</color>
     <color name="gray_dark">#4B4B4B</color>
     <color name="black">#FF000000</color>
-    <color name="line_color">#1AEAEA1A</color>
+    <color name="line_color">#1AEAEAEA</color>
     <color name="screen_background_color">@color/white</color>
 </resources>

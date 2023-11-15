@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lang"
+            type="String" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/screen_background"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginTop="@dimen/top_edge_spaces">
+
+                <ImageView
+                    android:id="@+id/close_imageview"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/circle_close_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/medal" />
+            </FrameLayout>
+
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/promote_your_media"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                style="@style/TextStyleRegular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/you_can_increase_the_number_of_views_and_appearances_among_the_target_groups_of_users_as_well_as_in_the_responser_section_by_filling_out_this_data"
+                android:textAlignment="center"
+                android:textColor="@color/text_second"
+                android:textSize="@dimen/_7ssp" />
+
+            <LinearLayout
+                android:id="@+id/country_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/TextStyleBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/country"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    style="@style/TextStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/arrow_right"
+                    android:drawableTint="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="@string/view_all"
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/language_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/TextStyleBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/language"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    style="@style/TextStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/arrow_right"
+                    android:drawableTint="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="@string/view_all"
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/interests_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/TextStyleBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/interests"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    style="@style/TextStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/arrow_right"
+                    android:drawableTint="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="@string/view_all"
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@color/line_color" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/TextStyleBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ages"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    style="@style/TextStyleRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text=" 10 Years -  100 Years "
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/_8ssp" />
+            </LinearLayout>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/range_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:values="@array/initial_slider_values" />
+
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/gender"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/_15ssp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gender_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/recycler_item_layout_selection" />
+
+            <TextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/advertisement_duration"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/_15ssp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/advertisement_duration_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/recycler_item_layout_selection" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_button"
+                style="@style/SolidGoldButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/save"
+                android:textSize="@dimen/_13ssp"
+                app:cornerRadius="@dimen/_15sdp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

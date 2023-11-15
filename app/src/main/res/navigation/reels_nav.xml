@@ -34,28 +34,27 @@
     <fragment
         android:id="@+id/reportStepFourFragment"
         android:name="com.deshAndDez.ui.screens.report.ReportStepFourFragment"
-        tools:layout="@layout/fragment_report_step_four"
-        android:label="ReportStepFourFragment" />
+        android:label="ReportStepFourFragment"
+        tools:layout="@layout/fragment_report_step_four" />
     <fragment
         android:id="@+id/reportStepOneFragment"
         android:name="com.deshAndDez.ui.screens.report.ReportStepOneFragment"
-        tools:layout="@layout/fragment_report_step_one"
-        android:label="ReportStepOneFragment" />
+        android:label="ReportStepOneFragment"
+        tools:layout="@layout/fragment_report_step_one" />
     <fragment
         android:id="@+id/reportStepTwoFragment"
         android:name="com.deshAndDez.ui.screens.report.ReportStepTwoFragment"
         android:label="ReportStepTwoFragment"
-        tools:layout="@layout/fragment_report_step_two"
-        />
+        tools:layout="@layout/fragment_report_step_two" />
     <fragment
         android:id="@+id/reportStepThreeFragment"
         android:name="com.deshAndDez.ui.screens.report.ReportStepThreeFragment"
-        tools:layout="@layout/fragment_report_step_three"
-        android:label="ReportStepThreeFragment" />
+        android:label="ReportStepThreeFragment"
+        tools:layout="@layout/fragment_report_step_three" />
     <fragment
         android:id="@+id/viewsFragment"
         android:name="com.deshAndDez.ui.screens.views.ViewsFragment"
-        tools:layout="@layout/fragment_views"
-        android:label="ViewsFragment" />
+        android:label="ViewsFragment"
+        tools:layout="@layout/fragment_views" />
 
 </navigation>

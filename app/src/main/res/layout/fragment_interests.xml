@@ -59,23 +59,17 @@
             android:layout_marginTop="@dimen/_10sdp"
             tools:listitem="@layout/recycler_item_layout_interest" />
 
-        <LinearLayout
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            style="@style/SolidGoldButton"
+            android:layout_marginVertical="@dimen/_16sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            >
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/save_button"
-                style="@style/SolidGoldButton"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingBottom="@dimen/_5sdp"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                app:cornerRadius="@dimen/_15sdp"
-                android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
-                android:text="@string/save"
-                android:textSize="@dimen/_13ssp" />
-        </LinearLayout>
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="@string/save"
+            android:textSize="@dimen/_13ssp"
+            app:cornerRadius="@dimen/_15sdp" />
     </LinearLayout>
 </layout>

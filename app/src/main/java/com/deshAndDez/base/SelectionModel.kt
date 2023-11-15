@@ -11,4 +11,7 @@ data class SelectionModel(
     @SerializedName("name")
     @Expose
     var name: String? = null,
+    @SerializedName("isSelected")
+    @Expose
+    var isSelected: String? = null,
 )
