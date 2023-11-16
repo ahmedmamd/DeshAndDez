@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/reels_nav"
-    app:startDestination="@id/likesFragment">
+    app:startDestination="@id/videoFragment">
 
 
     <fragment
         android:id="@+id/videoFragment"
-        android:name="com.deshAndDez.ui.customviews.fragment.HomeVediosFragment"
+        android:name="com.deshAndDez.ui.fragment.HomeVediosFragment"
         android:label="fragment_video"
         tools:layout="@layout/fragment_vides_player" />
     <fragment

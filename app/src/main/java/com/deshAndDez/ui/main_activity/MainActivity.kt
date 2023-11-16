@@ -1,4 +1,4 @@
-package com.deshAndDez.ui.customviews.main_activity
+package com.deshAndDez.ui.main_activity
 
 import android.os.Bundle
 import androidx.navigation.NavController
