@@ -44,9 +44,10 @@ class ReportStepTwoFragment : BaseFragment(R.layout.fragment_report_step_two) {
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
+        binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
         }
+
     }
 
     private fun setupRecyclerUi() {
@@ -58,6 +59,7 @@ class ReportStepTwoFragment : BaseFragment(R.layout.fragment_report_step_two) {
 
     private fun setupRecyclerAdapter() {
         reportsAdapter = ReportAdapter {
+            findNavController().navigate(R.id.reportStepThreeFragment)
         }
         reportList.add(Report("1", "Race or ethnicity"))
         reportList.add(Report("2", "National origin"))

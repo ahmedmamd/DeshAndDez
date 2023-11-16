@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.base.SelectionModel
@@ -50,7 +51,7 @@ class FilterFragment : BaseFragment(R.layout.fragment_filter) {
 
     private fun setupGenderRecyclerUi() {
         binding.genderRecycler.apply {
-            layoutManager = LinearLayoutManager(requireActivity())
+            layoutManager = LinearLayoutManager(requireActivity(),RecyclerView.HORIZONTAL,false)
             adapter = genderAdapter
         }
     }
@@ -66,7 +67,7 @@ class FilterFragment : BaseFragment(R.layout.fragment_filter) {
 
     private fun setupAdDurationRecyclerUi() {
         binding.advertisementDurationRecycler.apply {
-            layoutManager = LinearLayoutManager(requireActivity())
+            layoutManager = LinearLayoutManager(requireActivity(),RecyclerView.HORIZONTAL,false)
             adapter = adDurationAdapter
         }
     }

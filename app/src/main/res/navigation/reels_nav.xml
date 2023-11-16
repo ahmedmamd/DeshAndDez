@@ -55,6 +55,12 @@
         android:id="@+id/viewsFragment"
         android:name="com.deshAndDez.ui.screens.views.ViewsFragment"
         android:label="ViewsFragment"
-        tools:layout="@layout/fragment_views" />
+        tools:layout="@layout/fragment_views"
+        />
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.deshAndDez.ui.screens.filter.FilterFragment"
+        tools:layout="@layout/fragment_filter"
+        android:label="FilterFragment" />
 
 </navigation>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,7 +11,7 @@
     android:paddingVertical="@dimen/_5sdp">
 
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/imgProfile"
+        android:id="@+id/image"
         android:layout_width="@dimen/_42sdp"
         android:layout_height="@dimen/_42sdp"
         android:background="@drawable/circle"
@@ -28,18 +29,18 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/name_textview"
             style="@style/TextStyleBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:text="Ahmed Mohamed"
+            tools:text="Ahmed Mohamed"
             android:textAlignment="viewStart"
             android:textColor="@color/text_primary"
             android:textSize="@dimen/_11ssp" />
 
         <TextView
-            android:id="@+id/tvUserName"
+            android:id="@+id/username_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_minus5sdp"
@@ -47,7 +48,7 @@
             android:lines="1"
             android:maxLines="1"
             style="@style/TextStyleRegular"
-            android:text="ahmedmohamed22"
+            tools:text="ahmedmohamed22"
             android:textColor="@color/text_primary"
             android:textSize="@dimen/_10ssp" />
     </LinearLayout>

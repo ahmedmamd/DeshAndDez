@@ -24,6 +24,11 @@ class UsersAdapter(private val onItemClicked: (User) -> Unit) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = RecyclerItemLayoutUsersBinding.bind(itemView)
         fun bind(item: User) {
+            binding.nameTextview.text = item.name
+            binding.usernameTextview.text = item.username
+            item.image?.let {
+                binding.image.setImageResource(it)
+            }
             itemView.setOnClickListener {
                 onItemClicked(item)
             }

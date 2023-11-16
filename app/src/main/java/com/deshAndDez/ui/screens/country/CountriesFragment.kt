@@ -40,7 +40,7 @@ class CountriesFragment : BaseFragment(R.layout.fragment_countries) {
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
+        binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
         }
     }

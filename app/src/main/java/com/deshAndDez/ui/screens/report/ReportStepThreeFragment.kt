@@ -39,9 +39,11 @@ class ReportStepThreeFragment : BaseFragment(R.layout.fragment_report_step_three
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
+        binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
-
+        }
+        binding.submitReportButton.setOnClickListener {
+            findNavController().navigate(R.id.reportStepTwoFragment)
         }
     }
 }

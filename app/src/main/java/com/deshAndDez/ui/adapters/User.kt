@@ -15,5 +15,5 @@ class User(
     var username: String? = null,
     @SerializedName("image")
     @Expose
-    var image: String? = null
+    var image: Int? = null
 )

@@ -40,7 +40,7 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
+        binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
         }
     }
@@ -55,10 +55,10 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
     private fun setupRecyclerAdapter() {
         usersAdapter = UsersAdapter {
         }
-        usersList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112"))
-        usersList.add(User("2", "Mohamed Kamal", "mohamed33"))
-        usersList.add(User("3", "Karim Ahmed", "karim66"))
-        usersList.add(User("4", "Maged Ibraheem", "maged77"))
+        usersList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112", R.drawable.test_user_image1))
+        usersList.add(User("2", "Mohamed Kamal", "mohamed33", R.drawable.test_user_image2))
+        usersList.add(User("3", "Karim Ahmed", "karim66", R.drawable.test_user_image3))
+        usersList.add(User("4", "Maged Ibraheem", "maged77", R.drawable.test_user_image1))
         usersAdapter.setData(usersList)
     }
 }

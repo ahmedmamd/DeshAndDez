@@ -35,13 +35,14 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
     // Set up the UI components
     private fun setupUI() {
         // Set up any UI-related configurations here
+        binding.toolbar.titleTextview.text = getString(R.string.likes)
         setupRecyclerUi()
     }
 
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
+        binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
         }
     }
@@ -56,10 +57,10 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
     private fun setupRecyclerAdapter() {
         usersAdapter = UsersAdapter {
         }
-        likesList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112"))
-        likesList.add(User("2", "Mohamed Kamal", "mohamed33"))
-        likesList.add(User("3", "Karim Ahmed", "karim66"))
-        likesList.add(User("4", "Maged Ibraheem", "maged77"))
+        likesList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112", R.drawable.test_user_image1))
+        likesList.add(User("2", "Mohamed Kamal", "mohamed33", R.drawable.test_user_image2))
+        likesList.add(User("3", "Karim Ahmed", "karim66", R.drawable.test_user_image3))
+        likesList.add(User("4", "Maged Ibraheem", "maged77", R.drawable.test_user_image2))
         usersAdapter.setData(likesList)
     }
 }

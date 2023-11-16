@@ -43,7 +43,7 @@ class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
-        binding.toolbar.back.setOnClickListener {
+        binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
         }
     }
@@ -57,6 +57,7 @@ class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
 
     private fun setupRecyclerAdapter() {
         reportsAdapter = ReportAdapter {
+            findNavController().navigate(R.id.reportStepTwoFragment)
         }
         reportList.add(Report("1", "it’s spam"))
         reportList.add(Report("2", "Nudity or sexual activity"))
