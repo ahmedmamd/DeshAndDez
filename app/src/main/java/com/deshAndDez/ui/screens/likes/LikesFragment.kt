@@ -6,6 +6,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
+import com.deshAndDez.commons.extensions.showErrorMessage
+import com.deshAndDez.commons.extensions.showSuccessMessage
 import com.deshAndDez.databinding.FragmentLikesBinding
 import com.deshAndDez.ui.adapters.User
 import com.deshAndDez.ui.adapters.UsersAdapter
@@ -37,6 +39,12 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
         // Set up any UI-related configurations here
         binding.toolbar.titleTextview.text = getString(R.string.likes)
         setupRecyclerUi()
+        binding.toolbar.titleTextview.setOnFocusChangeListener { view, b ->
+            if (b){
+                showSuccessMessage("Focus")
+            }else
+                showErrorMessage("UnFocus")
+        }
     }
 
 
