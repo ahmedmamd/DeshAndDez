@@ -170,6 +170,8 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.1'
 //dote
     implementation 'com.tbuonomo:dotsindicator:4.2'
+// lottie
+    implementation 'com.airbnb.android:lottie:6.1.0'
 
 
 

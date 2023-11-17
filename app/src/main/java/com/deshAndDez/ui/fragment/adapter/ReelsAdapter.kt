@@ -18,6 +18,12 @@ import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
     CustomBaseAdapter<TutorialVideos, ReelsAdapter.ViewHolder>() {
@@ -33,6 +39,8 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
 
     inner class ViewHolder(val binding: ItemReelsBinding) : RecyclerView.ViewHolder(binding.root) {
         //        private val binding = ItemReelsBinding.bind(itemView)
+         val coroutineScope = CoroutineScope(Dispatchers.Main)
+
         init {
             binding.apply {
                 sound.setOnClickListener {
@@ -46,19 +54,19 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
                 }
 
                 llClearMode.setOnClickListener {
-                    if (nestedScrollView.isVisible){
-                        menuAds.isVisible=false
-                        nestedScrollView.isVisible=false
-                        allMenuAds.isVisible =false
-                        linearIcons.isVisible=false
-                        idAlert.isVisible=false
-                        llClearMode.isVisible=true
-                    }else{
-                        menuAds.isVisible=true
-                        nestedScrollView.isVisible=true
-                        allMenuAds.isVisible =true
-                        linearIcons.isVisible=true
-                        idAlert.isVisible=true
+                    if (nestedScrollView.isVisible) {
+                        menuAds.isVisible = false
+                        nestedScrollView.isVisible = false
+                        allMenuAds.isVisible = false
+                        linearIcons.isVisible = false
+                        idAlert.isVisible = false
+                        llClearMode.isVisible = true
+                    } else {
+                        menuAds.isVisible = true
+                        nestedScrollView.isVisible = true
+                        allMenuAds.isVisible = true
+                        linearIcons.isVisible = true
+                        idAlert.isVisible = true
                     }
                 }
 
@@ -71,17 +79,35 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
                         idExoPlayerVIewPause.isVisible = false
                     }
                 }
+                like.setOnClickListener {
+                    lottieAnimationView.isVisible=true
+                    lottieAnimationView.setAnimation("love_anim.json")
+                    lottieAnimationView.playAnimation()
+
+                    coroutineScope.launch {
+                         delay(3000)
+                        lottieAnimationView.cancelAnimation()
+                        lottieAnimationView.clearAnimation()
+                        lottieAnimationView.isVisible=false
+                    }
+//                    lottieAnimationView.playAnimation()
+//
+//                    // Stop the animation after 2 seconds
+//                    handler.postDelayed({
+//                        lottieAnimationView.cancelAnimation()
+//                    }, 2000)
+                }
                 menuAds.setOnClickListener {
-                    menuAds.isVisible=false
-                    allMenuAds.isVisible =true
+                    menuAds.isVisible = false
+                    allMenuAds.isVisible = true
                     val fadeInAnimation: Animation =
                         AnimationUtils.loadAnimation(menuAds.context, R.anim.fade_in)
                     // Hier ersetzen Sie "textView" durch die ID Ihres Views, auf die Sie die Animation anwenden möchten.
                     allMenuAds.startAnimation(fadeInAnimation)
                 }
                 allAdsBtn.setOnClickListener {
-                    menuAds.isVisible=true
-                    allMenuAds.isVisible =false
+                    menuAds.isVisible = true
+                    allMenuAds.isVisible = false
                 }
 
 
@@ -89,7 +115,7 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
         }
 
 
-         var exoPlayer: SimpleExoPlayer? = null
+        var exoPlayer: SimpleExoPlayer? = null
 
         fun bind(data: TutorialVideos) {
             Log.e("onResume", " adapter position data  " + data)
@@ -118,4 +144,10 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
             }
         }
     }
+    override fun onViewRecycled(holder: ViewHolder) {
+        super.onViewRecycled(holder)
+        holder.coroutineScope.cancel() // Cancel the scope
+        holder.binding.lottieAnimationView.cancelAnimation()
+    }
+
 }
