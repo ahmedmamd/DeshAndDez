@@ -8,7 +8,7 @@ import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.databinding.RecyclerItemLayoutUsersBinding
 
-class UsersAdapter(private val onItemClicked: (User) -> Unit) :
+class UsersAdapter(private val onItemClicked: (User) -> Unit,private val onFollowClicked: (User) -> Unit) :
     CustomBaseAdapter<User, UsersAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -33,7 +33,7 @@ class UsersAdapter(private val onItemClicked: (User) -> Unit) :
                 onItemClicked(item)
             }
             binding.followButton.setOnClickListener {
-                removeItem(position)
+                onFollowClicked(item)
             }
         }
     }

@@ -15,5 +15,8 @@ class User(
     var username: String? = null,
     @SerializedName("image")
     @Expose
-    var image: Int? = null
+    var image: Int? = null,
+    @SerializedName("isFollowed")
+    @Expose
+    var isFollowed: Boolean? = null,
 )

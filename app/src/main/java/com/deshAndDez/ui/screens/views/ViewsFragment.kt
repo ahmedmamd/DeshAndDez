@@ -53,8 +53,7 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
     }
 
     private fun setupRecyclerAdapter() {
-        usersAdapter = UsersAdapter {
-        }
+        usersAdapter = UsersAdapter(onItemClicked = {}, onFollowClicked = {})
         usersList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112", R.drawable.test_user_image1))
         usersList.add(User("2", "Mohamed Kamal", "mohamed33", R.drawable.test_user_image2))
         usersList.add(User("3", "Karim Ahmed", "karim66", R.drawable.test_user_image3))
