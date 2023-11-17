@@ -59,5 +59,8 @@
     <string name="_2_months">2 Months</string>
     <string name="gender">Gender</string>
     <string name="advertisement_duration">Advertisement duration</string>
+    <string name="do_you_want_to_submit_a_problem_report">Do You want to submit a\n problem report</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>

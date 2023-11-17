@@ -14,6 +14,7 @@ import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.data.models.reels.TutorialVideos
 import com.deshAndDez.databinding.FragmentVidesPlayerBinding
+import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
 import com.deshAndDez.ui.fragment.adapter.ReelsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,7 +31,9 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         }, onViewsUsersClicked = {
             findNavController().navigate(R.id.viewsFragment)
         }, onReportClicked = {
-            findNavController().navigate(R.id.reportStepOneFragment)
+            ReportConfirmationDialog(requireActivity(), onYesClick = {
+                findNavController().navigate(R.id.reportStepOneFragment)
+            }).show()
         }, onFilterClicked = {
             findNavController().navigate(R.id.filterFragment)
         })
