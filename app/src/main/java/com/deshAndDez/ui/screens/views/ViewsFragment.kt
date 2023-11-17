@@ -1,11 +1,14 @@
 package com.deshAndDez.ui.screens.views
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
+import com.deshAndDez.databinding.FragmentLanguageBinding
 import com.deshAndDez.databinding.FragmentLikesBinding
 import com.deshAndDez.databinding.FragmentViewsBinding
 import com.deshAndDez.ui.adapters.User
@@ -23,6 +26,14 @@ class ViewsFragment : BaseFragment(R.layout.fragment_views) {
         super.onCreate(savedInstanceState)
         binding = FragmentViewsBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentViewsBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

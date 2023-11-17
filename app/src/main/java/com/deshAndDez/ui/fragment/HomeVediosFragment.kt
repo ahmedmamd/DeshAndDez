@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.deshAndDez.R
@@ -24,9 +25,15 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
 
     val videosAdapter by lazy {
-        ReelsAdapter {
-
-        }
+        ReelsAdapter(onItemClicked = {}, onLikesUsersClicked = {
+            findNavController().navigate(R.id.likesFragment)
+        }, onViewsUsersClicked = {
+            findNavController().navigate(R.id.viewsFragment)
+        }, onReportClicked = {
+            findNavController().navigate(R.id.reportStepOneFragment)
+        }, onFilterClicked = {
+            findNavController().navigate(R.id.filterFragment)
+        })
     }
 //
 //    private fun toggleSaved(it: Int) {
@@ -115,7 +122,7 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
                             position
                         ) as? ReelsAdapter.ViewHolder
                     currentViewHolder?.exoPlayer?.playWhenReady = true
-                    currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible=false
+                    currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible = false
                 }
 
 

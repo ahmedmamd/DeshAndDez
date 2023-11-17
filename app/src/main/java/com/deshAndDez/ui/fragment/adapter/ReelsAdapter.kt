@@ -25,7 +25,13 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
+class ReelsAdapter(
+    private val onItemClicked: (TutorialVideos) -> Unit,
+    private val onLikesUsersClicked: (TutorialVideos) -> Unit,
+    private val onViewsUsersClicked: (TutorialVideos) -> Unit,
+    private val onReportClicked: (TutorialVideos) -> Unit,
+    private val onFilterClicked: (TutorialVideos) -> Unit,
+) :
     CustomBaseAdapter<TutorialVideos, ReelsAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemReelsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -39,9 +45,16 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
 
     inner class ViewHolder(val binding: ItemReelsBinding) : RecyclerView.ViewHolder(binding.root) {
         //        private val binding = ItemReelsBinding.bind(itemView)
-         val coroutineScope = CoroutineScope(Dispatchers.Main)
+        val coroutineScope = CoroutineScope(Dispatchers.Main)
 
         init {
+        }
+
+
+        var exoPlayer: SimpleExoPlayer? = null
+
+        fun bind(videoItem: TutorialVideos) {
+            Log.e("onResume", " adapter position data  " + videoItem)
             binding.apply {
                 sound.setOnClickListener {
                     if (idExoPlayerVIew.player?.volume == 0f) {
@@ -80,15 +93,15 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
                     }
                 }
                 like.setOnClickListener {
-                    lottieAnimationView.isVisible=true
+                    lottieAnimationView.isVisible = true
                     lottieAnimationView.setAnimation("love_anim.json")
                     lottieAnimationView.playAnimation()
 
                     coroutineScope.launch {
-                         delay(3000)
+                        delay(3000)
                         lottieAnimationView.cancelAnimation()
                         lottieAnimationView.clearAnimation()
-                        lottieAnimationView.isVisible=false
+                        lottieAnimationView.isVisible = false
                     }
 //                    lottieAnimationView.playAnimation()
 //
@@ -110,17 +123,18 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
                     allMenuAds.isVisible = false
                 }
 
-
-            }
-        }
-
-
-        var exoPlayer: SimpleExoPlayer? = null
-
-        fun bind(data: TutorialVideos) {
-            Log.e("onResume", " adapter position data  " + data)
-
-            binding.apply {
+                llNumLikeUsers.setOnClickListener {
+                    onLikesUsersClicked(videoItem)
+                }
+                llNumFollow.setOnClickListener {
+                    onViewsUsersClicked(videoItem)
+                }
+                report.setOnClickListener {
+                    onReportClicked(videoItem)
+                }
+                deutio.setOnClickListener {
+                    onFilterClicked(videoItem)
+                }
                 nameStar.setSelected(true)
 
                 if (exoPlayer == null) {
@@ -128,9 +142,8 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
                     idExoPlayerVIew.player = exoPlayer
                     exoPlayer?.repeatMode = Player.REPEAT_MODE_ALL
                 }
-
                 // Create and set the MediaItem for the current video
-                val videoUri = data.url
+                val videoUri = videoItem.url
                 val mediaItem = videoUri?.let { MediaItem.fromUri(it) }
                 if (mediaItem != null) {
                     exoPlayer?.setMediaItem(mediaItem)
@@ -144,6 +157,7 @@ class ReelsAdapter(private val onItemClicked: (TutorialVideos) -> Unit) :
             }
         }
     }
+
     override fun onViewRecycled(holder: ViewHolder) {
         super.onViewRecycled(holder)
         holder.coroutineScope.cancel() // Cancel the scope

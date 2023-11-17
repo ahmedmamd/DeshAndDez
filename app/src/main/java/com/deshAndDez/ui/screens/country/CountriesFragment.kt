@@ -1,12 +1,15 @@
 package com.deshAndDez.ui.screens.country
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.databinding.FragmentCountriesBinding
+import com.deshAndDez.databinding.FragmentFilterBinding
 import com.deshAndDez.ui.adapters.*
 
 class CountriesFragment : BaseFragment(R.layout.fragment_countries) {
@@ -23,7 +26,14 @@ class CountriesFragment : BaseFragment(R.layout.fragment_countries) {
         binding = FragmentCountriesBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
     }
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentCountriesBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
@@ -42,6 +52,9 @@ class CountriesFragment : BaseFragment(R.layout.fragment_countries) {
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
+        }
+        binding.clearImageview.setOnClickListener {
+            binding.searchEdittext.text?.clear()
         }
     }
 

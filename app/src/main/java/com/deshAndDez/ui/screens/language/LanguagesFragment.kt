@@ -1,7 +1,9 @@
 package com.deshAndDez.ui.screens.language
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +12,7 @@ import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.commons.extensions.showErrorMessage
 import com.deshAndDez.commons.extensions.showSuccessMessage
 import com.deshAndDez.databinding.FragmentLanguageBinding
+import com.deshAndDez.databinding.FragmentLikesBinding
 import com.deshAndDez.ui.adapters.Language
 import com.deshAndDez.ui.adapters.LanguageAdapter
 import com.deshAndDez.ui.adapters.User
@@ -28,6 +31,14 @@ class LanguagesFragment : BaseFragment(R.layout.fragment_language) {
         super.onCreate(savedInstanceState)
         binding = FragmentLanguageBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentLanguageBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +59,9 @@ class LanguagesFragment : BaseFragment(R.layout.fragment_language) {
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
             findNavController().popBackStack()
+        }
+        binding.clearImageview.setOnClickListener {
+            binding.searchEdittext.text?.clear()
         }
     }
 

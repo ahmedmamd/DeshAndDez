@@ -12,14 +12,14 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/image"
-        android:layout_width="@dimen/_42sdp"
-        android:layout_height="@dimen/_42sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
         android:background="@drawable/circle"
         android:backgroundTint="@color/gold"
         android:padding="@dimen/_1sdp"
         android:scaleType="fitXY"
         android:src="@drawable/test_user_image2"
-        app:riv_corner_radius="@dimen/_21sdp" />
+        app:riv_corner_radius="@dimen/_20sdp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/follow_button"
         style="@style/SolidGoldButton"
-        android:layout_height="@dimen/_32sdp"
+        android:layout_height="@dimen/_35sdp"
         android:text="@string/follow"
 
         android:textSize="@dimen/_10ssp" />

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
@@ -50,10 +51,6 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
         binding.toolbar.titleTextview.text = getString(R.string.likes)
         setupRecyclerUi()
         binding.toolbar.titleTextview.setOnFocusChangeListener { view, b ->
-            if (b){
-                showSuccessMessage("Focus")
-            }else
-                showErrorMessage("UnFocus")
         }
     }
 
@@ -74,7 +71,6 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
 
     private fun setupRecyclerAdapter() {
         usersAdapter = UsersAdapter(onItemClicked = {}, onFollowClicked = {
-
         })
         likesList.add(User("1", "Ahmed Mohamed", "ahmedmohamed112", R.drawable.test_user_image1,false))
         likesList.add(User("2", "Mohamed Kamal", "mohamed33", R.drawable.test_user_image2,false))

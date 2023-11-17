@@ -475,7 +475,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="@AhmedEzzOfficial"
+                    android:text="\@AhmedEzzOfficial"
                     android:textColor="@color/color_second"
                     android:textSize="12sp" />
 

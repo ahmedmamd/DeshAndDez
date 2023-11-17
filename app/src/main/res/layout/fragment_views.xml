@@ -35,14 +35,14 @@
                 android:text="@string/watched_by"
                 android:textAlignment="viewStart"
                 android:textColor="@color/text_primary"
-                android:textSize="@dimen/_14ssp" />
+                android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="432,253 views"
                 android:textColor="@color/text_second"
-                android:textSize="@dimen/_10ssp" />
+                android:textSize="@dimen/_13ssp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

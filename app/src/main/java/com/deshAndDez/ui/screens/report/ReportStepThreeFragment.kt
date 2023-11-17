@@ -1,7 +1,9 @@
 package com.deshAndDez.ui.screens.report
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
@@ -23,7 +25,14 @@ class ReportStepThreeFragment : BaseFragment(R.layout.fragment_report_step_three
         super.onCreate(savedInstanceState)
         binding = FragmentReportStepThreeBinding.inflate(layoutInflater)
     }
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentReportStepThreeBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
@@ -43,7 +52,7 @@ class ReportStepThreeFragment : BaseFragment(R.layout.fragment_report_step_three
             findNavController().popBackStack()
         }
         binding.submitReportButton.setOnClickListener {
-            findNavController().navigate(R.id.reportStepTwoFragment)
+            findNavController().navigate(R.id.reportStepFourFragment)
         }
     }
 }

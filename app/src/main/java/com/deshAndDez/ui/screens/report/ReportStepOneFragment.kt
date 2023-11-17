@@ -1,11 +1,14 @@
 package com.deshAndDez.ui.screens.report
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
+import com.deshAndDez.databinding.FragmentReportStepFourBinding
 import com.deshAndDez.databinding.FragmentReportStepOneBinding
 import com.deshAndDez.ui.adapters.Report
 import com.deshAndDez.ui.adapters.ReportAdapter
@@ -26,7 +29,14 @@ class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
         binding = FragmentReportStepOneBinding.inflate(layoutInflater)
         setupRecyclerAdapter()
     }
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentReportStepOneBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()

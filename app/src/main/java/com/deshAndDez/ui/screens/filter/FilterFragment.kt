@@ -1,7 +1,9 @@
 package com.deshAndDez.ui.screens.filter
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +11,7 @@ import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.base.SelectionModel
 import com.deshAndDez.databinding.FragmentFilterBinding
+import com.deshAndDez.databinding.FragmentInterestsBinding
 import com.deshAndDez.ui.adapters.SelectionAdapter
 
 class FilterFragment : BaseFragment(R.layout.fragment_filter) {
@@ -27,7 +30,14 @@ class FilterFragment : BaseFragment(R.layout.fragment_filter) {
         setupGenderRecyclerAdapter()
         setupAdDurationRecyclerAdapter()
     }
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentFilterBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
@@ -46,6 +56,15 @@ class FilterFragment : BaseFragment(R.layout.fragment_filter) {
     private fun setupListeners() {
         binding.closeImageview.setOnClickListener {
             findNavController().popBackStack()
+        }
+        binding.languageLinearlayout.setOnClickListener {
+            findNavController().navigate(R.id.languagesFragment)
+        }
+        binding.countryLinearlayout.setOnClickListener {
+            findNavController().navigate(R.id.countriesFragment)
+        }
+        binding.interestsLinearlayout.setOnClickListener {
+            findNavController().navigate(R.id.interrestsFragment)
         }
     }
 
