@@ -1,15 +1,19 @@
-package com.deshAndDez.ui.customviews.fragment
+package com.deshAndDez.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
+import com.deshAndDez.data.models.reels.TutorialVideos
 import com.deshAndDez.databinding.FragmentVidesPlayerBinding
+import com.deshAndDez.ui.fragment.adapter.ReelsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,18 +24,9 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
 
     val videosAdapter by lazy {
-//        VideosAdapter(
-//            requireActivity(),
-//            onSearchHasTag = { searchFor(it) },
-//            onOpenProfile = { openProfile(it) },
-//            onComments = { openComments(it.first, it.second) },
-//            onToggleFollow = { toggleFollow(it) },
-//            onFavorite = { addFavorite(it) },
-//            onSaved = { toggleSaved(it) },
-//            myImage = getUserImage(),
-//            viewModel = viewModel,
-//            fragment = this
-//        )
+        ReelsAdapter {
+
+        }
     }
 //
 //    private fun toggleSaved(it: Int) {
@@ -80,6 +75,7 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         binding = FragmentVidesPlayerBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
+//    private lateinit var internalRecyclerView: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -89,28 +85,37 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+        setUpAdapter()
+
         binding.apply {
             swipeRefresh.setOnRefreshListener {
-//                videosAdapter.refresh()
-//                viewModel.refreshList()
-
-
-//                binding.viewPager2.postInvalidate()
-
-//                viewPager2.currentItem = 0
-//                videosAdapter.currentPosition = 0
-
             }
-//                videosAdapter.currentPosition = 0
 
             observeFlow()
 
-//            viewPager2.adapter = videosAdapter
-//            viewPager2.offscreenPageLimit = 4
-//            viewPager2.setHasTransientState(false)
+
+        }
+
+    }
+
+    private fun setUpAdapter() {
+        binding.apply {
+            viewPager2.adapter = videosAdapter
+            dotsIndicator.setViewPager2(viewPager2)
             viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
+
+                    pauseAllPlayers()
+
+                    // Play the selected video
+                    // Play the current video
+                    val currentViewHolder =
+                        (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
+                            position
+                        ) as? ReelsAdapter.ViewHolder
+                    currentViewHolder?.exoPlayer?.playWhenReady = true
+                    currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible=false
                 }
 
 
@@ -128,47 +133,64 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
                 }
             })
         }
-        setAdapterStates()
     }
 
-
-    private fun setAdapterStates() {
-
+    fun pauseAllPlayers() {
+        for (i in 0 until videosAdapter.itemCount) {
+            val viewHolder =
+                (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
+                    i
+                ) as? ReelsAdapter.ViewHolder
+            viewHolder?.exoPlayer?.playWhenReady = false
+        }
     }
+
+    fun releaseAllPlayers() {
+        for (i in 0 until videosAdapter.itemCount) {
+            val viewHolder =
+                (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
+                    i
+                ) as? ReelsAdapter.ViewHolder
+            viewHolder?.exoPlayer?.release()
+        }
+    }
+
 
     private fun observeFlow() {
 
-//        handleSharedFlow(viewModel.randomVideo, onSuccess = {
-//            Toast.makeText(requireContext(), " " + it, Toast.LENGTH_SHORT).show()
-//            if (it is ArrayList<*>) {
-//                Log.e(TAG, "observeFlow:random video ${it} " )
-//                homeVideosAdapter.setAll(it as ArrayList<TutorialModel>)
-//            }
-//        })
-
-
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-//            viewModel.list.collectLatest {
-//                videosAdapter.submitData(it)
-//            }
-        }
+        var list = ArrayList<TutorialVideos>()
+        list.add(
+            TutorialVideos(
+                1,
+                null,
+                url = "https://chefshub.site//storage//videos//1696189889.mp4"
+            )
+        )
+        list.add(
+            TutorialVideos(
+                2,
+                null,
+                url = "https://chefshub.site//storage//videos//1696189889.mp4"
+            )
+        )
+        list.add(
+            TutorialVideos(
+                3,
+                null,
+                url = "https://chefshub.site//storage//videos//1696189889.mp4"
+            )
+        )
+        videosAdapter.setData(list)
     }
 
     override fun onPause() {
         super.onPause()
-//        videosAdapter.pauseVideo()
+        pauseAllPlayers()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-//        videosAdapter.removeVideo()
-//        videosAdapter.viewHolderList.forEach { item ->
-//            videosAdapter.viewHolderList[if (item.layoutPosition < 0) 0 else item.layoutPosition].item.idExoPlayerVIew.player?.release()
-//        }
+        releaseAllPlayers()
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        viewModel.randomVideo(1)
-//    }
 }

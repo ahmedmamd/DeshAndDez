@@ -45,7 +45,7 @@
         <!--   Authentication activities     -->
         <!--   Splash     -->
         <activity
-            android:name="com.deshAndDez.ui.customviews.main_activity.MainActivity"
+            android:name="com.deshAndDez.ui.main_activity.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
