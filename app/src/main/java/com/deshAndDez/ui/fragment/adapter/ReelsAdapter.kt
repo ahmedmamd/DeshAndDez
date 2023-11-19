@@ -31,6 +31,7 @@ class ReelsAdapter(
     private val onViewsUsersClicked: (TutorialVideos) -> Unit,
     private val onReportClicked: (TutorialVideos) -> Unit,
     private val onFilterClicked: (TutorialVideos) -> Unit,
+    private val onCommentsClicked: (TutorialVideos) -> Unit,
 ) :
     CustomBaseAdapter<TutorialVideos, ReelsAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -134,6 +135,12 @@ class ReelsAdapter(
                 }
                 deutio.setOnClickListener {
                     onFilterClicked(videoItem)
+                }
+                ivComments.setOnClickListener {
+                    onCommentsClicked(videoItem)
+                }
+                tvComments.setOnClickListener {
+                    onCommentsClicked(videoItem)
                 }
                 nameStar.setSelected(true)
 

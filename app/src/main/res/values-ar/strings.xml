@@ -20,7 +20,7 @@
     <string name="nudity">Nudity</string>
     <string name="view_all_photos">view all photo</string>
     <string name="profile">profile</string>
-    <string name="comments">comments</string>
+    <string name="comments">Comments</string>
     <string name="trend">trend</string>
     <string name="clear_mood">clear moood</string>
     <string name="ads">ads</string>
@@ -62,5 +62,6 @@
     <string name="do_you_want_to_submit_a_problem_report">Do You want to submit a\n problem report</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="replay">Replay</string>
 
 </resources>

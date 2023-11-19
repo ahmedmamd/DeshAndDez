@@ -14,6 +14,7 @@ import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.data.models.reels.TutorialVideos
 import com.deshAndDez.databinding.FragmentVidesPlayerBinding
+import com.deshAndDez.ui.dialogs.CommentsSheet
 import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
 import com.deshAndDez.ui.fragment.adapter.ReelsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +37,8 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
             }).show()
         }, onFilterClicked = {
             findNavController().navigate(R.id.filterFragment)
+        }, onCommentsClicked = {
+            CommentsSheet(requireActivity()).show()
         })
     }
 //

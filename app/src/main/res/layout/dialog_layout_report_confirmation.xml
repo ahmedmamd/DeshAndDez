@@ -4,21 +4,6 @@
 
     <data>
 
-        <variable
-            name="title"
-            type="String" />
-
-        <variable
-            name="body"
-            type="String" />
-
-        <variable
-            name="positiveTxt"
-            type="String" />
-
-        <variable
-            name="negativeTxt"
-            type="String" />
     </data>
 
     <RelativeLayout
@@ -43,7 +28,6 @@
 
             <TextView
                 style="@style/TextStyleBold"
-                notNullText="@{title}"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/report"
@@ -53,7 +37,6 @@
 
             <TextView
                 style="@style/TextStyleRegular"
-                notNullText="@{body}"
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:textAlignment="center"
@@ -76,7 +59,6 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/no_button"
                         style="@style/StrokeGoldButton"
-                        notNullText="@{negativeTxt}"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:paddingVertical="@dimen/_8sdp"
@@ -93,7 +75,6 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/yes_button"
                         style="@style/SolidGoldButton"
-                        notNullText="@{positiveTxt}"
                         android:layout_width="wrap_content"
                         android:layout_gravity="center"
                         android:paddingVertical="@dimen/_8sdp"
