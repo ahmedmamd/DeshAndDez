@@ -21,6 +21,7 @@
 
     <ImageView
         android:layout_width="@dimen/_15sdp"
+        android:id="@+id/selection"
         android:layout_height="@dimen/_15sdp"
         android:background="@drawable/dot_circle"
         />

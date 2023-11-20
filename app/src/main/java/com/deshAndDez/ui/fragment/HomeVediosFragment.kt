@@ -27,7 +27,7 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
 
     val videosAdapter by lazy {
-        ReelsAdapter(onItemClicked = {}, onLikesUsersClicked = {
+        ReelsAdapter(lifecycleScope,onItemClicked = {}, onLikesUsersClicked = {
             findNavController().navigate(R.id.likesFragment)
         }, onViewsUsersClicked = {
             findNavController().navigate(R.id.viewsFragment)
@@ -199,8 +199,12 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
     override fun onPause() {
         super.onPause()
         pauseAllPlayers()
+        videosAdapter.stopAutoScroll()
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         releaseAllPlayers()

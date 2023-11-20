@@ -9,10 +9,15 @@ import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
+import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.PagerAutoScrollJob
+import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.SliderITem
+import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.ViewPager2Utils
 import com.deshAndDez.data.models.reels.TutorialVideos
 import com.deshAndDez.databinding.ItemHomeReelsBinding
+import com.deshAndDez.databinding.ItemReelImagesBinding
 import com.deshAndDez.databinding.ItemReelsBinding
 import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 import com.google.android.exoplayer2.MediaItem
@@ -26,6 +31,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ReelsAdapter(
+    private val coroutineScope: CoroutineScope,
     private val onItemClicked: (TutorialVideos) -> Unit,
     private val onLikesUsersClicked: (TutorialVideos) -> Unit,
     private val onViewsUsersClicked: (TutorialVideos) -> Unit,
@@ -33,15 +39,32 @@ class ReelsAdapter(
     private val onFilterClicked: (TutorialVideos) -> Unit,
     private val onCommentsClicked: (TutorialVideos) -> Unit,
 ) :
-    CustomBaseAdapter<TutorialVideos, ReelsAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = ItemReelsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(view)
+    CustomBaseAdapter<TutorialVideos, RecyclerView.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        if (viewType == 0) {
+            val view =
+                ItemReelsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return ViewHolder(view)
+        } else {
+            val view =
+                ItemReelImagesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return ViewHolder1(view)
+        }
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item)
+        if (holder.itemViewType == 0) {
+            (holder as ViewHolder).bind(item)
+        } else {
+            (holder as ViewHolder1).bind(item)
+        }
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position % 2 == 0)
+            0
+        else 1
     }
 
     inner class ViewHolder(val binding: ItemReelsBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -149,7 +172,7 @@ class ReelsAdapter(
                     idExoPlayerVIew.player = exoPlayer
                     exoPlayer?.repeatMode = Player.REPEAT_MODE_ALL
                 }
-                // Create and set the MediaItem for the current video
+                // Create and set the SliderITem for the current video
                 val videoUri = videoItem.url
                 val mediaItem = videoUri?.let { MediaItem.fromUri(it) }
                 if (mediaItem != null) {
@@ -165,10 +188,82 @@ class ReelsAdapter(
         }
     }
 
-    override fun onViewRecycled(holder: ViewHolder) {
-        super.onViewRecycled(holder)
-        holder.coroutineScope.cancel() // Cancel the scope
-        holder.binding.lottieAnimationView.cancelAnimation()
+    fun stopAutoScroll() {
+        PagerAutoScrollJob.stopAutoScroll()
     }
+
+    override fun onViewRecycled(holder: RecyclerView.ViewHolder) {
+        super.onViewRecycled(holder)
+//        holder.coroutineScope.cancel() // Cancel the scope
+//        holder.binding.lottieAnimationView.cancelAnimation()
+    }
+
+    inner class ViewHolder1(val binding: ItemReelImagesBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        //        private val binding = ItemReelsBinding.bind(itemView)
+        fun bind(videoItem: TutorialVideos) {
+            ViewPager2Utils.setupViewPager2AsImageSlider(
+                binding.sliderImageViewpager2,
+                mutableListOf(
+                    SliderITem("https://i.pinimg.com/236x/b2/84/d6/b284d653ff401b21ba345dff6769e5fd.jpg"),
+                    SliderITem("https://wallpapers.com/images/hd/samurai-in-japanese-alley-3t4agok0fdvwadfz.jpg"),
+                    SliderITem("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtiBOMNFs_QYdzDJa1ZYhlCtk9LBo2zcpUwWmvubSv7O1Y9IGzv6__RlKdOIlcD0nMaqA&usqp=CAU")
+                )
+            )
+            binding.apply {
+                PagerAutoScrollJob.startAutoScroll(coroutineScope, sliderImageViewpager2)
+                dotsIndicator.setViewPager2(sliderImageViewpager2)
+                llClearMode.setOnClickListener {
+                    if (nestedScrollView.isVisible) {
+                        menuAds.isVisible = false
+                        nestedScrollView.isVisible = false
+                        allMenuAds.isVisible = false
+                        linearIcons.isVisible = false
+                        idAlert.isVisible = false
+                        llClearMode.isVisible = true
+                    } else {
+                        menuAds.isVisible = true
+                        nestedScrollView.isVisible = true
+                        allMenuAds.isVisible = true
+                        linearIcons.isVisible = true
+                        idAlert.isVisible = true
+                    }
+                }
+                menuAds.setOnClickListener {
+                    menuAds.isVisible = false
+                    allMenuAds.isVisible = true
+                    val fadeInAnimation: Animation =
+                        AnimationUtils.loadAnimation(menuAds.context, R.anim.fade_in)
+                    // Hier ersetzen Sie "textView" durch die ID Ihres Views, auf die Sie die Animation anwenden möchten.
+                    allMenuAds.startAnimation(fadeInAnimation)
+                }
+                allAdsBtn.setOnClickListener {
+                    menuAds.isVisible = true
+                    allMenuAds.isVisible = false
+                }
+
+                llNumLikeUsers.setOnClickListener {
+                    onLikesUsersClicked(videoItem)
+                }
+                llNumFollow.setOnClickListener {
+                    onViewsUsersClicked(videoItem)
+                }
+                report.setOnClickListener {
+                    onReportClicked(videoItem)
+                }
+                deutio.setOnClickListener {
+                    onFilterClicked(videoItem)
+                }
+                ivComments.setOnClickListener {
+                    onCommentsClicked(videoItem)
+                }
+                tvComments.setOnClickListener {
+                    onCommentsClicked(videoItem)
+                }
+                nameStar.setSelected(true)
+            }
+        }
+    }
+
 
 }
