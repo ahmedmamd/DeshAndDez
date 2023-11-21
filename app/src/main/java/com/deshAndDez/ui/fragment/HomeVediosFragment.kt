@@ -1,6 +1,7 @@
 package com.deshAndDez.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
 import com.deshAndDez.ui.fragment.adapter.ReelsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
+private const val TAG = "HomeVediosFragment"
 @AndroidEntryPoint
 class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
@@ -41,44 +43,6 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
             CommentsSheet(requireActivity()).show()
         })
     }
-//
-//    private fun toggleSaved(it: Int) {
-//        if (PreferencesGateway(requireContext()).isSaved(PrefKeys.IS_USER_LOGGED).not()) {
-//            videosAdapter.removeVideo()
-//            (activity as BaseActivity).apply {
-//                videosAdapter.removeVideo()
-//                startActivity(LoginActivity::class.java)
-//            }
-//        }
-//        viewModel.addSavedVideo(it)
-//    }
-//
-//    private fun toggleFollow(it: Int) {
-//        viewModel.toggleFollow(it)
-//    }
-//
-//    private fun addFavorite(it: Int) {
-//        viewModel.addFavorite(it)
-//    }
-//
-//    @Inject
-//    lateinit var preferencesGateway: PreferencesGateway
-//    private fun getUserImage() = preferencesGateway.load(PrefKeys.USER, UserModel())?.avatarPath
-//
-//    private fun openProfile(it: Int) {
-//        findNavController().navigate(R.id.profileFragmentFragment, bundleOf("value" to it))
-//    }
-//
-//    private fun searchFor(it: String) {
-//        findNavController().navigate(R.id.navigation_search, bundleOf("value" to it))
-//    }
-//
-//    private fun openComments(id: Int, num: Int) {
-//        findNavController().navigate(
-//            R.id.commentsFragment,
-//            bundleOf(CommentsFragment.POST_ID to id, CommentsFragment.NUM_COMMENTS to num)
-//        )
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -88,16 +52,17 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         binding = FragmentVidesPlayerBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
-//    private lateinit var internalRecyclerView: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         requireActivity().window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+        clearStackOfReport()
         setUpAdapter()
 
         binding.apply {
@@ -109,6 +74,13 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
         }
 
+    }
+
+    private fun clearStackOfReport() {
+//        findNavController().popBackStack(R.id.reportStepOneFragment, false)
+//        findNavController().popBackStack(R.id.reportStepTwoFragment, false)
+//        findNavController().popBackStack(R.id.reportStepThreeFragment, false)
+//        findNavController().popBackStack(R.id.reportStepFourFragment, false)
     }
 
     private fun setUpAdapter() {
@@ -126,11 +98,26 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
                     val currentViewHolder =
                         (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
                             position
-                        ) as? ReelsAdapter.ViewHolder
-                    currentViewHolder?.exoPlayer?.playWhenReady = true
-                    currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible = false
+                        )
+//                                as? ReelsAdapter.ViewHolder
+                    when (currentViewHolder) {
+                        is ReelsAdapter.ViewHolder -> {
+                            currentViewHolder?.exoPlayer?.playWhenReady = true
+                            currentViewHolder?.exoPlayer?.play()
+                            currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible = false
+                        }
+                        is ReelsAdapter.ViewHolder1 -> {
+                            // If ViewHolder1 also has an exoPlayer, pause it here
+                            // currentViewHolder.exoPlayer?.playWhenReady = false
+                            // currentViewHolder.exoPlayer?.pause()
+                        }
+                        is ReelsAdapter.ViewHolderAds -> {
+                            currentViewHolder?.exoPlayer?.playWhenReady = true
+                            currentViewHolder?.exoPlayer?.play()
+                            currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible = false
+                        }
+                    }
                 }
-
 
                 override fun onPageScrolled(
                     position: Int,
@@ -148,15 +135,30 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         }
     }
 
+
     fun pauseAllPlayers() {
         for (i in 0 until videosAdapter.itemCount) {
-            val viewHolder =
-                (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
-                    i
-                ) as? ReelsAdapter.ViewHolder
-            viewHolder?.exoPlayer?.playWhenReady = false
+            val viewHolder = (binding.viewPager2.getChildAt(0) as RecyclerView)
+                .findViewHolderForAdapterPosition(i)
+
+            when (viewHolder) {
+                is ReelsAdapter.ViewHolder -> {
+                    viewHolder.exoPlayer?.playWhenReady = false
+                    viewHolder.exoPlayer?.pause()
+                }
+                is ReelsAdapter.ViewHolder1 -> {
+                    // If ViewHolder1 also has an exoPlayer, pause it here
+                    // viewHolder.exoPlayer?.playWhenReady = false
+                    // viewHolder.exoPlayer?.pause()
+                }
+                is ReelsAdapter.ViewHolderAds -> {
+                    viewHolder.exoPlayer?.playWhenReady = false
+                    viewHolder.exoPlayer?.pause()
+                }
+            }
         }
     }
+
 
     fun releaseAllPlayers() {
         for (i in 0 until videosAdapter.itemCount) {
@@ -171,26 +173,26 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
     private fun observeFlow() {
 
-        var list = ArrayList<TutorialVideos>()
+        val list = ArrayList<TutorialVideos>()
         list.add(
             TutorialVideos(
                 1,
                 null,
-                url = "https://chefshub.site//storage//videos//1696189889.mp4"
+                url = "https://chefshub.site//storage//videos//1696189889.mp4", type = "reels"
             )
         )
         list.add(
             TutorialVideos(
                 2,
                 null,
-                url = "https://chefshub.site//storage//videos//1696189889.mp4"
+                url = "https://chefshub.site//storage//videos//1696189889.mp4", type = "images"
             )
         )
         list.add(
             TutorialVideos(
                 3,
                 null,
-                url = "https://chefshub.site//storage//videos//1696189889.mp4"
+                url = "https://chefshub.site//storage//videos//1696189889.mp4", type = "ads"
             )
         )
         videosAdapter.setData(list)

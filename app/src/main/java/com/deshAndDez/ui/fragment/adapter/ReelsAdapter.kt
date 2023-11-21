@@ -18,6 +18,7 @@ import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.ViewPager2Util
 import com.deshAndDez.data.models.reels.TutorialVideos
 import com.deshAndDez.databinding.ItemHomeReelsBinding
 import com.deshAndDez.databinding.ItemReelImagesBinding
+import com.deshAndDez.databinding.ItemReelsAdsBinding
 import com.deshAndDez.databinding.ItemReelsBinding
 import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 import com.google.android.exoplayer2.MediaItem
@@ -45,40 +46,43 @@ class ReelsAdapter(
             val view =
                 ItemReelsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder(view)
-        } else {
+        } else if (viewType == 1){
             val view =
                 ItemReelImagesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder1(view)
+        } else {
+            val view =
+                ItemReelsAdsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return ViewHolderAds(view)
         }
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
         val item = getItem(position)
-        if (holder.itemViewType == 0) {
-            (holder as ViewHolder).bind(item)
-        } else {
-            (holder as ViewHolder1).bind(item)
+        when (holder.itemViewType) {
+            0 -> (holder as ViewHolder).bind(item)
+            1 -> (holder as ViewHolder1).bind(item)
+            2 -> (holder as ViewHolderAds).bind(item)
         }
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (position % 2 == 0)
-            0
-        else 1
+        val item = getItem(position)
+        return when (item.type) {
+            "reels" -> 0
+            "images" -> 1
+            "ads" -> 2
+            else -> 3
+        }
     }
 
+
     inner class ViewHolder(val binding: ItemReelsBinding) : RecyclerView.ViewHolder(binding.root) {
-        //        private val binding = ItemReelsBinding.bind(itemView)
         val coroutineScope = CoroutineScope(Dispatchers.Main)
-
-        init {
-        }
-
-
         var exoPlayer: SimpleExoPlayer? = null
 
         fun bind(videoItem: TutorialVideos) {
-            Log.e("onResume", " adapter position data  " + videoItem)
             binding.apply {
                 sound.setOnClickListener {
                     if (idExoPlayerVIew.player?.volume == 0f) {
@@ -101,7 +105,6 @@ class ReelsAdapter(
                     } else {
                         menuAds.isVisible = true
                         nestedScrollView.isVisible = true
-                        allMenuAds.isVisible = true
                         linearIcons.isVisible = true
                         idAlert.isVisible = true
                     }
@@ -127,12 +130,6 @@ class ReelsAdapter(
                         lottieAnimationView.clearAnimation()
                         lottieAnimationView.isVisible = false
                     }
-//                    lottieAnimationView.playAnimation()
-//
-//                    // Stop the animation after 2 seconds
-//                    handler.postDelayed({
-//                        lottieAnimationView.cancelAnimation()
-//                    }, 2000)
                 }
                 menuAds.setOnClickListener {
                     menuAds.isVisible = false
@@ -183,7 +180,6 @@ class ReelsAdapter(
                 exoPlayer?.prepare()
                 exoPlayer?.playWhenReady = false
 
-//                exoPlayer?.play()
             }
         }
     }
@@ -194,13 +190,83 @@ class ReelsAdapter(
 
     override fun onViewRecycled(holder: RecyclerView.ViewHolder) {
         super.onViewRecycled(holder)
-//        holder.coroutineScope.cancel() // Cancel the scope
-//        holder.binding.lottieAnimationView.cancelAnimation()
     }
 
-    inner class ViewHolder1(val binding: ItemReelImagesBinding) :
+    inner class ViewHolderAds(val binding: ItemReelsAdsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        //        private val binding = ItemReelsBinding.bind(itemView)
+        val coroutineScope = CoroutineScope(Dispatchers.Main)
+        var exoPlayer: SimpleExoPlayer? = null
+
+        fun bind(videoItem: TutorialVideos) {
+            binding.apply {
+                sound.setOnClickListener {
+                    if (idExoPlayerVIew.player?.volume == 0f) {
+                        idExoPlayerVIew.player?.volume = 1f
+                        sound.setImageResource(R.drawable.sound)
+                    } else {
+                        idExoPlayerVIew.player?.volume = 0f
+                        sound.setImageResource(R.drawable.mute_icon)
+                    }
+                }
+
+                llClearMode.setOnClickListener {
+                    if (nestedScrollView.isVisible) {
+                        nestedScrollView.isVisible = false
+                        conSocial.isVisible =false
+                        linearIcons.isVisible = false
+                        idAlert.isVisible = false
+                        llClearMode.isVisible = true
+                        userImage.isVisible=false
+                    } else {
+                        nestedScrollView.isVisible = true
+                        linearIcons.isVisible = true
+                        idAlert.isVisible = true
+                        conSocial.isVisible=true
+                        userImage.isVisible=true
+                    }
+                }
+
+                idExoPlayerVIew.setOnClickListener {
+                    if (idExoPlayerVIew.player?.isPlaying == true) {
+                        idExoPlayerVIewPause.isVisible = true
+                        idExoPlayerVIew.player?.pause()
+                    } else {
+                        idExoPlayerVIew.player?.play()
+                        idExoPlayerVIewPause.isVisible = false
+                    }
+                }
+                like.setOnClickListener {
+                    lottieAnimationView.isVisible = true
+                    lottieAnimationView.setAnimation("love_anim.json")
+                    lottieAnimationView.playAnimation()
+
+                    coroutineScope.launch {
+                        delay(3000)
+                        lottieAnimationView.cancelAnimation()
+                        lottieAnimationView.clearAnimation()
+                        lottieAnimationView.isVisible = false
+                    }
+                }
+                if (exoPlayer == null) {
+                    exoPlayer = SimpleExoPlayer.Builder(root.context).build()
+                    idExoPlayerVIew.player = exoPlayer
+                    exoPlayer?.repeatMode = Player.REPEAT_MODE_ALL
+                }
+                // Create and set the SliderITem for the current video
+                val videoUri = videoItem.url
+                val mediaItem = videoUri?.let { MediaItem.fromUri(it) }
+                if (mediaItem != null) {
+                    exoPlayer?.setMediaItem(mediaItem)
+                }
+
+                // Prepare and start playback
+                exoPlayer?.prepare()
+                exoPlayer?.playWhenReady = false
+            }
+        }
+    }
+        inner class ViewHolder1(val binding: ItemReelImagesBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(videoItem: TutorialVideos) {
             ViewPager2Utils.setupViewPager2AsImageSlider(
                 binding.sliderImageViewpager2,
@@ -224,7 +290,6 @@ class ReelsAdapter(
                     } else {
                         menuAds.isVisible = true
                         nestedScrollView.isVisible = true
-                        allMenuAds.isVisible = true
                         linearIcons.isVisible = true
                         idAlert.isVisible = true
                     }

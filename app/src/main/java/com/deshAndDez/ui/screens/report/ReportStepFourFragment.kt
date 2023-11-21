@@ -1,6 +1,7 @@
 package com.deshAndDez.ui.screens.report
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +42,11 @@ class ReportStepFourFragment : BaseFragment(R.layout.fragment_report_step_four) 
     // Set up the UI components
     private fun setupUI() {
         // Set up any UI-related configurations here
+        binding.apply {
+            doneButton.setOnClickListener {
+                findNavController().navigate(R.id.videoFragment)
+            }
+        }
     }
 
 

@@ -36,4 +36,5 @@ data class TutorialVideos(
     @SerializedName("comments_count") var commentsCount: Int? = null,
     @SerializedName("url") var url: String? = null,
     @SerializedName("shares_count") var sharesCount: Int? =null,
+    @SerializedName("type") var type: String? =null,
 )

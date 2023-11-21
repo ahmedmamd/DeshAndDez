@@ -16,8 +16,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-
-
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager2"
             app:layout_scrollFlags="scroll|snap"
@@ -32,8 +30,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="8dp"
-            app:dotsColor="@color/black"
-            app:dotsStrokeColor="#C39FFA"
+            app:dotsColor="@color/white"
+            app:dotsStrokeColor="@color/white"
             app:dotsCornerRadius="8dp"
             android:rotation="90"
             android:elevation="50dp"

@@ -11,7 +11,7 @@ import com.deshAndDez.databinding.DialogLayoutReportConfirmationBinding
 
 class ReportConfirmationDialog(private val screenContext: Context, val onYesClick:()->Unit) :
     Dialog(screenContext) {
-    var binding: DialogLayoutReportConfirmationBinding =
+    var binding =
         DialogLayoutReportConfirmationBinding.inflate(LayoutInflater.from(screenContext))
 
     init {
