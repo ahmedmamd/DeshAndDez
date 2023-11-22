@@ -39,6 +39,7 @@ class ReelsAdapter(
     private val onReportClicked: (TutorialVideos) -> Unit,
     private val onFilterClicked: (TutorialVideos) -> Unit,
     private val onCommentsClicked: (TutorialVideos) -> Unit,
+    private val onViewAllImagesClicked: (TutorialVideos) -> Unit,
 ) :
     CustomBaseAdapter<TutorialVideos, RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -46,7 +47,7 @@ class ReelsAdapter(
             val view =
                 ItemReelsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder(view)
-        } else if (viewType == 1){
+        } else if (viewType == 1) {
             val view =
                 ItemReelImagesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ViewHolder1(view)
@@ -180,6 +181,7 @@ class ReelsAdapter(
                 exoPlayer?.prepare()
                 exoPlayer?.playWhenReady = false
 
+//                exoPlayer?.play()
             }
         }
     }
@@ -212,17 +214,17 @@ class ReelsAdapter(
                 llClearMode.setOnClickListener {
                     if (nestedScrollView.isVisible) {
                         nestedScrollView.isVisible = false
-                        conSocial.isVisible =false
+                        conSocial.isVisible = false
                         linearIcons.isVisible = false
                         idAlert.isVisible = false
                         llClearMode.isVisible = true
-                        userImage.isVisible=false
+                        userImage.isVisible = false
                     } else {
                         nestedScrollView.isVisible = true
                         linearIcons.isVisible = true
                         idAlert.isVisible = true
-                        conSocial.isVisible=true
-                        userImage.isVisible=true
+                        conSocial.isVisible = true
+                        userImage.isVisible = true
                     }
                 }
 
@@ -265,7 +267,8 @@ class ReelsAdapter(
             }
         }
     }
-        inner class ViewHolder1(val binding: ItemReelImagesBinding) :
+
+    inner class ViewHolder1(val binding: ItemReelImagesBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(videoItem: TutorialVideos) {
             ViewPager2Utils.setupViewPager2AsImageSlider(
@@ -324,6 +327,9 @@ class ReelsAdapter(
                 }
                 tvComments.setOnClickListener {
                     onCommentsClicked(videoItem)
+                }
+                viewAllButton.setOnClickListener {
+                    onViewAllImagesClicked(videoItem)
                 }
                 nameStar.setSelected(true)
             }

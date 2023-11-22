@@ -62,5 +62,11 @@
         android:name="com.deshAndDez.ui.screens.filter.FilterFragment"
         tools:layout="@layout/fragment_filter"
         android:label="FilterFragment" />
+    <fragment
+        android:id="@+id/imagesSliderFragment"
+        android:name="com.deshAndDez.ui.screens.interest.ImagesSliderFragment"
+        tools:layout="@layout/fragment_images_slider"
+        android:label="ImagesSliderFragment"
+        />
 
 </navigation>

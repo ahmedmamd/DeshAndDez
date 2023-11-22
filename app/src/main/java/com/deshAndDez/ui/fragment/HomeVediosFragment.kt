@@ -41,7 +41,13 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
             findNavController().navigate(R.id.filterFragment)
         }, onCommentsClicked = {
             CommentsSheet(requireActivity()).show()
+        }, onViewAllImagesClicked = {
+            openImagesSlider()
         })
+    }
+
+    private fun openImagesSlider() {
+        findNavController().navigate(R.id.imagesSliderFragment)
     }
 
     override fun onCreateView(
