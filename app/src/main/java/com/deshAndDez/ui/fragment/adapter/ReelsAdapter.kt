@@ -97,17 +97,17 @@ class ReelsAdapter(
 
                 llClearMode.setOnClickListener {
                     if (nestedScrollView.isVisible) {
-                        menuAds.isVisible = false
-                        nestedScrollView.isVisible = false
-                        allMenuAds.isVisible = false
-                        linearIcons.isVisible = false
-                        idAlert.isVisible = false
-                        llClearMode.isVisible = true
+                        menuAds.visibility = View.INVISIBLE
+                        nestedScrollView.visibility = View.INVISIBLE
+                        allMenuAds.visibility = View.INVISIBLE
+                        linearIcons.visibility = View.INVISIBLE
+                        idAlert.visibility = View.INVISIBLE
+                        llClearMode.visibility = View.VISIBLE
                     } else {
-                        menuAds.isVisible = true
-                        nestedScrollView.isVisible = true
-                        linearIcons.isVisible = true
-                        idAlert.isVisible = true
+                        menuAds.visibility = View.VISIBLE
+                        nestedScrollView.visibility = View.VISIBLE
+                        linearIcons.visibility = View.VISIBLE
+                        idAlert.visibility = View.VISIBLE
                     }
                 }
 
@@ -213,18 +213,18 @@ class ReelsAdapter(
 
                 llClearMode.setOnClickListener {
                     if (nestedScrollView.isVisible) {
-                        nestedScrollView.isVisible = false
-                        conSocial.isVisible = false
-                        linearIcons.isVisible = false
-                        idAlert.isVisible = false
-                        llClearMode.isVisible = true
-                        userImage.isVisible = false
+                        nestedScrollView.visibility = View.INVISIBLE
+                        conSocial.visibility = View.INVISIBLE
+                        linearIcons.visibility = View.INVISIBLE
+                        idAlert.visibility = View.INVISIBLE
+                        userImage.visibility = View.INVISIBLE
+                        llClearMode.visibility = View.VISIBLE
                     } else {
-                        nestedScrollView.isVisible = true
-                        linearIcons.isVisible = true
-                        idAlert.isVisible = true
-                        conSocial.isVisible = true
-                        userImage.isVisible = true
+                        nestedScrollView.visibility = View.VISIBLE
+                        conSocial.visibility = View.VISIBLE
+                        linearIcons.visibility = View.VISIBLE
+                        idAlert.visibility = View.VISIBLE
+                        userImage.visibility = View.VISIBLE
                     }
                 }
 
@@ -284,17 +284,17 @@ class ReelsAdapter(
                 dotsIndicator.setViewPager2(sliderImageViewpager2)
                 llClearMode.setOnClickListener {
                     if (nestedScrollView.isVisible) {
-                        menuAds.isVisible = false
-                        nestedScrollView.isVisible = false
-                        allMenuAds.isVisible = false
-                        linearIcons.isVisible = false
-                        idAlert.isVisible = false
-                        llClearMode.isVisible = true
+                        menuAds.visibility = View.INVISIBLE
+                        nestedScrollView.visibility = View.INVISIBLE
+                        allMenuAds.visibility = View.INVISIBLE
+                        linearIcons.visibility = View.INVISIBLE
+                        idAlert.visibility = View.INVISIBLE
+                        llClearMode.visibility = View.VISIBLE
                     } else {
-                        menuAds.isVisible = true
-                        nestedScrollView.isVisible = true
-                        linearIcons.isVisible = true
-                        idAlert.isVisible = true
+                        menuAds.visibility = View.VISIBLE
+                        nestedScrollView.visibility = View.VISIBLE
+                        linearIcons.visibility = View.VISIBLE
+                        idAlert.visibility = View.VISIBLE
                     }
                 }
                 menuAds.setOnClickListener {

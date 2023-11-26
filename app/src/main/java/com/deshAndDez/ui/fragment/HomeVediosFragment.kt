@@ -30,7 +30,7 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
     val videosAdapter by lazy {
         ReelsAdapter(lifecycleScope,onItemClicked = {}, onLikesUsersClicked = {
-            findNavController().navigate(R.id.likesFragment)
+            findNavController().navigate(R.id.paymentFragment)
         }, onViewsUsersClicked = {
             findNavController().navigate(R.id.viewsFragment)
         }, onReportClicked = {

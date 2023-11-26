@@ -1,5 +1,6 @@
 package com.deshAndDez.ui.adapters
 
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,10 +32,22 @@ class SelectionAdapter(private val onItemClicked: (SelectionModel) -> Unit) :
             binding.container.text = item.name
             if (position == currentSelectedPosition) {
                 binding.container.setBackgroundResource(R.drawable.gold_round_background)
-                binding.container.setTextColor(Utils.getColorTintList(itemView.context,R.color.text_primary))
+                binding.container.setTextColor(
+                    Utils.getColorTintList(
+                        itemView.context,
+                        R.color.text_primary
+                    )
+                )
+                binding.container.setTypeface(null, Typeface.BOLD)
             } else {
                 binding.container.setBackgroundResource(R.drawable.gold_round_stroke_background)
-                binding.container.setTextColor(Utils.getColorTintList(itemView.context,R.color.gold))
+                binding.container.setTextColor(
+                    Utils.getColorTintList(
+                        itemView.context,
+                        R.color.gold
+                    )
+                )
+                binding.container.setTypeface(null, Typeface.NORMAL)
             }
             itemView.setOnClickListener {
                 clickItem(position) {

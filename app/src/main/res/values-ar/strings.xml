@@ -63,5 +63,9 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="replay">Replay</string>
+    <string name="payment">Payment</string>
+    <string name="confirm">Confirm</string>
+    <string name="comment">Comment</string>
+    <string name="next">Next</string>
 
 </resources>

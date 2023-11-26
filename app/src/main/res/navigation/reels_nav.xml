@@ -68,5 +68,10 @@
         tools:layout="@layout/fragment_images_slider"
         android:label="ImagesSliderFragment"
         />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.deshAndDez.ui.screens.interest.PaymentFragment"
+        tools:layout="@layout/fragment_payment"
+        android:label="PaymentFragment" />
 
 </navigation>

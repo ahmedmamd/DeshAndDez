@@ -22,10 +22,7 @@
             android:layout_height="@dimen/_20sdp"
             android:layout_gravity="start|top"
             android:layout_margin="@dimen/_16sdp"
-            android:background="@drawable/circle"
-            android:elevation="@dimen/_1sdp"
-            android:padding="@dimen/_4sdp"
-            android:src="@drawable/arrow_back_icon" />
+            android:src="@drawable/circle_close_icon" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/slider_image_viewpager2"

@@ -29,7 +29,7 @@
     <color name="yellow_10">#1AEAEA1A</color>
     <color name="line_color">#1AEAEAEA</color>
 <!--    <color name="social_color">#1AEAEA1A</color>-->
-    <color name="social_color">#1AEAEA1A</color>
+    <color name="social_color">#1AEAEAEA</color>
 
 
     <color name="screen_background_color">@color/white</color>

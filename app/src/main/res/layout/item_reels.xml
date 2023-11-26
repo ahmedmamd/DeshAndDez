@@ -67,7 +67,7 @@
         android:background="@drawable/reels_menu_bk"
         android:elevation="5dp"
         android:orientation="vertical"
-        android:paddingTop="@dimen/_18sdp"
+        android:paddingTop="@dimen/_8sdp"
         android:paddingBottom="@dimen/_8sdp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +79,6 @@
             android:layout_height="@dimen/_20sdp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-
             android:src="@drawable/celebrity"
             app:shapeAppearance="@style/circleImage"
             app:strokeColor="@null"
@@ -94,7 +93,7 @@
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
             android:drawablePadding="5dp"
-            android:padding="@dimen/_6ssp"
+            android:padding="@dimen/_5sdp"
             android:scaleType="centerInside"
             android:src="@drawable/follow"
             app:riv_corner_radius="@dimen/_21sdp" />
@@ -118,7 +117,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:scaleType="centerInside"
             android:src="@drawable/comment" />
 
@@ -129,7 +128,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
-            android:text="@string/comments"
+            android:text="@string/comment"
             android:textColor="@color/white"
             android:textSize="@dimen/_6ssp" />
 
@@ -141,7 +140,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/trend" />
 
         <TextView
@@ -163,7 +162,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/like" />
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -174,7 +173,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/save" />
 
         <TextView
@@ -196,7 +195,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_6sdp"
+            android:padding="@dimen/_5sdp"
             android:src="@drawable/share" />
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -207,7 +206,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_7sdp"
+            android:padding="@dimen/_6sdp"
             android:src="@drawable/report" />
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -229,7 +228,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_5sdp"
+            android:padding="@dimen/_6sdp"
             android:src="@drawable/planner" />
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -240,7 +239,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/circle"
             android:backgroundTint="@color/line_color"
-            android:padding="@dimen/_5sdp"
+            android:padding="@dimen/_7sdp"
             android:src="@drawable/sound" />
     </LinearLayout>
 
@@ -249,14 +248,14 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_17sdp"
         android:layout_marginBottom="@dimen/_90sdp"
         android:background="@drawable/reels_menu_bk"
         android:elevation="5dp"
         android:padding="5dp"
         android:src="@drawable/ic_clear"
+        app:layout_constraintStart_toStartOf="@+id/linearIcons"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/linearIcons" />
 
     <TextView
         android:id="@+id/tv_clear"
@@ -272,28 +271,31 @@
         app:layout_constraintStart_toStartOf="@+id/llClearMode"
         app:layout_constraintTop_toBottomOf="@+id/llClearMode" />
 
-    <LinearLayout
-        android:id="@+id/allMenuAds"
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_21sdp"
+        android:id="@+id/allMenuAds"
         android:layout_marginEnd="10dp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardBackgroundColor="@color/line_color"
         android:layout_marginBottom="35dp"
-        android:background="@drawable/reels_menu_bk"
-        android:backgroundTint="@color/gold_open"
-        android:backgroundTintMode="multiply"
-        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/llClearMode">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="8dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llClearMode">
+        >
 
         <LinearLayout
             android:id="@+id/allMenuAdsDetails"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="horizontal"
@@ -304,6 +306,7 @@
                 android:id="@+id/llMenuAdsDetailsData"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_38sdp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -399,13 +402,14 @@
             android:orientation="vertical">
 
             <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:background="@drawable/reels_menu_bk"
                 android:padding="@dimen/_5sdp"
                 android:src="@drawable/ic_ads" />
         </LinearLayout>
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/menuAds"
@@ -451,6 +455,7 @@
         android:layout_marginEnd="@dimen/_45sdp"
         android:layout_marginBottom="100dp"
         android:paddingStart="10dp"
+        android:elevation="@dimen/_5sdp"
         android:paddingEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -464,14 +469,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/reels_menu_bk"
                 android:backgroundTintMode="multiply"
-                android:fontFamily="@font/poppins_bold"
+                style="@style/TextStyleBold"
                 android:gravity="center"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:text="Netflix"
                 android:textColor="@color/color_second"
                 android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -81,10 +81,10 @@
                     android:layout_weight="1"
                     android:text="@string/country"
                     android:textColor="@color/text_primary"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_13ssp" />
 
                 <TextView
-                    style="@style/TextStyleRegular"
+                    style="@style/TextStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/arrow_right"
@@ -116,10 +116,10 @@
                     android:layout_weight="1"
                     android:text="@string/language"
                     android:textColor="@color/text_primary"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_13ssp" />
 
                 <TextView
-                    style="@style/TextStyleRegular"
+                    style="@style/TextStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/arrow_right"
@@ -151,10 +151,10 @@
                     android:layout_weight="1"
                     android:text="@string/interests"
                     android:textColor="@color/text_primary"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_13ssp" />
 
                 <TextView
-                    style="@style/TextStyleRegular"
+                    style="@style/TextStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/arrow_right"
@@ -186,7 +186,7 @@
                     android:layout_weight="1"
                     android:text="@string/ages"
                     android:textColor="@color/text_primary"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_13ssp" />
 
                 <TextView
                     style="@style/TextStyleRegular"
@@ -215,7 +215,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="@string/gender"
                 android:textColor="@color/text_primary"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_13ssp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/gender_recycler"
@@ -236,7 +236,7 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:text="@string/advertisement_duration"
                 android:textColor="@color/text_primary"
-                android:textSize="@dimen/_15ssp" />
+                android:textSize="@dimen/_13ssp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/advertisement_duration_recycler"
@@ -250,15 +250,16 @@
                 tools:listitem="@layout/recycler_item_layout_selection" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/save_button"
+                android:id="@+id/next_button"
                 style="@style/SolidGoldButton"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
                 android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
-                android:layout_marginVertical="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:text="@string/save"
+                android:text="@string/next"
                 android:textSize="@dimen/_13ssp"
                 app:cornerRadius="@dimen/_15sdp" />
         </LinearLayout>
