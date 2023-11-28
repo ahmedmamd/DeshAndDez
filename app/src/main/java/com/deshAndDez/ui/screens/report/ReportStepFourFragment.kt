@@ -14,6 +14,8 @@ import com.deshAndDez.ui.adapters.Report
 import com.deshAndDez.ui.adapters.ReportAdapter
 import com.deshAndDez.ui.adapters.User
 import com.deshAndDez.ui.adapters.UsersAdapter
+import com.deshAndDez.ui.fragment.HomeVediosFragment
+import com.deshAndDez.utils.replaceFragment
 
 class ReportStepFourFragment : BaseFragment(R.layout.fragment_report_step_four) {
 
@@ -44,7 +46,9 @@ class ReportStepFourFragment : BaseFragment(R.layout.fragment_report_step_four) 
         // Set up any UI-related configurations here
         binding.apply {
             doneButton.setOnClickListener {
-                findNavController().navigate(R.id.videoFragment)
+                activity?.replaceFragment(HomeVediosFragment(), R.id.fragment_container)
+
+//                findNavController().navigate(R.id.videoFragment)
             }
         }
     }
@@ -53,7 +57,8 @@ class ReportStepFourFragment : BaseFragment(R.layout.fragment_report_step_four) 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
+//            findNavController().popBackStack()
         }
         binding.doneButton.setOnClickListener {
         }

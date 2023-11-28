@@ -48,7 +48,8 @@ class PaymentFragment : BaseFragment(R.layout.fragment_payment) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
+//            findNavController().popBackStack()
         }
     }
 

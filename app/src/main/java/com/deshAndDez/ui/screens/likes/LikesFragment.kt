@@ -58,7 +58,8 @@ class LikesFragment : BaseFragment(R.layout.fragment_likes) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+//            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
         }
     }
 

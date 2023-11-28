@@ -1,66 +1,64 @@
-package com.deshAndDez.ui.fragment
+package com.deshAndDez.ui.screens.live
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.data.models.reels.TutorialVideos
-import com.deshAndDez.databinding.FragmentVidesPlayerBinding
+import com.deshAndDez.databinding.FragmentLivePlayerBinding
 import com.deshAndDez.ui.dialogs.CommentsSheet
 import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
-import com.deshAndDez.ui.fragment.adapter.ReelsAdapter
 import com.deshAndDez.ui.screens.filter.FilterFragment
 import com.deshAndDez.ui.screens.interest.ImagesSliderFragment
 import com.deshAndDez.ui.screens.likes.LikesFragment
-import com.deshAndDez.ui.screens.live.LiveFragment
+import com.deshAndDez.ui.screens.live.adapter.LiveAdapter
 import com.deshAndDez.ui.screens.report.ReportStepOneFragment
+import com.deshAndDez.ui.screens.report.ReportStepTwoFragment
 import com.deshAndDez.ui.screens.views.ViewsFragment
-import com.deshAndDez.utils.addFragment
 import com.deshAndDez.utils.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
-private const val TAG = "HomeVediosFragment"
 @AndroidEntryPoint
-class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
+class LiveFragment : BaseFragment(R.layout.fragment_live_player) {
 
-    private lateinit var binding: FragmentVidesPlayerBinding
+    private lateinit var binding: FragmentLivePlayerBinding
 //    private val viewModel: TutorialViewModel by activityViewModels()
 
-
     val videosAdapter by lazy {
-        ReelsAdapter(lifecycleScope,onItemClicked = {}, onLikesUsersClicked = {
+        LiveAdapter(lifecycleScope, onItemClicked = {}, onLikesUsersClicked = {
             activity?.replaceFragment(LikesFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.likesFragment)
         }, onViewsUsersClicked = {
             activity?.replaceFragment(ViewsFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.viewsFragment)
         }, onReportClicked = {
             ReportConfirmationDialog(requireActivity(), onYesClick = {
                 activity?.replaceFragment(ReportStepOneFragment(), R.id.fragment_container)
+
+//                findNavController().navigate(R.id.reportStepOneFragment)
             }).show()
         }, onFilterClicked = {
             activity?.replaceFragment(FilterFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.filterFragment)
         }, onCommentsClicked = {
             CommentsSheet(requireActivity()).show()
         }, onViewAllImagesClicked = {
             openImagesSlider()
         }, onViewUserImageClicked = {
-            openLive()
         })
-    }
-
-    private fun openLive() {
-        activity?.replaceFragment(LiveFragment(), R.id.fragment_container)
     }
 
     private fun openImagesSlider() {
         activity?.replaceFragment(ImagesSliderFragment(), R.id.fragment_container)
+//        findNavController().navigate(R.id.imagesSliderFragment)
     }
 
     override fun onCreateView(
@@ -68,12 +66,14 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentVidesPlayerBinding.inflate(layoutInflater, container, false)
+        binding = FragmentLivePlayerBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         requireActivity().window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -85,8 +85,12 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         binding.apply {
             swipeRefresh.setOnRefreshListener {
             }
+
             observeFlow()
+
+
         }
+
     }
 
     private fun clearStackOfReport() {
@@ -99,30 +103,19 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
     private fun setUpAdapter() {
         binding.apply {
             viewPager2.adapter = videosAdapter
-            dotsIndicator.setViewPager2(viewPager2)
             viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
 
                     pauseAllPlayers()
 
-                    // Play the selected video
-                    // Play the current video
                     val currentViewHolder =
                         (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
                             position
                         )
 //                                as? ReelsAdapter.ViewHolder
                     when (currentViewHolder) {
-                        is ReelsAdapter.ViewHolder -> {
-                            currentViewHolder?.exoPlayer?.playWhenReady = true
-                            currentViewHolder?.exoPlayer?.play()
-                            currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible = false
-                        }
-                        is ReelsAdapter.ViewHolder1 -> {
-
-                        }
-                        is ReelsAdapter.ViewHolderAds -> {
+                        is LiveAdapter.ViewHolder -> {
                             currentViewHolder?.exoPlayer?.playWhenReady = true
                             currentViewHolder?.exoPlayer?.play()
                             currentViewHolder?.binding?.idExoPlayerVIewPause?.isVisible = false
@@ -153,13 +146,7 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
                 .findViewHolderForAdapterPosition(i)
 
             when (viewHolder) {
-                is ReelsAdapter.ViewHolder -> {
-                    viewHolder.exoPlayer?.playWhenReady = false
-                    viewHolder.exoPlayer?.pause()
-                }
-                is ReelsAdapter.ViewHolder1 -> {
-                }
-                is ReelsAdapter.ViewHolderAds -> {
+                is LiveAdapter.ViewHolder -> {
                     viewHolder.exoPlayer?.playWhenReady = false
                     viewHolder.exoPlayer?.pause()
                 }
@@ -167,12 +154,13 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
         }
     }
 
+
     fun releaseAllPlayers() {
         for (i in 0 until videosAdapter.itemCount) {
             val viewHolder =
                 (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
                     i
-                ) as? ReelsAdapter.ViewHolder
+                ) as? LiveAdapter.ViewHolder
             viewHolder?.exoPlayer?.release()
         }
     }
@@ -202,13 +190,6 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
                 url = "https://chefshub.site//storage//videos//1696189889.mp4", type = "ads"
             )
         )
-        list.add(
-            TutorialVideos(
-                4,
-                null,
-                url = "https://chefshub.site//storage//videos//1696189889.mp4", type = "photo"
-            )
-        )
         videosAdapter.setData(list)
     }
 
@@ -221,6 +202,7 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
     override fun onResume() {
         super.onResume()
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         releaseAllPlayers()

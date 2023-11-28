@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data >
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gold_round_stroke_background"
+        android:layout_margin="@dimen/_5sdp">
+
+
+        <EditText
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/add_comment_input_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Add comment..."
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textColorHint="#AFAFAF"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/emoji"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/upload_comment"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/btn_send_live"
+            android:layout_marginVertical="@dimen/_9sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/camera"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_comment"
+            app:layout_constraintEnd_toStartOf="@+id/upload_comment"
+            app:layout_constraintTop_toTopOf="@+id/upload_comment">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/upload_voice"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/voice"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/camera"
+            app:layout_constraintEnd_toStartOf="@+id/camera"
+            app:layout_constraintTop_toTopOf="@+id/camera">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/mention"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/mention"
+            app:tint="@color/white"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/upload_voice"
+            app:layout_constraintEnd_toStartOf="@+id/upload_voice"
+            app:layout_constraintTop_toTopOf="@+id/upload_voice">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/emoji"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/emotion"
+            app:layout_constraintBottom_toBottomOf="@+id/mention"
+            app:layout_constraintEnd_toStartOf="@+id/mention"
+            app:layout_constraintTop_toTopOf="@+id/mention"
+            app:tint="@color/white">
+        </ImageView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -15,6 +15,7 @@ import com.deshAndDez.ui.adapters.Report
 import com.deshAndDez.ui.adapters.ReportAdapter
 import com.deshAndDez.ui.adapters.User
 import com.deshAndDez.ui.adapters.UsersAdapter
+import com.deshAndDez.utils.replaceFragment
 
 class ReportStepThreeFragment : BaseFragment(R.layout.fragment_report_step_three) {
 
@@ -49,10 +50,12 @@ class ReportStepThreeFragment : BaseFragment(R.layout.fragment_report_step_three
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+//            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
         }
         binding.submitReportButton.setOnClickListener {
-            findNavController().navigate(R.id.reportStepFourFragment)
+            activity?.replaceFragment(ReportStepFourFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.reportStepFourFragment)
         }
     }
 }

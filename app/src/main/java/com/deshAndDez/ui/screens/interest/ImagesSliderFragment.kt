@@ -42,7 +42,6 @@ class ImagesSliderFragment : BaseFragment(R.layout.fragment_images_slider) {
         setupListeners()
     }
 
-
     // Set up the UI components
     private fun setupUI() {
         // Set up any UI-related configurations here
@@ -54,13 +53,14 @@ class ImagesSliderFragment : BaseFragment(R.layout.fragment_images_slider) {
                 SliderITem("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtiBOMNFs_QYdzDJa1ZYhlCtk9LBo2zcpUwWmvubSv7O1Y9IGzv6__RlKdOIlcD0nMaqA&usqp=CAU")
             )
         )
+        binding.dotsIndicator.setViewPager2(binding.sliderImageViewpager2)
     }
-
 
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
+//            findNavController().popBackStack()
         }
     }
 }

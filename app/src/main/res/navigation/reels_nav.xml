@@ -69,6 +69,12 @@
         android:label="ImagesSliderFragment"
         />
     <fragment
+        android:id="@+id/liveFragment"
+        android:name="com.deshAndDez.ui.screens.live.LiveFragment"
+        tools:layout="@layout/fragment_live_player"
+        android:label="ImagesSliderFragment"
+        />
+    <fragment
         android:id="@+id/paymentFragment"
         android:name="com.deshAndDez.ui.screens.interest.PaymentFragment"
         tools:layout="@layout/fragment_payment"
