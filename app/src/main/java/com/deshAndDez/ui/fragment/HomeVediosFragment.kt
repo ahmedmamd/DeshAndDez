@@ -19,6 +19,7 @@ import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
 import com.deshAndDez.ui.fragment.adapter.ReelsAdapter
 import com.deshAndDez.ui.screens.filter.FilterFragment
 import com.deshAndDez.ui.screens.interest.ImagesSliderFragment
+import com.deshAndDez.ui.screens.interest.PaymentFragment
 import com.deshAndDez.ui.screens.likes.LikesFragment
 import com.deshAndDez.ui.screens.live.LiveFragment
 import com.deshAndDez.ui.screens.report.ReportStepOneFragment
@@ -36,7 +37,9 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
 
     val videosAdapter by lazy {
-        ReelsAdapter(lifecycleScope,onItemClicked = {}, onLikesUsersClicked = {
+        ReelsAdapter(lifecycleScope,onItemClicked = {},
+            onLikesUsersClicked = {
+//            activity?.replaceFragment(PaymentFragment(), R.id.fragment_container)
             activity?.replaceFragment(LikesFragment(), R.id.fragment_container)
         }, onViewsUsersClicked = {
             activity?.replaceFragment(ViewsFragment(), R.id.fragment_container)
