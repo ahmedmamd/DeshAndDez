@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.databinding.FragmentReportStepFourBinding
 import com.deshAndDez.databinding.FragmentReportStepOneBinding
 import com.deshAndDez.ui.adapters.Report
 import com.deshAndDez.ui.adapters.ReportAdapter
-import com.deshAndDez.ui.adapters.User
-import com.deshAndDez.ui.adapters.UsersAdapter
+import com.deshAndDez.utils.replaceFragment
 
 class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
 
@@ -54,7 +51,8 @@ class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
+//            findNavController().popBackStack()
         }
     }
 
@@ -67,7 +65,9 @@ class ReportStepOneFragment : BaseFragment(R.layout.fragment_report_step_one) {
 
     private fun setupRecyclerAdapter() {
         reportsAdapter = ReportAdapter {
-            findNavController().navigate(R.id.reportStepTwoFragment)
+            activity?.replaceFragment(ReportStepTwoFragment(), R.id.fragment_container)
+
+//            findNavController().navigate(R.id.reportStepTwoFragment)
         }
         reportList.add(Report("1", "it’s spam"))
         reportList.add(Report("2", "Nudity or sexual activity"))

@@ -59,6 +59,19 @@
                     android:layout_marginHorizontal="@dimen/_10sdp"
                     tools:listitem="@layout/recycler_item_layout_comment"/>
 
+                <include
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:id="@+id/add_comment_layout"
+                    layout="@layout/add_comment_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/choosen_image_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+                </include>
             </LinearLayout>
         </FrameLayout>
     </RelativeLayout>

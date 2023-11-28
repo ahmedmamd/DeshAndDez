@@ -15,6 +15,7 @@ import com.deshAndDez.ui.adapters.Report
 import com.deshAndDez.ui.adapters.ReportAdapter
 import com.deshAndDez.ui.adapters.User
 import com.deshAndDez.ui.adapters.UsersAdapter
+import com.deshAndDez.utils.replaceFragment
 
 class ReportStepTwoFragment : BaseFragment(R.layout.fragment_report_step_two) {
 
@@ -55,7 +56,8 @@ class ReportStepTwoFragment : BaseFragment(R.layout.fragment_report_step_two) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+//            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
         }
 
     }
@@ -69,7 +71,9 @@ class ReportStepTwoFragment : BaseFragment(R.layout.fragment_report_step_two) {
 
     private fun setupRecyclerAdapter() {
         reportsAdapter = ReportAdapter {
-            findNavController().navigate(R.id.reportStepThreeFragment)
+            activity?.replaceFragment(ReportStepThreeFragment(), R.id.fragment_container)
+
+//            findNavController().navigate(R.id.reportStepThreeFragment)
         }
         reportList.add(Report("1", "Race or ethnicity"))
         reportList.add(Report("2", "National origin"))

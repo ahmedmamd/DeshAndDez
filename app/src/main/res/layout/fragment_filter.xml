@@ -202,8 +202,11 @@
                 android:id="@+id/range_slider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:trackColorActive="@color/gold"
+                app:trackColorInactive="@color/seekpar_color"
                 android:layout_marginHorizontal="@dimen/_7sdp"
                 android:valueFrom="0.0"
+                app:thumbColor="@color/gold"
                 android:valueTo="100.0"
                 app:values="@array/initial_slider_values" />
 

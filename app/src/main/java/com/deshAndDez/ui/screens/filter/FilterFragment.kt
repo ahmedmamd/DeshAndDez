@@ -13,6 +13,11 @@ import com.deshAndDez.base.SelectionModel
 import com.deshAndDez.databinding.FragmentFilterBinding
 import com.deshAndDez.databinding.FragmentInterestsBinding
 import com.deshAndDez.ui.adapters.SelectionAdapter
+import com.deshAndDez.ui.screens.country.CountriesFragment
+import com.deshAndDez.ui.screens.interest.InterrestsFragment
+import com.deshAndDez.ui.screens.language.LanguagesFragment
+import com.deshAndDez.ui.screens.report.ReportStepTwoFragment
+import com.deshAndDez.utils.replaceFragment
 
 class FilterFragment : BaseFragment(R.layout.fragment_filter) {
     // Declare view and objects
@@ -55,16 +60,20 @@ class FilterFragment : BaseFragment(R.layout.fragment_filter) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.closeImageview.setOnClickListener {
-            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
+//            findNavController().popBackStack()
         }
         binding.languageLinearlayout.setOnClickListener {
-            findNavController().navigate(R.id.languagesFragment)
+            activity?.replaceFragment(LanguagesFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.languagesFragment)
         }
         binding.countryLinearlayout.setOnClickListener {
-            findNavController().navigate(R.id.countriesFragment)
+            activity?.replaceFragment(CountriesFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.countriesFragment)
         }
         binding.interestsLinearlayout.setOnClickListener {
-            findNavController().navigate(R.id.interrestsFragment)
+            activity?.replaceFragment(InterrestsFragment(), R.id.fragment_container)
+//            findNavController().navigate(R.id.interrestsFragment)
         }
     }
 

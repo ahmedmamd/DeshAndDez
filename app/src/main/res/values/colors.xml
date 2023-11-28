@@ -14,6 +14,7 @@
     <color name="text_second">#D2D2D2</color>
     <color name="colorPrimaryTransparent">#B277B64D</color>
     <color name="gold">#FFC107</color>
+    <color name="seekpar_color">#535353</color>
     <color name="gold_open">#29000000</color>
     <color name="transparent_gray">#A4FFFFFF</color>
     <color name="transparent_black_gray">#B4888888</color>
@@ -28,7 +29,11 @@
     <color name="black">#FF000000</color>
     <color name="yellow_10">#1AEAEA1A</color>
     <color name="line_color">#1AEAEAEA</color>
-<!--    <color name="social_color">#1AEAEA1A</color>-->
+    <color name="dotes_color">#66E2E263</color>
+    background: #;
+
+
+    <!--    <color name="social_color">#1AEAEA1A</color>-->
     <color name="social_color">#1AEAEAEA</color>
 
 

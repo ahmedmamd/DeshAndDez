@@ -8,13 +8,14 @@ import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.commons.helpers.Utils
 import com.deshAndDez.databinding.RecyclerItemLayoutCountryBinding
+import com.deshAndDez.databinding.RecyclerItemLayoutInterestBinding
 import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 
 class InterestAdapter(private val onItemClicked: (Interest) -> Unit) :
     CustomBaseAdapter<Interest, InterestAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_item_layout_country, parent, false)
+            .inflate(R.layout.recycler_item_layout_interest, parent, false)
         return ViewHolder(view)
     }
 
@@ -24,7 +25,7 @@ class InterestAdapter(private val onItemClicked: (Interest) -> Unit) :
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = RecyclerItemLayoutCountryBinding.bind(itemView)
+        private val binding = RecyclerItemLayoutInterestBinding.bind(itemView)
         fun bind(item: Interest) {
             binding.title.text = item.text
             if (position == currentSelectedPosition) {

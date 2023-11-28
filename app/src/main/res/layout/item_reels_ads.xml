@@ -63,7 +63,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_8sdp"
         android:background="@drawable/circle"
-        android:padding="@dimen/_6ssp"
+        android:padding="@dimen/_3ssp"
         android:scaleType="centerInside"
         android:src="@drawable/bmw"
         app:layout_constraintBottom_toTopOf="@+id/linearIcons"
@@ -187,7 +187,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/reels_shadow"
             android:orientation="vertical">
 
             <TextView
@@ -345,6 +344,10 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/reels_shadow"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

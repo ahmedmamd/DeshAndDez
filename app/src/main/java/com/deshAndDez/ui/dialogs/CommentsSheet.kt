@@ -1,14 +1,9 @@
 package com.deshAndDez.ui.dialogs
 
-import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
-import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
-import com.deshAndDez.commons.extensions.setUpSheetUi
-import com.deshAndDez.databinding.DialogLayoutReportConfirmationBinding
 import com.deshAndDez.databinding.SheetLayoutCommentsBinding
 import com.deshAndDez.ui.adapters.Comment
 import com.deshAndDez.ui.adapters.CommentsAdapter
@@ -46,6 +41,8 @@ class CommentsSheet(private val screenContext: Context) :
         commentsList.add(Comment(image = R.drawable.test_user_image1))
         commentsList.add(Comment(image = R.drawable.test_user_image2))
         commentsList.add(Comment(image = R.drawable.test_user_image3))
+        commentsList.add(Comment(image = R.drawable.test_user_image1))
+
         commentsAdapter.setData(commentsList)
         binding.recycler.apply {
             adapter = commentsAdapter

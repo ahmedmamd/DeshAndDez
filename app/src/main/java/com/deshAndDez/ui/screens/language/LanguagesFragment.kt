@@ -58,7 +58,8 @@ class LanguagesFragment : BaseFragment(R.layout.fragment_language) {
     // Set up event listeners for button clicks and other interactions
     private fun setupListeners() {
         binding.toolbar.backImageview.setOnClickListener {
-            findNavController().popBackStack()
+            parentFragmentManager.popBackStack()
+//            findNavController().popBackStack()
         }
         binding.clearImageview.setOnClickListener {
             binding.searchEdittext.text?.clear()
