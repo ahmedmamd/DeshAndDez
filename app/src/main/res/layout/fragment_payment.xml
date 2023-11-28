@@ -22,39 +22,149 @@
             app:title="@{@string/payment}" />
 
 
+        <TextView
+            style="@style/TextStyleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="@string/contact_number"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_13ssp" />
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:id="@+id/contact_number_input"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/text_input_layout_stroke_color">
+            app:boxCornerRadiusBottomEnd="@dimen/_16sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_16sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_16sdp"
+            app:boxCornerRadiusTopStart="@dimen/_16sdp"
+            app:boxBackgroundColor="@color/light_grey"
+            app:boxStrokeColor="@color/text_input_layout_stroke_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_24sdp"
-                android:textSize="@dimen/_9ssp" />
+                android:inputType="phone"
+                android:minHeight="@dimen/_50sdp"
+                android:textColor="@color/text_second"
+                android:textSize="@dimen/_14ssp"
+                app:hintTextColor="@color/text_second" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <TextView
+            style="@style/TextStyleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/card_number"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_13ssp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:id="@+id/card_number_input"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/text_input_layout_stroke_color">
+            app:hintEnabled="false"
+            app:boxCornerRadiusBottomEnd="@dimen/_16sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_16sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_16sdp"
+            app:boxCornerRadiusTopStart="@dimen/_16sdp"
+            app:boxBackgroundColor="@color/light_grey"
+            app:boxStrokeColor="@color/text_input_layout_stroke_color">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_24sdp"
-                android:textSize="@dimen/_9ssp" />
+                android:minHeight="@dimen/_50sdp"
+                android:textSize="@dimen/_14ssp"
+                app:hintTextColor="@color/text_second"
+                android:textColor="@color/text_second"
+                android:hint="0000 0000 0000 000"
+                android:inputType="number"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            style="@style/TextStyleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="@string/name_on_card"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_13ssp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/name_on_card_input"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:boxCornerRadiusBottomEnd="@dimen/_16sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_16sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_16sdp"
+            app:boxCornerRadiusTopStart="@dimen/_16sdp"
+            app:boxBackgroundColor="@color/light_grey"
+            app:boxStrokeColor="@color/text_input_layout_stroke_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_50sdp"
+                android:textSize="@dimen/_14ssp"
+                app:hintTextColor="@color/text_second"
+                android:textColor="@color/text_second"
+                android:hint="@string/enter_your_name"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/horizontal_edge_spaces">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+                <TextView
+                    style="@style/TextStyleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="@string/expiry_date"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/_13ssp"/>
+                <com.deshAndDez.ui.customviews.textview.DateTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:background="@drawable/round_background"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        
+        
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/confirm_button"

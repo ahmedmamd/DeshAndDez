@@ -67,5 +67,10 @@
     <string name="confirm">Confirm</string>
     <string name="comment">Comment</string>
     <string name="next">Next</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="card_number">Card Number</string>
+    <string name="name_on_card">Name on card</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="expiry_date">Expiry Date</string>
 
 </resources>
