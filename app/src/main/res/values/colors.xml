@@ -12,6 +12,7 @@
     <color name="text_primary">#ffffff</color>
     <color name="text_primaryDark">#1b1b1b</color>
     <color name="text_second">#D2D2D2</color>
+    <color name="text_second11">#1AEAEAEA</color>
     <color name="colorPrimaryTransparent">#B277B64D</color>
     <color name="gold">#FFC107</color>
     <color name="seekpar_color">#535353</color>

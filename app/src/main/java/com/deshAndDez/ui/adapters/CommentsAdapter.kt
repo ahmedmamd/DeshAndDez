@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
+import com.deshAndDez.data.models.all_reels.comments.Comment
+import com.deshAndDez.data.models.all_reels.comments.replay.Replay
 import com.deshAndDez.databinding.RecyclerItemLayoutCommentBinding
-import com.deshAndDez.databinding.RecyclerItemLayoutUsersBinding
 
 class CommentsAdapter(private val onItemClicked: (Comment) -> Unit) :
     CustomBaseAdapter<Comment, CommentsAdapter.ViewHolder>() {

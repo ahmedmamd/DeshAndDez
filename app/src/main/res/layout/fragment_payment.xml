@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="lang"
             type="String" />
@@ -53,7 +52,8 @@
                 android:minHeight="@dimen/_50sdp"
                 android:textColor="@color/text_second"
                 android:textSize="@dimen/_14ssp"
-                app:hintTextColor="@color/text_second" />
+                android:elevation="1dp"
+                app:hintTextColor="@color/text_second11" />
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
             style="@style/TextStyleMedium"
@@ -83,13 +83,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/_50sdp"
-                android:textSize="@dimen/_14ssp"
-                app:hintTextColor="@color/text_second"
-                android:textColor="@color/text_second"
+                android:elevation="2dp"
                 android:hint="0000 0000 0000 000"
                 android:inputType="number"
-                />
+                android:minHeight="@dimen/_50sdp"
+                android:textColor="@color/text_second"
+                android:textSize="@dimen/_14ssp"
+                app:hintTextColor="@color/text_second11" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="@dimen/_50sdp"
                 android:textSize="@dimen/_14ssp"
-                app:hintTextColor="@color/text_second"
+                app:hintTextColor="@color/text_second11"
                 android:textColor="@color/text_second"
                 android:hint="@string/enter_your_name"
                 android:inputType="text"

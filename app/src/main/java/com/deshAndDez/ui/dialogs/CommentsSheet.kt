@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.databinding.SheetLayoutCommentsBinding
-import com.deshAndDez.ui.adapters.Comment
+import com.deshAndDez.data.models.all_reels.comments.Comment
 import com.deshAndDez.ui.adapters.CommentsAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 

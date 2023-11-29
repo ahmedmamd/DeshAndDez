@@ -1,16 +1,13 @@
 package com.deshAndDez.ui.screens.live.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.databinding.ItemCommentLiveBinding
-import com.deshAndDez.databinding.RecyclerItemLayoutCommentBinding
-import com.deshAndDez.ui.adapters.Comment
+import com.deshAndDez.data.models.all_reels.comments.Comment
 
 class CommentsLiveAdapter() :
     CustomBaseAdapter<Comment, CommentsLiveAdapter.ViewHolder>() {

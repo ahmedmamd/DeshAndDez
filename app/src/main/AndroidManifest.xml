@@ -37,13 +37,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD-CG0GJCuXKB441V1gL-2xC0Jc5rJi_UA" />
-        <!--   Base     -->
         <activity
             android:name="com.deshAndDez.base.BaseActivity"
             android:screenOrientation="portrait" />
 
-        <!--   Authentication activities     -->
-        <!--   Splash     -->
         <activity
             android:name="com.deshAndDez.ui.main_activity.MainActivity"
             android:exported="true"
@@ -53,137 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--   main Activities     -->
-        <activity
-            android:name="com.deshAndDez.ui.main.activities.MainActivity"
-            android:exported="true"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.contactus.ContactUsActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.deshAndDez.ui.aboutApp.PolicyActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.aboutApp.AboutUsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".ui.screens.servicedetails.ServiceDetailsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".ui.screens.search.SearchActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.deshAndDez.ui.auth.profile.EditProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".ui.screens.purchase.PurchasesActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.purchase.PurchasesDetailsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.orders.OrdersActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.orders.OrderDetailsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.profile.ProfileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.login.LoginActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.create_account.SignUpActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepOneActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepTwoActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepThreeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.accountverification.VerifyAccountStepFourActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".ui.screens.cart.CartActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.chats.ChatsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.departments.DepartmentsActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.payment.PaymentActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.more.MoreActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.forgetpassword.ForgetPasswordActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.forgetpassword.ForgetPasswordVerificationActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.auth.forgetpassword.ForgetPasswordResetActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.deshAndDez.ui.screens.addservice.AddServiceStepOneActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.addservice.AddServiceStepTwoActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.screens.addservice.AddServiceStepThreeActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-
-<!--        <service-->
-<!--            android:name="com.deshAndDez.fcm.MyFirebaseMessagingService"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
-<!--            </intent-filter>-->
-<!--        </service>-->
-
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.PagerAutoScrollJob
 import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.SliderITem
 import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.ViewPager2Utils
-import com.deshAndDez.data.models.reels.TutorialVideos
+import com.deshAndDez.data.models.all_reels_tutorial.TutorialVideos
 import com.deshAndDez.databinding.ItemReelImagesBinding
 import com.deshAndDez.databinding.ItemReelsAdsBinding
 import com.deshAndDez.databinding.ItemReelsBinding
@@ -35,6 +35,9 @@ class ReelsAdapter(
     private val onCommentsClicked: (TutorialVideos) -> Unit,
     private val onViewAllImagesClicked: (TutorialVideos) -> Unit,
     private val onViewUserImageClicked: (TutorialVideos) -> Unit,
+    private val onFollowClicked: (TutorialVideos) -> Unit,
+    private val onTrendClicked: (TutorialVideos) -> Unit,
+    private val onSaveClicked: (TutorialVideos) -> Unit,
 ) : CustomBaseAdapter<TutorialVideos, RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == 0) {
@@ -95,7 +98,18 @@ class ReelsAdapter(
                 }
                 userImage.setOnClickListener {
                     onViewUserImageClicked(videoItem)
-
+                }
+                allMenuAdsDetails.setOnClickListener {
+                    onItemClicked.invoke(videoItem)
+                }
+                ivFollow.setOnClickListener {
+                    onFollowClicked.invoke(videoItem)
+                }
+                trend.setOnClickListener {
+                    onTrendClicked.invoke(videoItem)
+                }
+                save.setOnClickListener {
+                    onSaveClicked.invoke(videoItem)
                 }
 
                 llClearMode.setOnClickListener {

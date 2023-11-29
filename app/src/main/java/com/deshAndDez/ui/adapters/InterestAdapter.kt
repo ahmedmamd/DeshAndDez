@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.commons.helpers.Utils
-import com.deshAndDez.databinding.RecyclerItemLayoutCountryBinding
+import com.deshAndDez.data.models.all_reels.intersted.Interest
 import com.deshAndDez.databinding.RecyclerItemLayoutInterestBinding
-import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 
 class InterestAdapter(private val onItemClicked: (Interest) -> Unit) :
     CustomBaseAdapter<Interest, InterestAdapter.ViewHolder>() {

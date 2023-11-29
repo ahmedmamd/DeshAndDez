@@ -4,15 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.commons.extensions.showErrorMessage
-import com.deshAndDez.commons.extensions.showSuccessMessage
 import com.deshAndDez.databinding.FragmentLikesBinding
-import com.deshAndDez.ui.adapters.User
+import com.deshAndDez.data.models.all_reels.user.User
 import com.deshAndDez.ui.adapters.UsersAdapter
 
 class LikesFragment : BaseFragment(R.layout.fragment_likes) {

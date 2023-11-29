@@ -6,9 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
-import com.deshAndDez.databinding.RecyclerItemLayoutCommentBinding
+import com.deshAndDez.data.models.all_reels.comments.replay.Replay
 import com.deshAndDez.databinding.RecyclerItemLayoutReplayBinding
-import com.deshAndDez.databinding.RecyclerItemLayoutUsersBinding
 
 class ReplayAdapter(private val onItemClicked: (Replay) -> Unit) :
     CustomBaseAdapter<Replay, ReplayAdapter.ViewHolder>() {

@@ -10,7 +10,7 @@ import com.deshAndDez.R
     fun FragmentActivity.replaceFragment(fragment: Fragment, frameId: Int) {
         supportFragmentManager.beginTransaction().apply {
             replace(frameId, fragment)
-            addToBackStack(null) // Optional. Remove if you don't want this transaction in the back stack.
+            addToBackStack(null)
             commit()
         }
     }

@@ -11,7 +11,9 @@
         android:layout_height="match_parent"
         android:keepScreenOn="true"
         android:id="@+id/swipeRefresh"
+        android:fitsSystemWindows="true"
         tools:context="com.deshAndDez.ui.fragment.HomeVediosFragment">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

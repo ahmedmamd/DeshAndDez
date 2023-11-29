@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.commons.helpers.Utils
-import com.deshAndDez.databinding.RecyclerItemLayoutCountryBinding
+import com.deshAndDez.data.models.all_reels.languages.Language
 import com.deshAndDez.databinding.RecyclerItemLayoutLanguageBinding
-import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 
 class LanguageAdapter(private val onItemClicked: (Language) -> Unit) :
     CustomBaseAdapter<Language, LanguageAdapter.ViewHolder>() {

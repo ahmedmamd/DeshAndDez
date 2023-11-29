@@ -1,7 +1,6 @@
 package com.deshAndDez.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.data.models.reels.TutorialVideos
+import com.deshAndDez.data.models.all_reels_tutorial.TutorialVideos
 import com.deshAndDez.databinding.FragmentVidesPlayerBinding
 import com.deshAndDez.ui.dialogs.CommentsSheet
 import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
@@ -22,9 +21,11 @@ import com.deshAndDez.ui.screens.interest.ImagesSliderFragment
 import com.deshAndDez.ui.screens.interest.PaymentFragment
 import com.deshAndDez.ui.screens.likes.LikesFragment
 import com.deshAndDez.ui.screens.live.LiveFragment
+import com.deshAndDez.ui.screens.reels_ads.AdsFragment
+import com.deshAndDez.ui.screens.reels_photo.PhotoFragment
+import com.deshAndDez.ui.screens.reels_video.VediosFragment
 import com.deshAndDez.ui.screens.report.ReportStepOneFragment
 import com.deshAndDez.ui.screens.views.ViewsFragment
-import com.deshAndDez.utils.addFragment
 import com.deshAndDez.utils.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,13 +34,12 @@ private const val TAG = "HomeVediosFragment"
 class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
 
     private lateinit var binding: FragmentVidesPlayerBinding
-//    private val viewModel: TutorialViewModel by activityViewModels()
-
 
     val videosAdapter by lazy {
-        ReelsAdapter(lifecycleScope,onItemClicked = {},
+        ReelsAdapter(lifecycleScope,onItemClicked = {
+            activity?.replaceFragment(PaymentFragment(), R.id.fragment_container)
+        },
             onLikesUsersClicked = {
-//            activity?.replaceFragment(PaymentFragment(), R.id.fragment_container)
             activity?.replaceFragment(LikesFragment(), R.id.fragment_container)
         }, onViewsUsersClicked = {
             activity?.replaceFragment(ViewsFragment(), R.id.fragment_container)
@@ -55,7 +55,16 @@ class HomeVediosFragment : BaseFragment(R.layout.fragment_vides_player) {
             openImagesSlider()
         }, onViewUserImageClicked = {
             openLive()
-        })
+        }, onFollowClicked = {
+                activity?.replaceFragment(VediosFragment(), R.id.fragment_container)
+            },
+            onTrendClicked = {
+                activity?.replaceFragment(PhotoFragment(), R.id.fragment_container)
+            },
+            onSaveClicked = {
+                activity?.replaceFragment(AdsFragment(), R.id.fragment_container)
+            }
+            )
     }
 
     private fun openLive() {

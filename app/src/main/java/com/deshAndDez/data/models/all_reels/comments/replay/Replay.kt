@@ -1,9 +1,9 @@
-package com.deshAndDez.ui.adapters
+package com.deshAndDez.data.models.all_reels.comments.replay
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class User(
+class Replay(
     @SerializedName("id")
     @Expose
     var id: String? = null,

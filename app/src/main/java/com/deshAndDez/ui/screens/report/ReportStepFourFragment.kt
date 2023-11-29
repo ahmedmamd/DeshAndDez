@@ -1,19 +1,12 @@
 package com.deshAndDez.ui.screens.report
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.databinding.*
-import com.deshAndDez.ui.adapters.Report
-import com.deshAndDez.ui.adapters.ReportAdapter
-import com.deshAndDez.ui.adapters.User
-import com.deshAndDez.ui.adapters.UsersAdapter
 import com.deshAndDez.ui.fragment.HomeVediosFragment
 import com.deshAndDez.utils.replaceFragment
 

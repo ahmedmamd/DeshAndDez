@@ -1,4 +1,4 @@
-package com.deshAndDez.data.models.reels
+package com.deshAndDez.data.models.all_reels_tutorial
 
 import com.google.gson.annotations.SerializedName
 

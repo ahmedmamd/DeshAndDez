@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
 import com.deshAndDez.commons.helpers.viewpager2_autoscroll_utils.PagerAutoScrollJob
-import com.deshAndDez.data.models.reels.TutorialVideos
+import com.deshAndDez.data.models.all_reels_tutorial.TutorialVideos
 import com.deshAndDez.databinding.ItemLiveBinding
-import com.deshAndDez.ui.adapters.Comment
+import com.deshAndDez.data.models.all_reels.comments.Comment
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer

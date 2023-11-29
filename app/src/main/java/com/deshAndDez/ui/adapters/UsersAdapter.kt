@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
+import com.deshAndDez.data.models.all_reels.user.User
 import com.deshAndDez.databinding.RecyclerItemLayoutUsersBinding
 
-class UsersAdapter(private val onItemClicked: (User) -> Unit,private val onFollowClicked: (User) -> Unit) :
+class UsersAdapter(private val onItemClicked: (User) -> Unit, private val onFollowClicked: (User) -> Unit) :
     CustomBaseAdapter<User, UsersAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)

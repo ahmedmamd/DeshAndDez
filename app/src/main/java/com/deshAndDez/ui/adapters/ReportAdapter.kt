@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deshAndDez.R
 import com.deshAndDez.base.adapters.CustomBaseAdapter
+import com.deshAndDez.data.models.all_reels.report.Report
 import com.deshAndDez.databinding.RecyclerItemLayoutReportBinding
 
 class ReportAdapter(private val onItemClicked: (Report) -> Unit) :

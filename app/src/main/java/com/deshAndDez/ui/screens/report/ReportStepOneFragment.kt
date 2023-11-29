@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
 import com.deshAndDez.databinding.FragmentReportStepOneBinding
-import com.deshAndDez.ui.adapters.Report
+import com.deshAndDez.data.models.all_reels.report.Report
 import com.deshAndDez.ui.adapters.ReportAdapter
 import com.deshAndDez.utils.replaceFragment
 

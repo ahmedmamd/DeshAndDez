@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
+import com.deshAndDez.data.models.all_reels.intersted.Interest
 import com.deshAndDez.databinding.FragmentInterestsBinding
-import com.deshAndDez.databinding.FragmentLanguageBinding
-import com.deshAndDez.databinding.FragmentViewsBinding
 import com.deshAndDez.ui.adapters.*
 
 class InterrestsFragment : BaseFragment(R.layout.fragment_interests) {

@@ -1,4 +1,4 @@
-package com.deshAndDez.ui.adapters
+package com.deshAndDez.data.models.all_reels.languages
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

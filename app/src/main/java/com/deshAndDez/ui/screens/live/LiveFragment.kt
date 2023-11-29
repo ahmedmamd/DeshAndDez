@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.deshAndDez.R
 import com.deshAndDez.base.BaseFragment
-import com.deshAndDez.data.models.reels.TutorialVideos
+import com.deshAndDez.data.models.all_reels_tutorial.TutorialVideos
 import com.deshAndDez.databinding.FragmentLivePlayerBinding
 import com.deshAndDez.ui.dialogs.CommentsSheet
 import com.deshAndDez.ui.dialogs.ReportConfirmationDialog
@@ -21,7 +20,6 @@ import com.deshAndDez.ui.screens.interest.ImagesSliderFragment
 import com.deshAndDez.ui.screens.likes.LikesFragment
 import com.deshAndDez.ui.screens.live.adapter.LiveAdapter
 import com.deshAndDez.ui.screens.report.ReportStepOneFragment
-import com.deshAndDez.ui.screens.report.ReportStepTwoFragment
 import com.deshAndDez.ui.screens.views.ViewsFragment
 import com.deshAndDez.utils.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,19 +33,14 @@ class LiveFragment : BaseFragment(R.layout.fragment_live_player) {
     val videosAdapter by lazy {
         LiveAdapter(lifecycleScope, onItemClicked = {}, onLikesUsersClicked = {
             activity?.replaceFragment(LikesFragment(), R.id.fragment_container)
-//            findNavController().navigate(R.id.likesFragment)
         }, onViewsUsersClicked = {
             activity?.replaceFragment(ViewsFragment(), R.id.fragment_container)
-//            findNavController().navigate(R.id.viewsFragment)
         }, onReportClicked = {
             ReportConfirmationDialog(requireActivity(), onYesClick = {
                 activity?.replaceFragment(ReportStepOneFragment(), R.id.fragment_container)
-
-//                findNavController().navigate(R.id.reportStepOneFragment)
             }).show()
         }, onFilterClicked = {
             activity?.replaceFragment(FilterFragment(), R.id.fragment_container)
-//            findNavController().navigate(R.id.filterFragment)
         }, onCommentsClicked = {
             CommentsSheet(requireActivity()).show()
         }, onViewAllImagesClicked = {
@@ -58,7 +51,6 @@ class LiveFragment : BaseFragment(R.layout.fragment_live_player) {
 
     private fun openImagesSlider() {
         activity?.replaceFragment(ImagesSliderFragment(), R.id.fragment_container)
-//        findNavController().navigate(R.id.imagesSliderFragment)
     }
 
     override fun onCreateView(
@@ -78,26 +70,13 @@ class LiveFragment : BaseFragment(R.layout.fragment_live_player) {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-
-        clearStackOfReport()
         setUpAdapter()
 
         binding.apply {
             swipeRefresh.setOnRefreshListener {
             }
-
             observeFlow()
-
-
         }
-
-    }
-
-    private fun clearStackOfReport() {
-//        findNavController().popBackStack(R.id.reportStepOneFragment, false)
-//        findNavController().popBackStack(R.id.reportStepTwoFragment, false)
-//        findNavController().popBackStack(R.id.reportStepThreeFragment, false)
-//        findNavController().popBackStack(R.id.reportStepFourFragment, false)
     }
 
     private fun setUpAdapter() {
@@ -113,7 +92,6 @@ class LiveFragment : BaseFragment(R.layout.fragment_live_player) {
                         (binding.viewPager2.getChildAt(0) as RecyclerView).findViewHolderForAdapterPosition(
                             position
                         )
-//                                as? ReelsAdapter.ViewHolder
                     when (currentViewHolder) {
                         is LiveAdapter.ViewHolder -> {
                             currentViewHolder?.exoPlayer?.playWhenReady = true
@@ -180,7 +158,7 @@ class LiveFragment : BaseFragment(R.layout.fragment_live_player) {
             TutorialVideos(
                 2,
                 null,
-                url = "https://chefshub.site//storage//videos//1696189889.mp4", type = "images"
+                url = "https://chefshub.site//storage//videos//1692733836.mp4", type = "images"
             )
         )
         list.add(
